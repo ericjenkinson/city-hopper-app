@@ -14,7 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BAEB2F3728B13C47002FBBAD /* CityHopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityHopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3C28B13C47002FBBAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,7 +43,7 @@
 		BAEB2F3828B13C47002FBBAD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BAEB2F3728B13C47002FBBAD /* CityHopper.app */,
+				BAEB2F3728B13C47002FBBAD /* City Hopper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,7 +84,7 @@
 			);
 			name = CityHopper;
 			productName = CityHopper;
-			productReference = BAEB2F3728B13C47002FBBAD /* CityHopper.app */;
+			productReference = BAEB2F3728B13C47002FBBAD /* City Hopper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -281,7 +281,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ehjconsultancy.com.CityHopper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "City Hopper";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,7 +310,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ehjconsultancy.com.CityHopper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "City Hopper";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
