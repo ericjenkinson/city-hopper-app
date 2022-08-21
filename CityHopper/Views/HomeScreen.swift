@@ -50,11 +50,11 @@ struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
     HomeScreen()
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
       .preferredColorScheme(.dark)
     HomeScreen()
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }
 }

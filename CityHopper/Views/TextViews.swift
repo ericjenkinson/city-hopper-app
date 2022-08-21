@@ -29,6 +29,22 @@ struct BigThinHeading: View {
   }
 }
 
+struct UnorderedListLabelText: View {
+  let sfSymbol: String
+  let text: String
+  var body: some View {
+    HStack {
+      RoundedImageView(systemName: sfSymbol)
+      Text(text)
+        .foregroundColor(Color(Constants.Color.TextColor))
+        .kerning(Constants.General.unorderedListTextKerning)
+        .font(.body)
+        .bold()
+      .frame(alignment: .leading)
+    }
+  }
+}
+
 struct ButtonText: View {
   var text: String
   
@@ -52,6 +68,8 @@ struct TextPreviews: View {
       BigBoldHeading(text: Constants.AppData.welcomeMessage)
       BigThinHeading(text: Constants.AppData.userName)
       ButtonText(text: Constants.AppData.closeOnboarding)
+      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.walking, text: "Plan trips across multiple Cities")
+      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.airplane, text: "Explore cities")
     }
   }
 }
@@ -61,11 +79,11 @@ struct TextViews_Previews: PreviewProvider {
   static var previews: some View {
     TextPreviews()
     TextPreviews()
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     TextPreviews()
       .preferredColorScheme(.dark)
     TextPreviews()
       .preferredColorScheme(.dark)
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
   }
 }
