@@ -68,8 +68,8 @@ struct TextPreviews: View {
       BigBoldHeading(text: Constants.AppData.welcomeMessage)
       BigThinHeading(text: Constants.AppData.userName)
       ButtonText(text: Constants.AppData.closeOnboarding)
-      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.walking, text: "Plan trips across multiple Cities")
-      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.airplane, text: "Explore cities")
+      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.walking, text: Constants.AppData.obBodyLine1)
+      UnorderedListLabelText(sfSymbol: Constants.SFSymbols.airplane, text: Constants.AppData.obBodyLine3)
     }
   }
 }
