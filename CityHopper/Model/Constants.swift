@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum Constants {
+  enum Text {
+    public static let TextColor = "TextColor"
+  }
+}
