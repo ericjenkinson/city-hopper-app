@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct OnBoarding: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Binding var onboardingIsVisible: Bool
   
   var body: some View {
     VStack {
       Text(Constants.AppData.appName)
       Button("Dismiss Modal") {
-        presentationMode.wrappedValue.dismiss()
-        
+        withAnimation {
+          self.onboardingIsVisible.toggle()
+        }
       }
     }
   }
 }
 
 struct OnBoarding_Previews: PreviewProvider {
+  static private var onboardingIsVisible = Binding.constant(false)
   static var previews: some View {
-    OnBoarding()
+    OnBoarding(onboardingIsVisible: onboardingIsVisible)
   }
 }

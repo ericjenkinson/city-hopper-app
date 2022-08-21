@@ -24,7 +24,6 @@ struct HomeScreen: View {
           .padding([.bottom, .trailing])
       }
       .padding(.top)
-      .transition(.scale)
     Spacer()
     }
   }
@@ -41,7 +40,10 @@ struct OnboardingButton: View {
     }) {
       RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
     }
-    .fullScreenCover(isPresented: $onboardingIsVisible, content: OnBoarding.init)
+    .sheet(isPresented: $onboardingIsVisible) {
+      OnBoarding(onboardingIsVisible: $onboardingIsVisible)
+    }
+    //.fullScreenCover(isPresented: $onboardingIsVisible, content: OnBoarding.init)
   }
 }
 
