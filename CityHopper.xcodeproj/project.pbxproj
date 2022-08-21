@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
+		BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */; };
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
-		BAEB2F3D28B13C47002FBBAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3C28B13C47002FBBAD /* ContentView.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -17,9 +17,9 @@
 /* Begin PBXFileReference section */
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
-		BAEB2F3C28B13C47002FBBAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,7 +47,7 @@
 		BA5B482728B1C53600308D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAEB2F3C28B13C47002FBBAD /* ContentView.swift */,
+				BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAEB2F3D28B13C47002FBBAD /* ContentView.swift in Sources */,
+				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
 				BA5B482A28B1C57300308D00 /* Constants.swift in Sources */,
 			);
