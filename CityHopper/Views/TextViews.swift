@@ -12,7 +12,7 @@ struct BigBoldHeading: View {
   
   var body: some View {
     Text(text)
-      .foregroundColor(Color(Constants.Text.TextColor))
+      .foregroundColor(Color(Constants.Color.TextColor))
       .font(.largeTitle)
       .bold()
   }
@@ -23,7 +23,7 @@ struct BigThinHeading: View {
   var body: some View {
     Text(text)
       .fontWeight(.thin)
-      .foregroundColor(Color(Constants.Text.TextColor))
+      .foregroundColor(Color(Constants.Color.TextColor))
       .font(.largeTitle)
   }
 }
@@ -31,8 +31,8 @@ struct BigThinHeading: View {
 struct TextPreviews: View {
   var body: some View {
     VStack {
-      BigBoldHeading(text: "Welcome, ")
-      BigThinHeading(text: "Eric")
+      BigBoldHeading(text: Constants.DevData.welcomeMessage)
+      BigThinHeading(text: Constants.DevData.userName)
     }
   }
 }
