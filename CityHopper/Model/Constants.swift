@@ -17,7 +17,8 @@ enum Constants {
     public static let TextColor = "TextColor"
     public static let ButtonStrokeColor = "ButtonStrokeColor"
   }
-  enum DevData {
+  enum AppData {
+    public static let appName = "City Hopper"
     public static let buttonSFSymbol = "folder"
     public static let welcomeMessage = "Welcome, "
     public static let userName = "Eric"

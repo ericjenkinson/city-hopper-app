@@ -24,7 +24,7 @@ struct RoundedImageViewStroked: View {
 struct ButtonPreviews: View {
   var body: some View {
     VStack {
-      RoundedImageViewStroked(systemName: Constants.DevData.buttonSFSymbol)
+      RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
     }
   }
 }

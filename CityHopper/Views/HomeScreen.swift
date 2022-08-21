@@ -8,29 +8,40 @@
 import SwiftUI
 
 struct HomeScreen: View {
+  @State private var onboardingIsVisible = false
+  
   var body: some View {
     VStack {
-      Header()
-      Spacer()
-      
+      HStack {
+        VStack(alignment: .leading) {
+          BigBoldHeading(text: Constants.AppData.welcomeMessage)
+            .padding(.leading)
+          BigThinHeading(text: Constants.AppData.userName)
+            .padding(.leading)
+        }
+        Spacer()
+        OnboardingButton(onboardingIsVisible: $onboardingIsVisible)
+          .padding([.bottom, .trailing])
+      }
+      .padding(.top)
+      .transition(.scale)
+    Spacer()
     }
   }
 }
 
-struct Header: View {
+
+struct OnboardingButton: View {
+  @Binding var onboardingIsVisible: Bool
   var body: some View {
-    HStack {
-      VStack(alignment: .leading) {
-        BigBoldHeading(text: Constants.DevData.welcomeMessage)
-          .padding(.leading)
-        BigThinHeading(text: Constants.DevData.userName)
-          .padding(.leading)
+    Button(action: {
+      withAnimation {
+        onboardingIsVisible.toggle()
       }
-      Spacer()
-      RoundedImageViewStroked(systemName: Constants.DevData.buttonSFSymbol)
-        .padding([.bottom, .trailing])
+    }) {
+      RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
     }
-    .padding(.top)
+    .fullScreenCover(isPresented: $onboardingIsVisible, content: OnBoarding.init)
   }
 }
 

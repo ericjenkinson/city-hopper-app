@@ -32,8 +32,8 @@ struct BigThinHeading: View {
 struct TextPreviews: View {
   var body: some View {
     VStack {
-      BigBoldHeading(text: Constants.DevData.welcomeMessage)
-      BigThinHeading(text: Constants.DevData.userName)
+      BigBoldHeading(text: Constants.AppData.welcomeMessage)
+      BigThinHeading(text: Constants.AppData.userName)
     }
   }
 }
