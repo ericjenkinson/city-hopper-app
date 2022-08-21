@@ -43,7 +43,6 @@ struct OnboardingButton: View {
     .sheet(isPresented: $onboardingIsVisible) {
       OnBoarding(onboardingIsVisible: $onboardingIsVisible)
     }
-    //.fullScreenCover(isPresented: $onboardingIsVisible, content: OnBoarding.init)
   }
 }
 
