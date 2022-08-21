@@ -25,6 +25,7 @@ struct BigThinHeading: View {
       .fontWeight(.thin)
       .foregroundColor(Color(Constants.Color.TextColor))
       .font(.largeTitle)
+      .multilineTextAlignment(.leading)
   }
 }
 

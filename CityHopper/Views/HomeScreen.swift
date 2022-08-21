@@ -9,7 +9,28 @@ import SwiftUI
 
 struct HomeScreen: View {
   var body: some View {
-    Text("City Hopper")
+    VStack {
+      Header()
+      Spacer()
+      
+    }
+  }
+}
+
+struct Header: View {
+  var body: some View {
+    HStack {
+      VStack(alignment: .leading) {
+        BigBoldHeading(text: Constants.DevData.welcomeMessage)
+          .padding(.leading)
+        BigThinHeading(text: Constants.DevData.userName)
+          .padding(.leading)
+      }
+      Spacer()
+      RoundedImageViewStroked(systemName: Constants.DevData.buttonSFSymbol)
+        .padding([.bottom, .trailing])
+    }
+    .padding(.top)
   }
 }
 
