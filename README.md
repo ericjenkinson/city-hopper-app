@@ -18,6 +18,7 @@ can dismiss the Onboarding screen by clicking the "Return to App" button.
 
 * SwiftUI containers: Views, HStack, VStack, ZStack
 * SwiftUI components: Text, Button
+* SwiftUI view modifers
 * SwiftUI Animation basics
 * SwiftUI @State and @Binding
 * Basic Swift concepts
