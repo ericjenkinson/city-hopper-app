@@ -12,7 +12,7 @@ struct BigBoldHeading: View {
   
   var body: some View {
     Text(text)
-      .foregroundColor(Color(Constants.Color.TextColor))
+      .foregroundColor(Constants.Colors.TextColor)
       .font(.largeTitle)
       .bold()
   }
@@ -23,7 +23,7 @@ struct BigThinHeading: View {
   var body: some View {
     Text(text)
       .fontWeight(.thin)
-      .foregroundColor(Color(Constants.Color.TextColor))
+      .foregroundColor(Constants.Colors.TextColor)
       .font(.largeTitle)
       .multilineTextAlignment(.leading)
   }
@@ -36,7 +36,7 @@ struct UnorderedListLabelText: View {
     HStack {
       RoundedImageView(systemName: sfSymbol)
       Text(text)
-        .foregroundColor(Color(Constants.Color.TextColor))
+        .foregroundColor(Constants.Colors.TextColor)
         .kerning(Constants.General.unorderedListTextKerning)
         .font(.body)
         .bold()
@@ -50,7 +50,7 @@ struct ButtonText: View {
   
   var body: some View {
     Text(text)
-      .foregroundColor(Color(Constants.Color.ButtonTextColor))
+      .foregroundColor(Constants.Colors.ButtonTextColor)
       .font(.headline)
       .bold()
       .padding()
