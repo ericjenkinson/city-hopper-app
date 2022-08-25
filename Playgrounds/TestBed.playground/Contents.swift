@@ -8,7 +8,7 @@ struct City {
   let image: String
   let country: String
   let description: String
-  let rating: Int?
+  let reviews: [Review]?
   let price: Double
 }
 
@@ -31,4 +31,10 @@ struct Trip {
   let owner: Person
   let cities: [City]?
   let group: [Group]?
+}
+
+struct Review {
+  let id: UUID
+  let rating: Int
+  let description: String?
 }
