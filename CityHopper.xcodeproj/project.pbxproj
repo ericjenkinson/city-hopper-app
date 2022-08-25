@@ -24,6 +24,7 @@
 		BAB8067228B1CE6E009E81E4 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		BAB8067B28B6DDCC009E81E4 /* TestBed.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestBed.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,9 +77,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		BAB8067928B6DC18009E81E4 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				BAB8067B28B6DDCC009E81E4 /* TestBed.playground */,
+			);
+			path = Playgrounds;
+			sourceTree = "<group>";
+		};
 		BAEB2F2E28B13C47002FBBAD = {
 			isa = PBXGroup;
 			children = (
+				BAB8067928B6DC18009E81E4 /* Playgrounds */,
 				BA5B482B28B1C5CA00308D00 /* README.md */,
 				BAEB2F3928B13C47002FBBAD /* CityHopper */,
 				BAEB2F3828B13C47002FBBAD /* Products */,
