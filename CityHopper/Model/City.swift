@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct City {  
+  let name: String
+  let image: String
+  let country: String
+  let description: String
+  let reviews: [Review]?  
+  let price: Double
+}

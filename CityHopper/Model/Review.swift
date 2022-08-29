@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Review {
+  let id: UUID
+  let rating: Double
+  let description: String
+}
