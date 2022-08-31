@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
   @State private var onboardingIsVisible = false
-  
+  @State private var destinations = Destination(loadTestData: true)
   var body: some View {
     VStack {
       HStack {
@@ -24,7 +24,14 @@ struct HomeScreen: View {
           .padding([.bottom, .trailing])
       }
       .padding(.top)
-    Spacer()
+      Spacer()
+      ScrollView {
+        VStack {
+          ForEach(destinations.cities.indices, id: \.self) { i in
+            Text(destinations.cities[i].name)
+          }
+        }
+      }
     }
   }
 }

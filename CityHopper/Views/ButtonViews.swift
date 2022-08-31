@@ -12,11 +12,11 @@ struct RoundedImageViewStroked: View {
   var body: some View {
     Image(systemName: systemName)
       .font(.title)
-      .foregroundColor(Color(Constants.Color.TextColor))
+      .foregroundColor(Constants.Colors.TextColor)
       .frame(width: Constants.General.roundedViewLength, height: Constants.General.roundedViewLength)
       .overlay(
         Circle()
-          .strokeBorder(Color(Constants.Color.ButtonStrokeColor), lineWidth: Constants.General.strokeWidth)
+          .strokeBorder(Constants.Colors.ButtonStrokeColor, lineWidth: Constants.General.strokeWidth)
       )
   }
 }
@@ -26,7 +26,7 @@ struct RoundedImageView: View {
   var body: some View {
     Image(systemName: systemName)
       .font(.title)
-      .foregroundColor(Color(Constants.Color.TextColor))
+      .foregroundColor(Constants.Colors.TextColor)
       .frame(width: Constants.General.roundedViewLength, height: Constants.General.roundedViewLength)
   }
 }

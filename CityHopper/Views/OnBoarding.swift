@@ -12,23 +12,23 @@ struct OnBoarding: View {
   
   var body: some View {
     VStack {
-      obHeader()
+      OnboardingHeader()
       Spacer()
-      obBody()
+      OnboardingBody()
       Spacer()
-      obFooter(onboardingIsVisible: $onboardingIsVisible)
+      OnboardingFooter(onboardingIsVisible: $onboardingIsVisible)
     }
   }
 }
 
-struct obHeader:View {
+struct OnboardingHeader:View {
   var body: some View {
     BigBoldHeading(text: Constants.AppData.appName)
       .padding(.top)
   }
 }
 
-struct obBody: View {
+struct OnboardingBody: View {
   var body: some View {
     VStack(alignment: .leading) {
       UnorderedListLabelText(sfSymbol: Constants.SFSymbols.walking, text: Constants.AppData.obBodyLine1)
@@ -39,7 +39,7 @@ struct obBody: View {
   }
 }
 
-struct obFooter: View {
+struct OnboardingFooter: View {
   @Binding var onboardingIsVisible: Bool
   var body: some View {
     Button(action: {

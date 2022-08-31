@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 enum Constants {
   enum General {
@@ -18,10 +19,10 @@ enum Constants {
     public static let samplePortraitViewHeight = CGFloat(320.0)
     public static let samplePortraitViewWidth = CGFloat(568.0)
   }
-  enum Color {
-    public static let TextColor = "TextColor"
-    public static let ButtonStrokeColor = "ButtonStrokeColor"
-    public static let ButtonTextColor = "ButtonTextColor"
+  enum Colors {
+    public static let TextColor = Color("TextColor")
+    public static let ButtonStrokeColor = Color("ButtonStrokeColor")
+    public static let ButtonTextColor = Color("ButtonTextColor")
   }
   enum AppData {
     public static let appName = "City Hopper"
