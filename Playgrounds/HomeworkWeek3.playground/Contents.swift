@@ -9,6 +9,14 @@ import UIKit
   Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/2
 */
 
+func discountAmount(for totalAmount: Double, appliedDiscount: Double) -> Double {
+  let discountedAmount = totalAmount * appliedDiscount
+  let totalAmountAfterDiscount = totalAmount - discountedAmount
+  return totalAmountAfterDiscount
+}
+
+print(discountAmount(for: 12.99, appliedDiscount: 0.01))
+
 /*
   Assignment 2: Function
   Modify the function above to now take in a default discount percentage that will be applied by default to all.
@@ -16,6 +24,16 @@ import UIKit
  
   Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/4
 */
+
+func discountAmount(for totalAmount: Double, appliedDiscount: Double, standardDiscount: Double = 0.1) -> Double {
+  let totalDiscount = appliedDiscount + standardDiscount
+  let totalAmountAfterDiscount = discountAmount(for: totalAmount, appliedDiscount: totalDiscount)
+  return totalAmountAfterDiscount
+}
+
+print(discountAmount(for: 12.99, appliedDiscount: 0.1))
+print(discountAmount(for: 12.99, appliedDiscount: 0.05, standardDiscount: 0.05))
+
 
 /*
  Assignment 3: typealias
