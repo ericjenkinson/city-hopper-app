@@ -30,7 +30,7 @@
 		BAB8067228B1CE6E009E81E4 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 		BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
-		BAB8067B28B6DDCC009E81E4 /* TestBed.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestBed.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BAB8067B28B6DDCC009E81E4 /* HomeworkWeek2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HomeworkWeek2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAB8067C28BC0101009E81E4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BAB8067E28BC011F009E81E4 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BAB8068028BC012A009E81E4 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		BAB8067928B6DC18009E81E4 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				BAB8067B28B6DDCC009E81E4 /* TestBed.playground */,
+				BAB8067B28B6DDCC009E81E4 /* HomeworkWeek2.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
