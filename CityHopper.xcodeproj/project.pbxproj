@@ -37,6 +37,7 @@
 		BAB8068228BC0140009E81E4 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		BAB8068428BC0166009E81E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAB8068628BC8321009E81E4 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		BAB8068828C28BF0009E81E4 /* HomeworkWeek3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HomeworkWeek3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		BAB8067928B6DC18009E81E4 /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				BAB8068828C28BF0009E81E4 /* HomeworkWeek3.playground */,
 				BAB8067B28B6DDCC009E81E4 /* HomeworkWeek2.playground */,
 			);
 			path = Playgrounds;
