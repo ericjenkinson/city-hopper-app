@@ -249,8 +249,8 @@ extension ShoppingCart {
   }
 }
 
-/*
- Assignment 11: Protocol
+/*:
+ ## Assignment 11: Protocol
  Create a protocol and class conforming to the protocol. For example: Discount that has DiscountType and
  DiscountPercentage and a method to calculate discount.
  
@@ -258,9 +258,61 @@ extension ShoppingCart {
             
 */
 
-/*
- Assignment 12: Extension
+protocol Discount {
+  var discountType: DiscountType { get set }
+  var discountPercentage: Double { get set }
+  
+  func calculateDiscount() -> Double
+}
+
+class Price: Discount {
+  var price: Double
+  var discountType: DiscountType
+  var discountPercentage = 0.0
+  
+  init(price: Double, discountType: DiscountType) {
+    self.price = price
+    self.discountType = discountType
+    self.discountPercentage = self.discountType.rawValue
+  }
+  
+  func calculateDiscount() -> Double {
+    self.price * self.discountPercentage
+  }
+}
+
+var itemPrice = Price(price: 12.99, discountType: DiscountType.multiCity)
+print(itemPrice.calculateDiscount())
+
+/*:
+ ## Assignment 12: Extension
  Create an extension that rounds off the totalDiscountedAmount.
  
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/43
+ Materials: [Programming in Swift: Functions & Types Lesson 43: Protocols & Extensions](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/43)
 */
+
+struct PriceWithDiscountApplied {
+  var totalDiscountedAmount = 30.018
+}
+
+extension PriceWithDiscountApplied {
+  func totalDiscountAmountRounded() -> String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .decimal
+    formatter.maximumFractionDigits = 0
+    
+    let fractionalPart = totalDiscountedAmount.truncatingRemainder(dividingBy: 1)
+    if(fractionalPart >= 0.50) {
+      formatter.roundingMode = .up
+    } else {
+      formatter.roundingMode = .down
+    }
+    return formatter.string(for: totalDiscountedAmount) ?? "0.00"
+  }
+}
+
+var unrounded = PriceWithDiscountApplied()
+print(unrounded.totalDiscountAmountRounded())
+unrounded.totalDiscountedAmount = 50.6
+print(unrounded.totalDiscountAmountRounded())
+
