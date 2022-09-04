@@ -21,6 +21,7 @@
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
+		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				BAB8068228BC0140009E81E4 /* Review.swift */,
 				BAB8068428BC0166009E81E4 /* City.swift */,
 				BAB8068628BC8321009E81E4 /* Destination.swift */,
+				BAFDE72D28C475320067F27F /* Cart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* Destination.swift in Sources */,
+				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,

@@ -123,7 +123,7 @@ print(discountAmountShort(12.99, "Multi City"))
 
  *Hint*: Use Array's map method.
  
- Materials: [[Programming in Swift: Functions & Types Lesson 14: forEach & Map]]https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/14
+ Materials: [Programming in Swift: Functions & Types Lesson 14: forEach & Map](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/14)
 */
 
 let itemPrices = [10.99, 4.39, 199.49, 5.00, 212.75, 49.99, 99.99]
@@ -316,3 +316,14 @@ print(unrounded.totalDiscountAmountRounded())
 unrounded.totalDiscountedAmount = 50.6
 print(unrounded.totalDiscountAmountRounded())
 
+/*:
+ ## Assignment 13: Final code goes in the app
+ The code that best fits in the app goes to where it belongs. :]
+
+ ### Code used in the app is found in model/cart.swift
+ - enum DiscountType
+ - enum ShoppingCart - renamed Cart
+ 
+ In the UI there is text field that prints the total price with discount applied
+ 
+*/
