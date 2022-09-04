@@ -1,4 +1,5 @@
 import UIKit
+import CoreText
 
 /*:
   ## Properties/ Data/ Formulae student needs:
@@ -125,7 +126,7 @@ print(discountAmountShort(12.99, "Multi City"))
  Materials: [[Programming in Swift: Functions & Types Lesson 14: forEach & Map]]https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/14
 */
 
-let itemPrices = [10.99, 4.39, 199.49, 5.00]
+let itemPrices = [10.99, 4.39, 199.49, 5.00, 212.75, 49.99, 99.99]
 let discountedItemPrices = itemPrices.map { (price) -> Double in
   price * 0.5
 }
@@ -144,50 +145,116 @@ print(discountedItemPrices)
  Note that the second video talks about sorted on array not dictionary, but both are collections.
 */
 
-let DiscountTypes = ["Multi City": 0.1, "Wedding": 0.2, "Holiday": 0.3, "Opening Day": 0.5]
+let discountTypes = ["Multi City": 0.1, "Wedding": 0.2, "Holiday": 0.3, "Opening Day": 0.5]
+let sortedDiscountTypes = discountTypes.sorted{ $0.value > $1.value }
+print(discountTypes)
+print(sortedDiscountTypes)
 
-/*
- Assignment 7: Enums and Switch cases
+/*:
+ ## Assignment 7: Enums and Switch cases
  Use enums for discount types.
  Create a function printDiscount to print the value for discount types. Use switch cases and enums to do this.
 
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/21
-            https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/23
-            https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/24
+ Materials: [Programming in Swift: Functions & Types Lesson 21: Enumerations](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/21) \
+ &emsp;&emsp;&emsp;&emsp;&ensp; [Programming in Swift: Functions & Types Lesson 23: Switch Statements](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/23) \
+ &emsp;&emsp;&emsp;&emsp;&ensp; [Programming in Swift: Functions & Types Lesson 24: More Switch Statements](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/24)
  */
 
-/*
- Assignment 8: Computed property
+enum DiscountType: Double, CaseIterable {
+  case multiCity = 0.1
+  case wedding = 0.2
+  case holiday = 0.3
+  case openingDay = 0.5
+  case noDiscount = 0.0
+}
+
+func printDiscount(for discountType: DiscountType) {
+  switch discountType {
+  case .multiCity, .wedding, .holiday, .openingDay, .noDiscount:
+    print(discountType.rawValue)
+  }
+}
+
+let openingDiscount = DiscountType.openingDay
+printDiscount(for: openingDiscount)
+
+/*:
+ ## Assignment 8: Computed property
  Create a computed property: currentDiscountedAmount that returns the current discounted amount that
  you apply on the itemPrices.
  
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/30
-            https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/35
+ Materials: [Programming in Swift: Functions & Types Lesson 30: Computed Properties](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/30) \
+ &emsp;&emsp;&emsp;&emsp;&ensp; [Programming in Swift: Functions & Types Lesson 35: Computed Properties or Methods](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/35)
 */
 
-/*
- Assignment 9: Lazy property
+struct ShoppingCart {
+  var items: [String]?
+  var itemPrices: [Double]?
+  var discount = DiscountType.noDiscount
+  
+  var currentDiscountedAmount: Double {
+    guard itemPrices != nil else {
+      return 0.0
+    }
+    let discountedItemPrices = itemPrices?.map { (price) -> Double in
+      price * discount.rawValue
+    }
+    return (discountedItemPrices?.reduce(0, +))!
+  }
+}
+
+var usersCart = ShoppingCart()
+print(usersCart.currentDiscountedAmount) // no prices, discount set DiscountType.noDiscount
+usersCart.itemPrices = [10.99, 4.39, 199.49, 5.00, 212.75, 49.99, 99.99]
+usersCart.discount = DiscountType.openingDay
+print(usersCart.currentDiscountedAmount)
+
+/*:
+ ## Assignment 9: Lazy property
  Create a lazy property that returns the maximum discount that can be applied.
 
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/31
+ Materials: [Programming in Swift: Functions & Types Lesson 31: Lazy Properties](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/31)
 */
 
-/*
- Assignment 10: Method
+func highestDiscount() -> Double {
+  var max = 0.0
+  for discount in DiscountType.allCases {  // Discount type was defined in Assignment 7 and is CaseIterable
+    if discount.rawValue > max {
+      max = discount.rawValue
+    }
+  }
+  return max
+}
+
+struct LazyDiscount {
+  lazy var maxDiscount = highestDiscount()
+}
+
+var lazyDiscount = LazyDiscount()
+print(lazyDiscount.maxDiscount)
+
+/*:
+ ## Assignment 10: Method
  Create a method that calculates and returns totalAmountAfterApplyingDiscount.
  
  Hint: Method belongs to a class/ struct/ enum.
  
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/33
+ Materials: [Programming in Swift: Functions & Types Lesson 33: Methods](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/33)
 
 */
+
+extension ShoppingCart {
+  func totalAmountAfterApplyingDiscount() {
+    self.currentDiscountedAmount
+  }
+}
 
 /*
  Assignment 11: Protocol
  Create a protocol and class conforming to the protocol. For example: Discount that has DiscountType and
  DiscountPercentage and a method to calculate discount.
  
- Materials: https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/42
+ Materials: [Programming in Swift: Functions & Types Lesson 42: Protocols](https://www.raywenderlich.com/28433240-programming-in-swift-functions-types/lessons/42)
             
 */
 
