@@ -31,3 +31,6 @@ apps shopping cart feature.
 * Swift Protocols
 * Swift Classes
 * Swift Extension
+* Swift Number Formatter
+* NSAttributedString
+* Using Markdown in Playgrounds

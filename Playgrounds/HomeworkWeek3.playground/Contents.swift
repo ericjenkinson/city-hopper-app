@@ -99,7 +99,11 @@ let discountAmountLong = { (totalAmount: Double, discountType: String) -> Double
   discountAmount(for: totalAmount, discountType: discountType)
 }
 
-// Nice to have
+/*:
+ ### Nice to have
+ Showcase the progression of the usage of a closure from the longest syntax to the shortest possible syntax.
+ Longest syntax appears above in Assignment 4, the other three are below.
+*/
 
 let discountAmountNoParamTypes: AmountAfterDiscount = { (totalAmount, discountType) -> Double in
   discountAmount(for: totalAmount, discountType: discountType)
@@ -128,7 +132,7 @@ print(discountAmountShort(12.99, "Multi City"))
 
 let itemPrices = [10.99, 4.39, 199.49, 5.00, 212.75, 49.99, 99.99]
 let discountedItemPrices = itemPrices.map { (price) -> Double in
-  price * 0.5
+  price + (price * 0.5)
 }
 print(itemPrices)
 print(discountedItemPrices)
@@ -326,4 +330,12 @@ print(unrounded.totalDiscountAmountRounded())
  
  In the UI there is text field that prints the total price with discount applied
  
+*/
+
+
+/*:
+ ### Nice to have
+ Display a date or a string (preferably a long string)  in a nice readable format using NSAttributedString.
+ Use your creativity and make the date/string look appealing using different fonts/ colors.
+
 */
