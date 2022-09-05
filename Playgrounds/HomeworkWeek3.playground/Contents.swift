@@ -131,11 +131,11 @@ print(discountAmountShort(12.99, "Multi City"))
 */
 
 let itemPrices = [10.99, 4.39, 199.49, 5.00, 212.75, 49.99, 99.99]
-let discountedItemPrices = itemPrices.map { (price) -> Double in
+let increasedItemPrices = itemPrices.map { (price) -> Double in
   price + (price * 0.5)
 }
 print(itemPrices)
-print(discountedItemPrices)
+print(increasedItemPrices)
 
 /*:
  ## Assignment 6: Sorted
