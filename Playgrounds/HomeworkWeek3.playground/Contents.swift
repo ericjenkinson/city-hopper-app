@@ -338,4 +338,125 @@ print(unrounded.totalDiscountAmountRounded())
  Display a date or a string (preferably a long string)  in a nice readable format using NSAttributedString.
  Use your creativity and make the date/string look appealing using different fonts/ colors.
 
+ Material: [Swift Apprentice Chapter 20: Result Builders](https://www.raywenderlich.com/books/swift-apprentice/v7.0/chapters/20-result-builders)
 */
+
+
+
+enum SpecialCharacters {
+  case lineBreak
+  case tab
+  case comma
+  case space
+}
+
+@resultBuilder
+enum AttributedStringBuilder {
+  
+  static func buildBlock(_ components: NSAttributedString...) -> NSAttributedString {
+    let attributedString = NSMutableAttributedString()
+    for component in components {
+      attributedString.append(component)
+    }
+    return attributedString
+  }
+  // to allow if statements in the result builder
+  static func buildOptional(_ component: NSAttributedString?) -> NSAttributedString {
+    component ?? NSAttributedString()
+  }
+  
+  // to allow if else statements in the result builder
+  static func buildEither(first component: NSAttributedString) -> NSAttributedString {
+    component
+  }
+  
+  static func buildEither(second component: NSAttributedString) -> NSAttributedString {
+    component
+  }
+  
+  // to allow for-in loops
+  static func buildArray(_ components: [NSAttributedString]) -> NSAttributedString {
+    let attributedString = NSMutableAttributedString()
+    for component in components {
+      attributedString.append(component)
+    }
+    return attributedString
+  }
+  
+  static func buildExpression(_ expression: SpecialCharacters) -> NSAttributedString {
+    switch expression {
+    case .lineBreak:
+      return Text("\n")
+    case .tab:
+      return Text("\t")
+    case .comma:
+      return Text(",")
+    case .space:
+      return Text(" ")
+    }
+  }
+  
+  static func buildExpression(_ expression: NSAttributedString) -> NSAttributedString {
+    expression
+  }
+  
+}
+
+extension NSMutableAttributedString {
+  
+  convenience init(_ string: String) {
+    self.init(string: string)
+  }
+  
+  public func color(_ color: UIColor) -> NSMutableAttributedString {
+    self.addAttribute(NSMutableAttributedString.Key.foregroundColor,
+                      value: color,
+                      range: NSRange(location: 0, length: self.length))
+    return self
+  }
+  
+  public func font(_ font: UIFont) -> NSMutableAttributedString {
+    self.addAttribute(NSAttributedString.Key.font,
+                      value: font,
+                      range: NSRange(location: 0, length: self.length))
+    return self
+  }
+}
+
+typealias Text = NSMutableAttributedString
+
+@AttributedStringBuilder
+func dateBuilder(stringArray: [String]) -> NSAttributedString {
+  if !stringArray.isEmpty {
+    for textItem in stringArray {
+      Text(textItem)
+        .font(.systemFont(ofSize: 20))
+        .color(.red)
+      SpecialCharacters.space
+    }
+  } else {
+    Text(", No title")
+  }
+}
+
+func longDate() {
+  var textArray = [String]()
+  let date = Date()
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "EEEE" // Weekday Name
+  textArray.append("Today is \(dateFormatter.string(from: date))")
+  dateFormatter.dateFormat = "LLLL" // month
+  textArray.append(dateFormatter.string(from: date))
+  dateBuilder(stringArray: textArray)
+  let calendar = Calendar.current
+  let components = calendar.dateComponents([.day], from: date)
+  textArray.append(String(components.day!))
+  dateFormatter.dateFormat = "yyyy"
+  textArray.append(dateFormatter.string(from: date))
+  
+  dateBuilder(stringArray: textArray)
+}
+
+longDate()
+
+
