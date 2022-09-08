@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
   @State private var onboardingIsVisible = false
   @State private var destinations = Destination(loadTestData: true)
+  @State private var cart = Cart(loadTestData: true)
   var body: some View {
     VStack {
       HStack {
@@ -30,6 +31,7 @@ struct HomeScreen: View {
           ForEach(destinations.cities.indices, id: \.self) { i in
             Text(destinations.cities[i].name)
           }
+          Text("Total Price (including discounts): \(cart.currentDiscountedAmount)")
         }
       }
     }
