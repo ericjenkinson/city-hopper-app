@@ -63,7 +63,7 @@ struct DestinationsView: View {
     ScrollView {
       VStack {
         ForEach(destinations.cities.indices, id: \.self) { i in
-          Text(destinations.cities[i].name)
+          ListViewElement(city: $destinations.cities[i])
         }
       }
     }
@@ -74,11 +74,15 @@ struct DestinationsView: View {
 struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .preferredColorScheme(.dark)
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }
