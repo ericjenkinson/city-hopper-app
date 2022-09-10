@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Destination {
-  var cities: [City] = []
+class Destination: ObservableObject {
+  @Published var cities: [City] = []
   
   init(loadTestData: Bool = false) {
     cities.append(City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00))
@@ -28,7 +28,7 @@ struct Destination {
     cities.append(City(name: "St. Louis", image: "imageStLouis", country: "United State", description: "The Great Arch", reviews: [Review(id: UUID(), rating: 4.1, description: "Wonderful!")], price: 2400.00))
   }
   
-  mutating func add(city: City) {
+  func add(city: City) {
     cities.append(city)
   }
   
