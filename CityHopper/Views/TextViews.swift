@@ -36,7 +36,7 @@ struct UnorderedListLabelText: View {
     HStack {
       RoundedImageView(systemName: sfSymbol)
       Text(text)
-        .foregroundColor(Constants.Colors.TextColor)
+        .foregroundColor(Constants.Colors.textColor)
         .kerning(Constants.General.unorderedListTextKerning)
         .font(.body)
         .bold()
