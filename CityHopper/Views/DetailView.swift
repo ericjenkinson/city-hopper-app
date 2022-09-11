@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
   @Binding var city: City
-  
+  @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   var body: some View {
     ZStack {
       Image(city.image)
         .resizable()
-        .scaledToFit()
+        .scaledToFill()
         .ignoresSafeArea()
       
       VStack {
@@ -23,7 +23,16 @@ struct DetailView: View {
           .padding()
       }
     }
-    .navigationTitle("")
+    .navigationBarBackButtonHidden(true)
+    .navigationBarItems(leading: Button {
+      self.mode.wrappedValue.dismiss()
+    }label: {
+      RoundedImageView(systemName: "chevron.backward", textColor: Constants.Colors.listViewElementTextColor)
+        .background(
+          UIBlurEffect.View(blurStyle: .regular)
+        )
+        .cornerRadius(Constants.General.listViewElementCornerRadius)
+    })
   }
 }
 

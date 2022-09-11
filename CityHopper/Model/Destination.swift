@@ -18,7 +18,7 @@ class Destination: ObservableObject {
     cities.append(City(name: "Chicago", image: "imageChicago", country: "United States", description: "The Great Masters", reviews: nil, price: 900.00))
     cities.append(City(name: "Tokyo", image: "imageTokyo", country: "Japan", description: "Samurai", reviews: [Review(id: UUID(), rating: 4.1, description: "Wonderful!")], price: 2400.00))
     
-    cities.append(City(name: "Berlin", image: "imageMunich", country: "Germany", description: "Ich bin ein Berliner", reviews: nil, price: 1200.00))
+    cities.append(City(name: "Berlin", image: "imageBerlin", country: "Germany", description: "Ich bin ein Berliner", reviews: nil, price: 1200.00))
     cities.append(City(name: "Denver", image: "imageDenver", country: "United States", description: "Mile High!", reviews: [Review(id: UUID(), rating: 4.3, description: "Great!")], price: 1600.00))
     cities.append(City(name: "London", image: "imageLondon", country: "United Kingdom", description: "Bangers and Mash!", reviews: [Review(id: UUID(), rating: 3.3, description: "Great!")], price: 1000.00))
     cities.append(City(name: "Los Angeles", image: "imageLosAngeles", country: "United States", description: "Hollywood1", reviews: [Review(id: UUID(), rating: 5.0, description: "Wonderful!")], price: 2000.00))
