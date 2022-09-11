@@ -12,10 +12,15 @@ struct HomeScreen: View {
   @EnvironmentObject var destinations: Destination
 
   var body: some View {
-    VStack {
-      HomeScreenHeader(onboardingIsVisible: $onboardingIsVisible)
-      Spacer()
-      DestinationsView()
+    
+    NavigationView {
+      VStack {
+        HomeScreenHeader(onboardingIsVisible: $onboardingIsVisible)
+        Spacer()
+        DestinationsView()
+      }
+      .navigationTitle("")
+      .navigationBarHidden(true)
     }
   }
 }
@@ -63,10 +68,15 @@ struct DestinationsView: View {
     ScrollView {
       VStack {
         ForEach(destinations.cities.indices, id: \.self) { i in
-          ListViewElement(city: $destinations.cities[i])
+          NavigationLink (
+            destination: DetailView(city: $destinations.cities[i]),
+            label: {
+                ListViewElement(city: $destinations.cities[i])
+            })
         }
       }
     }
+    
   }
 }
 
