@@ -21,7 +21,7 @@ struct ListViewElement: View {
       }
     }
     .scaledToFit()
-    .cornerRadius(50.0)
+    .cornerRadius(Constants.General.listViewElementCornerRadius)
     .padding()
   }
 }
@@ -31,17 +31,19 @@ struct ListElementViewHeader: View {
   var body: some View {
     HStack {
       HStack {
-        RoundedImageView(systemName: "star")
+        RoundedImageView(systemName: "star.fill", textColor: Constants.Colors.starSymbolColor)
         Text("4.5")
+          .foregroundColor(Constants.Colors.listViewElementTextColor)
+          .bold()
           .padding(.trailing)
       }
       .background(
         UIBlurEffect.View(blurStyle: .regular)
       )
-      .cornerRadius(50.0)
+      .cornerRadius(Constants.General.listViewElementCornerRadius)
       
       Spacer()
-      RoundedImageView(systemName: "heart")
+      RoundedImageView(systemName: "heart", textColor: Constants.Colors.listViewElementTextColor)
         .background(
           UIBlurEffect.View(blurStyle: .regular)
         )
@@ -58,26 +60,22 @@ struct ListElementViewFooter: View {
   
   var body: some View {
     HStack {
-      RoundedImageView(systemName: "location")
+      RoundedImageView(systemName: "location", textColor: Constants.Colors.listViewElementTextColor)
       HStack {
         Text("\(city), ")
-        Text(country)
+          .foregroundColor(Constants.Colors.listViewElementTextColor)
+          .bold()
+        Text(country).foregroundColor(Constants.Colors.listViewElementTextColor)
           .padding(.trailing)
       }
     }
     .background(
       UIBlurEffect.View(blurStyle: .regular)
     )
-    .cornerRadius(50.0)
+    .cornerRadius(Constants.General.listViewElementCornerRadius)
     .padding()
   }
   
-}
-
-struct ListViews: View {
-  var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-  }
 }
 
 struct ListViews_Previews: PreviewProvider {
@@ -85,7 +83,6 @@ struct ListViews_Previews: PreviewProvider {
 
   static var previews: some View {
     VStack {
-      ListViews()
       ListViewElement(city: city)
     }
   }

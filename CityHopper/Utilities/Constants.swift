@@ -18,11 +18,14 @@ enum Constants {
     public static let unorderedListTextKerning = CGFloat(1.5)
     public static let samplePortraitViewHeight = CGFloat(320.0)
     public static let samplePortraitViewWidth = CGFloat(568.0)
+    public static let listViewElementCornerRadius = CGFloat(50.0)
   }
   enum Colors {
-    public static let TextColor = Color("TextColor")
-    public static let ButtonStrokeColor = Color("ButtonStrokeColor")
-    public static let ButtonTextColor = Color("ButtonTextColor")
+    public static let textColor = Color("TextColor")
+    public static let buttonStrokeColor = Color("ButtonStrokeColor")
+    public static let buttonTextColor = Color("ButtonTextColor")
+    public static let starSymbolColor = Color("StarSymbolColor")
+    public static let listViewElementTextColor = Color("ListViewElementTextColor")
   }
   enum AppData {
     public static let appName = "City Hopper"

@@ -12,7 +12,7 @@ struct BigBoldHeading: View {
   
   var body: some View {
     Text(text)
-      .foregroundColor(Constants.Colors.TextColor)
+      .foregroundColor(Constants.Colors.textColor)
       .font(.largeTitle)
       .bold()
   }
@@ -23,7 +23,7 @@ struct BigThinHeading: View {
   var body: some View {
     Text(text)
       .fontWeight(.thin)
-      .foregroundColor(Constants.Colors.TextColor)
+      .foregroundColor(Constants.Colors.textColor)
       .font(.largeTitle)
       .multilineTextAlignment(.leading)
   }
@@ -50,7 +50,7 @@ struct ButtonText: View {
   
   var body: some View {
     Text(text)
-      .foregroundColor(Constants.Colors.ButtonTextColor)
+      .foregroundColor(Constants.Colors.buttonTextColor)
       .font(.headline)
       .bold()
       .padding()
