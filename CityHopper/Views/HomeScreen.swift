@@ -16,6 +16,7 @@ struct HomeScreen: View {
     NavigationView {
       VStack {
         HomeScreenHeader(onboardingIsVisible: $onboardingIsVisible)
+        Divider()
         Spacer()
         DestinationsView()
       }

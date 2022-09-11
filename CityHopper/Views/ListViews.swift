@@ -27,7 +27,6 @@ struct ListViewElement: View {
 }
 
 struct ListElementViewHeader: View {
-  
   var body: some View {
     HStack {
       HStack {
@@ -47,7 +46,7 @@ struct ListElementViewHeader: View {
         .background(
           UIBlurEffect.View(blurStyle: .regular)
         )
-        .cornerRadius(50.0)
+        .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
     .padding()
     

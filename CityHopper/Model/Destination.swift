@@ -35,4 +35,5 @@ class Destination: ObservableObject {
   func getReviews(for city: City) -> [Review]? {
     city.reviews ?? nil
   }
+  
 }

@@ -19,6 +19,7 @@ enum Constants {
     public static let samplePortraitViewHeight = CGFloat(320.0)
     public static let samplePortraitViewWidth = CGFloat(568.0)
     public static let listViewElementCornerRadius = CGFloat(50.0)
+    public static let detailViewCityDetailsCornerRadius = CGFloat(25)
   }
   enum Colors {
     public static let textColor = Color("TextColor")
