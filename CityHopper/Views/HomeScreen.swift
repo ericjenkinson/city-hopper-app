@@ -9,31 +9,19 @@ import SwiftUI
 
 struct HomeScreen: View {
   @State private var onboardingIsVisible = false
-  @State private var destinations = Destination(loadTestData: true)
-  @State private var cart = Cart(loadTestData: true)
+  @EnvironmentObject var destinations: Destination
+
   var body: some View {
-    VStack {
-      HStack {
-        VStack(alignment: .leading) {
-          BigBoldHeading(text: Constants.AppData.welcomeMessage)
-            .padding(.leading)
-          BigThinHeading(text: Constants.AppData.userName)
-            .padding(.leading)
-        }
+    
+    NavigationView {
+      VStack {
+        HomeScreenHeader(onboardingIsVisible: $onboardingIsVisible)
+        Divider()
         Spacer()
-        OnboardingButton(onboardingIsVisible: $onboardingIsVisible)
-          .padding([.bottom, .trailing])
+        DestinationsView()
       }
-      .padding(.top)
-      Spacer()
-      ScrollView {
-        VStack {
-          ForEach(destinations.cities.indices, id: \.self) { i in
-            Text(destinations.cities[i].name)
-          }
-          Text("Total Price (including discounts): \(cart.currentDiscountedAmount)")
-        }
-      }
+      .navigationTitle("")
+      .navigationBarHidden(true)
     }
   }
 }
@@ -55,14 +43,57 @@ struct OnboardingButton: View {
   }
 }
 
+struct HomeScreenHeader: View {
+  @Binding var onboardingIsVisible: Bool
+  
+  var body: some View {
+    HStack {
+      VStack(alignment: .leading) {
+        BigBoldHeading(text: Constants.AppData.welcomeMessage)
+          .padding(.leading)
+        BigThinHeading(text: Constants.AppData.userName)
+          .padding(.leading)
+      }
+      Spacer()
+      OnboardingButton(onboardingIsVisible: $onboardingIsVisible)
+        .padding([.bottom, .trailing])
+    }
+    .padding(.top)
+  }
+}
+
+struct DestinationsView: View {
+  @EnvironmentObject var destinations: Destination
+  
+  var body: some View {
+    ScrollView {
+      VStack {
+        ForEach(destinations.cities.indices, id: \.self) { i in
+          NavigationLink (
+            destination: DetailView(city: $destinations.cities[i]),
+            label: {
+                ListViewElement(city: $destinations.cities[i])
+            })
+        }
+      }
+    }
+    
+  }
+}
+
+
 struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .preferredColorScheme(.dark)
     HomeScreen()
+      .environmentObject(Destination(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }
