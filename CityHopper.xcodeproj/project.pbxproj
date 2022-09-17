@@ -26,6 +26,7 @@
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
 		BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5928D64CB600E1AEF8 /* Category.swift */; };
 		BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5B28D6555500E1AEF8 /* Country.swift */; };
+		BAF2DF5F28D66C2900E1AEF8 /* HomeScreenTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5E28D66C2900E1AEF8 /* HomeScreenTab.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BAF2DF5928D64CB600E1AEF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BAF2DF5B28D6555500E1AEF8 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		BAF2DF5E28D66C2900E1AEF8 /* HomeScreenTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenTab.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 		BA5B482728B1C53600308D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAF2DF5D28D66C0500E1AEF8 /* TabViews */,
 				BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */,
 				BAB8067228B1CE6E009E81E4 /* TextViews.swift */,
 				BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */,
@@ -161,6 +164,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BAF2DF5D28D66C0500E1AEF8 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2DF5E28D66C2900E1AEF8 /* HomeScreenTab.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +248,7 @@
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,
 				BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */,
+				BAF2DF5F28D66C2900E1AEF8 /* HomeScreenTab.swift in Sources */,
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
