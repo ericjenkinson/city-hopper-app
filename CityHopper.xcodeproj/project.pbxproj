@@ -24,6 +24,8 @@
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
+		BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5928D64CB600E1AEF8 /* Category.swift */; };
+		BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5B28D6555500E1AEF8 /* Country.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAF2DF5928D64CB600E1AEF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BAF2DF5B28D6555500E1AEF8 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +100,8 @@
 				BAB8068428BC0166009E81E4 /* City.swift */,
 				BAB8068628BC8321009E81E4 /* Destination.swift */,
 				BAFDE72D28C475320067F27F /* Cart.swift */,
+				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
+				BAF2DF5B28D6555500E1AEF8 /* Country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,7 +241,9 @@
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
+				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViews.swift in Sources */,
+				BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */,
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
 				BAB8068528BC0166009E81E4 /* City.swift in Sources */,
 				BAB8067D28BC0101009E81E4 /* Person.swift in Sources */,
