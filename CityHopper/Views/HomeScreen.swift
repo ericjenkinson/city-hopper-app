@@ -67,7 +67,7 @@ struct DestinationsView: View {
   
   var body: some View {
     ScrollView {
-      VStack {
+      LazyVStack {
         ForEach(destinations.cities.indices, id: \.self) { i in
           NavigationLink (
             destination: DetailView(city: $destinations.cities[i]),
