@@ -15,7 +15,6 @@ struct HomeScreen: View {
   }
   
   var body: some View {
-    NavigationView {
       TabView {
         HomeScreenTab()
           .tabItem {
@@ -23,8 +22,13 @@ struct HomeScreen: View {
             Text("Home")
           }
           .tag(Tabs.tab1)
+        CityListTab(cities: destinations.cities, countries: destinations.getCountries())
+          .tabItem {
+            Image(systemName: "list.bullet")
+            Text("Cities")
+          }
+          .tag(Tabs.tab2)
       }
-    }
   }
 }
 
@@ -32,18 +36,18 @@ struct DestinationsView: View {
   @EnvironmentObject var destinations: Destination
   
   var body: some View {
-    ScrollView {
-      LazyVStack {
-        ForEach(destinations.cities.indices, id: \.self) { i in
-          NavigationLink (
-            destination: DetailView(city: $destinations.cities[i]),
-            label: {
-                ListViewElement(city: $destinations.cities[i])
-            })
-        }
+    NavigationView {
+      ScrollView {
+          List(destinations.cities.indices, id: \.self) { i in
+            NavigationLink (
+              destination: DetailView(city: $destinations.cities[i]),
+              label: {
+                  LargeListViewElement(city: $destinations.cities[i])
+              })
+          }
+        
       }
     }
-    
   }
 }
 

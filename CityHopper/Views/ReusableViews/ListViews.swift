@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListViewElement: View {
+struct LargeListViewElement: View {
   @Binding var city: City
   
   var body: some View {
@@ -64,8 +64,10 @@ struct ListElementViewFooter: View {
         Text("\(city), ")
           .foregroundColor(Constants.Colors.listViewElementTextColor)
           .bold()
-        Text(country).foregroundColor(Constants.Colors.listViewElementTextColor)
-          .padding(.trailing)
+        if !country.isEmpty {
+          Text(country).foregroundColor(Constants.Colors.listViewElementTextColor)
+            .padding(.trailing)
+        }
       }
     }
     .background(
@@ -74,15 +76,39 @@ struct ListElementViewFooter: View {
     .cornerRadius(Constants.General.listViewElementCornerRadius)
     .padding()
   }
+}
+
+struct SmallListViewElement: View {
+  var city: City
   
+  var body: some View {
+    Image(city.image)
+      .resizable()
+      .scaledToFill()
+      .frame(width: 120, height: 120)
+      .cornerRadius(20)
+      .overlay(
+        Text(city.name)
+          .fontWeight(.bold)
+          .foregroundColor(Constants.Colors.listViewElementTextColor)
+          .padding(10)
+          .frame(alignment: .bottomLeading),
+        alignment: .bottomLeading
+          
+      )
+  }
 }
 
 struct ListViews_Previews: PreviewProvider {
   static private var city = Binding.constant(City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00))
 
+  static private var city2 = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
+  
   static var previews: some View {
     VStack {
-      ListViewElement(city: city)
+      LargeListViewElement(city: city)
+      Spacer()
+      SmallListViewElement(city: city2)
     }
   }
 }
