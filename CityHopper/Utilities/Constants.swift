@@ -38,6 +38,8 @@ enum Constants {
     public static let obBodyLine2 = "Plan trips across multiple cities."
     public static let obBodyLine3 = "Split the cost among the group."
     public static let obBodyLine4 = "Share your trip with others."
+    public static let tabTextHome = "Home"
+    public static let tabTextCities = "Cities"
     
   }
   enum SFSymbols {
@@ -45,5 +47,9 @@ enum Constants {
     public static let airplane = "airplane"
     public static let group = "person.3"
     public static let camera = "camera"
+    public static let heart = "heart"
+    public static let filledStar = "star.fill"
+    public static let location = "location"
+    public static let filledHouse = "house.fill"
   }
 }

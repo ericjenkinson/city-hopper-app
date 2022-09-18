@@ -7,25 +7,25 @@
 
 import SwiftUI
 
-struct HomeScreenTab: View {
+struct HomeTab: View {
   @State private var onboardingIsVisible = false
   @EnvironmentObject var destinations: Destination
   
   var body: some View {
     
     VStack {
-      HomeScreenTabHeader(onboardingIsVisible: $onboardingIsVisible)
+      HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
       Divider()
       Spacer()
-      DestinationsView()
+      ListView()
     }
-    .navigationTitle("")
-    .navigationBarHidden(true)
+    //.navigationTitle("")
+    //.navigationBarHidden(true)
     
   }
 }
 
-struct HomeScreenTabHeader: View {
+struct HomeTabHeader: View {
   @Binding var onboardingIsVisible: Bool
   
   var body: some View {
@@ -60,11 +60,29 @@ struct OnboardingButton: View {
   }
 }
 
+struct DestinationsView: View {
+  @EnvironmentObject var destinations: Destination
+  
+  var body: some View {
+    NavigationView {
+      ScrollView {
+          List(destinations.cities.indices, id: \.self) { i in
+            NavigationLink (
+              destination: DetailView(city: $destinations.cities[i]),
+              label: {
+                  LargeListViewElement(city: $destinations.cities[i])
+              })
+          }
+        
+      }
+    }
+  }
+}
 
 
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreenTab()
+        HomeTab()
           .environmentObject(Destination(loadTestData: true))
     }
 }

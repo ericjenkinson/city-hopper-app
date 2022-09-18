@@ -30,7 +30,7 @@ struct ListElementViewHeader: View {
   var body: some View {
     HStack {
       HStack {
-        RoundedImageView(systemName: "star.fill", textColor: Constants.Colors.starSymbolColor)
+        RoundedImageView(systemName: Constants.SFSymbols.filledStar, textColor: Constants.Colors.starSymbolColor)
         Text("4.5")
           .foregroundColor(Constants.Colors.listViewElementTextColor)
           .bold()
@@ -42,7 +42,7 @@ struct ListElementViewHeader: View {
       .cornerRadius(Constants.General.listViewElementCornerRadius)
       
       Spacer()
-      RoundedImageView(systemName: "heart", textColor: Constants.Colors.listViewElementTextColor)
+      RoundedImageView(systemName: Constants.SFSymbols.heart, textColor: Constants.Colors.listViewElementTextColor)
         .background(
           UIBlurEffect.View(blurStyle: .regular)
         )
@@ -59,7 +59,7 @@ struct ListElementViewFooter: View {
   
   var body: some View {
     HStack {
-      RoundedImageView(systemName: "location", textColor: Constants.Colors.listViewElementTextColor)
+      RoundedImageView(systemName: Constants.SFSymbols.location, textColor: Constants.Colors.listViewElementTextColor)
       HStack {
         Text("\(city), ")
           .foregroundColor(Constants.Colors.listViewElementTextColor)

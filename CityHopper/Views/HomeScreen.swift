@@ -16,40 +16,24 @@ struct HomeScreen: View {
   
   var body: some View {
       TabView {
-        HomeScreenTab()
+        HomeTab()
           .tabItem {
-            Image(systemName: "house.fill")
-            Text("Home")
+            Image(systemName: Constants.SFSymbols.filledHouse)
+            Text(Constants.AppData.tabTextHome)
           }
           .tag(Tabs.tab1)
         CityListTab(cities: destinations.cities, countries: destinations.getCountries())
           .tabItem {
-            Image(systemName: "list.bullet")
-            Text("Cities")
+            Image(systemName: Constants.SFSymbols.location)
+            Text(Constants.AppData.tabTextCities)
           }
           .tag(Tabs.tab2)
+        
       }
   }
 }
 
-struct DestinationsView: View {
-  @EnvironmentObject var destinations: Destination
-  
-  var body: some View {
-    NavigationView {
-      ScrollView {
-          List(destinations.cities.indices, id: \.self) { i in
-            NavigationLink (
-              destination: DetailView(city: $destinations.cities[i]),
-              label: {
-                  LargeListViewElement(city: $destinations.cities[i])
-              })
-          }
-        
-      }
-    }
-  }
-}
+
 
 
 struct HomeScreen_Previews: PreviewProvider {
