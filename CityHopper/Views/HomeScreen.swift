@@ -27,6 +27,7 @@ struct HomeScreen: View {
             Image(systemName: Constants.SFSymbols.location)
             Text(Constants.AppData.tabTextCities)
           }
+          .badge(destinations.cities.count)
           .tag(Tabs.tab2)
         
       }

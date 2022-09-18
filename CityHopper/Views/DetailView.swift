@@ -11,28 +11,34 @@ struct DetailView: View {
   @Binding var city: City
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   var body: some View {
-    ZStack {
-      Image(city.image)
-        .resizable()
-        .scaledToFill()
-        .ignoresSafeArea()
-      
-      VStack {
-        Spacer()
-        CityDetails(city: city)
-          .padding()
+    GeometryReader { proxy in
+      ZStack {
+        Image(city.image)
+          .resizable()
+          .scaledToFill()
+          .ignoresSafeArea(.container, edges: .top)
+          .padding(.bottom)
+        
+        VStack {
+          Spacer()
+          CityDetails(city: city)
+            .padding()
+        }
       }
+      .frame(width: proxy.size.width, height: proxy.size.height * 0.9)
+      //.navigationTitle("")
+      //.navigationBarHidden(true)
+      .navigationBarBackButtonHidden(true)
+      .navigationBarItems(leading: Button {
+        self.mode.wrappedValue.dismiss()
+      }label: {
+        RoundedImageView(systemName: "chevron.backward", textColor: Constants.Colors.listViewElementTextColor)
+          .background(
+            UIBlurEffect.View(blurStyle: .regular)
+          )
+          .cornerRadius(Constants.General.listViewElementCornerRadius)
+      })
     }
-    .navigationBarBackButtonHidden(true)
-    .navigationBarItems(leading: Button {
-      self.mode.wrappedValue.dismiss()
-    }label: {
-      RoundedImageView(systemName: "chevron.backward", textColor: Constants.Colors.listViewElementTextColor)
-        .background(
-          UIBlurEffect.View(blurStyle: .regular)
-        )
-        .cornerRadius(Constants.General.listViewElementCornerRadius)
-    })
   }
 }
 

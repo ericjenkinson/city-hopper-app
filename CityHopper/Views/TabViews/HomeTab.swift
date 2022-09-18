@@ -13,15 +13,16 @@ struct HomeTab: View {
   
   var body: some View {
     
-    VStack {
-      HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
-      Divider()
-      Spacer()
-      ListView()
+    NavigationView {
+      VStack {
+        HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
+        Divider()
+        Spacer()
+        ListView()
+      }
+      //.navigationTitle("")
+      .navigationBarHidden(true)
     }
-    //.navigationTitle("")
-    //.navigationBarHidden(true)
-    
   }
 }
 

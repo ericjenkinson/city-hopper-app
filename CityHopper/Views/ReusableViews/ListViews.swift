@@ -12,7 +12,6 @@ struct ListView: View {
   
   var body: some View {
     
-    NavigationView {
       List(destinations.cities.indices, id: \.self) { i in
         ZStack {
           NavigationLink (
@@ -24,9 +23,8 @@ struct ListView: View {
           LargeListViewElement(city: $destinations.cities[i])
         }
       }
-      .navigationTitle("")
-      .navigationBarHidden(true)
-    }
+      
+    
     
   }
 }
