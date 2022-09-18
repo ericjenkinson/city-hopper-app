@@ -26,8 +26,6 @@ struct DetailView: View {
         }
       }
       .frame(width: proxy.size.width, height: proxy.size.height * 0.9)
-      //.navigationTitle("")
-      //.navigationBarHidden(true)
       .navigationBarBackButtonHidden(true)
       .navigationBarItems(leading: Button {
         self.mode.wrappedValue.dismiss()
