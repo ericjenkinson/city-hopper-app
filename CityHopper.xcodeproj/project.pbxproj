@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA19A95C28CD0FC5006C7ABF /* ListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViews.swift */; };
+		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA19A95B28CD0FC5006C7ABF /* ListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViews.swift; sourceTree = "<group>"; };
+		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */,
-				BA19A95B28CD0FC5006C7ABF /* ListViews.swift */,
+				BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */,
 				BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */,
 				BAB8067228B1CE6E009E81E4 /* TextViews.swift */,
 			);
@@ -266,7 +266,7 @@
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
-				BA19A95C28CD0FC5006C7ABF /* ListViews.swift in Sources */,
+				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */,
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
 				BAB8068528BC0166009E81E4 /* City.swift in Sources */,
