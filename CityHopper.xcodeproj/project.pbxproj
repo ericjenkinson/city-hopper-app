@@ -29,6 +29,7 @@
 		BAF2DF5F28D66C2900E1AEF8 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5E28D66C2900E1AEF8 /* HomeTab.swift */; };
 		BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6028D6979B00E1AEF8 /* CityListTab.swift */; };
 		BAF2DF6628D799AC00E1AEF8 /* ListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */; };
+		BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		BAF2DF5E28D66C2900E1AEF8 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
 		BAF2DF6028D6979B00E1AEF8 /* CityListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTab.swift; sourceTree = "<group>"; };
 		BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViews.swift; sourceTree = "<group>"; };
+		BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */,
 				BAB8067628B1E03B009E81E4 /* OnBoarding.swift */,
 				BA63588628CD3B370021F9D3 /* DetailView.swift */,
+				BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
+				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
 				BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */,
 				BAF2DF6628D799AC00E1AEF8 /* ListViews.swift in Sources */,
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
@@ -411,6 +415,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -440,6 +445,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

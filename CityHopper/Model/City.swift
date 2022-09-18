@@ -15,6 +15,7 @@ struct City {
   let description: String
   let reviews: [Review]?  
   let price: Double
+  let thingsToDo = ["Sight seeing", "Theater", "Shopping", "Museums", "Live Music", "Arts and Crafts", "Theme Parks", "Convention"]
 }
 
 extension City: Identifiable {
