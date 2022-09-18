@@ -20,7 +20,6 @@ struct HomeTab: View {
         Spacer()
         ListView()
       }
-      //.navigationTitle("")
       .navigationBarHidden(true)
     }
   }
@@ -60,26 +59,6 @@ struct OnboardingButton: View {
     }
   }
 }
-
-struct DestinationsView: View {
-  @EnvironmentObject var destinations: Destination
-  
-  var body: some View {
-    NavigationView {
-      ScrollView {
-          List(destinations.cities.indices, id: \.self) { i in
-            NavigationLink (
-              destination: DetailView(city: $destinations.cities[i]),
-              label: {
-                  LargeListViewElement(city: $destinations.cities[i])
-              })
-          }
-        
-      }
-    }
-  }
-}
-
 
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {
