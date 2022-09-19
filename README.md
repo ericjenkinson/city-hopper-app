@@ -7,7 +7,7 @@ trips can be planned for a single user or a group. Users will be able to choose 
 to visit and add them to a trip planning list. Users can write reviews on the cities
 they have visited and upload pictures from their trip.
 
-## What is in this week's homework. (branch homework/week04)
+## What is in this week's homework. (branch homework/week05)
 
 The app has two screens at this time. A home screen where the user lands after starting the app.
 And an Onboarding Screen that provides a little information about the app. The Onboarding screen
@@ -22,11 +22,9 @@ a detail view with the picture and details of the city.
 
 * SwiftUI NavigationView
 * SwiftUI NavigationItem
-* Using UIKit in SwiftUI
-* SwiftUI State and Binding
-* SwiftUI Repeat views with ForEach
-* Observable Objects
-* Environment Object
-* UIKit Controls and ViewControllers
-* UIKit alerts
-* UIKit Seques
+* SwiftUI List
+* SwiftUI List section header and footers
+* SwiftUI Scrollview
+* SwiftUI TabView
+* SwiftUI Alignment
+* SwiftUI LazyVStack, LazyHStack, LazyGrid
