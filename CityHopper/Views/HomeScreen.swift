@@ -9,13 +9,16 @@ import SwiftUI
 
 struct HomeScreen: View {
   @EnvironmentObject var destinations: Destination
-
+  
+  
   enum Tabs {
     case tab1, tab2, tab3, tab4
   }
   
+  @State var defaultTab = Tabs.tab3
+  
   var body: some View {
-      TabView {
+    TabView(selection: $defaultTab) {
         HomeTab()
           .tabItem {
             Image(systemName: Constants.SFSymbols.filledHouse)
@@ -29,7 +32,12 @@ struct HomeScreen: View {
           }
           .badge(destinations.cities.count)
           .tag(Tabs.tab2)
-        
+        ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
+          .tabItem {
+            Image(systemName: "sun.max")
+            Text("Things to Do")
+          }
+          .tag(Tabs.tab3)
       }
   }
 }
