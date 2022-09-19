@@ -8,78 +8,41 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  @State private var onboardingIsVisible = false
-  @EnvironmentObject var destinations: Destination
-
-  var body: some View {
-    
-    NavigationView {
-      VStack {
-        HomeScreenHeader(onboardingIsVisible: $onboardingIsVisible)
-        Divider()
-        Spacer()
-        DestinationsView()
-      }
-      .navigationTitle("")
-      .navigationBarHidden(true)
-    }
-  }
-}
-
-
-struct OnboardingButton: View {
-  @Binding var onboardingIsVisible: Bool
-  var body: some View {
-    Button(action: {
-      withAnimation {
-        onboardingIsVisible.toggle()
-      }
-    }) {
-      RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
-    }
-    .sheet(isPresented: $onboardingIsVisible) {
-      OnBoarding(onboardingIsVisible: $onboardingIsVisible)
-    }
-  }
-}
-
-struct HomeScreenHeader: View {
-  @Binding var onboardingIsVisible: Bool
-  
-  var body: some View {
-    HStack {
-      VStack(alignment: .leading) {
-        BigBoldHeading(text: Constants.AppData.welcomeMessage)
-          .padding(.leading)
-        BigThinHeading(text: Constants.AppData.userName)
-          .padding(.leading)
-      }
-      Spacer()
-      OnboardingButton(onboardingIsVisible: $onboardingIsVisible)
-        .padding([.bottom, .trailing])
-    }
-    .padding(.top)
-  }
-}
-
-struct DestinationsView: View {
   @EnvironmentObject var destinations: Destination
   
+  
+  enum Tabs {
+    case tab1, tab2, tab3, tab4
+  }
+  
+  @State var defaultTab = Tabs.tab3
+  
   var body: some View {
-    ScrollView {
-      VStack {
-        ForEach(destinations.cities.indices, id: \.self) { i in
-          NavigationLink (
-            destination: DetailView(city: $destinations.cities[i]),
-            label: {
-                ListViewElement(city: $destinations.cities[i])
-            })
-        }
+    TabView(selection: $defaultTab) {
+        HomeTab()
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.filledHouse)
+            Text(Constants.AppData.tabTextHome)
+          }
+          .tag(Tabs.tab1)
+        CityListTab(cities: destinations.cities, countries: destinations.getCountries())
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.location)
+            Text(Constants.AppData.tabTextCities)
+          }
+          .badge(destinations.cities.count)
+          .tag(Tabs.tab2)
+        ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
+          .tabItem {
+            Image(systemName: "sun.max")
+            Text("Things to Do")
+          }
+          .tag(Tabs.tab3)
       }
-    }
-    
   }
 }
+
+
 
 
 struct HomeScreen_Previews: PreviewProvider {

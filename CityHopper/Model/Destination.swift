@@ -36,4 +36,14 @@ class Destination: ObservableObject {
     city.reviews ?? nil
   }
   
+  func getCountries() -> [String] {
+    var countries = [String]()
+    cities.forEach {
+      if !countries.contains($0.country) {
+        countries.append($0.country)
+      }
+    }
+    return countries
+  }
+  
 }

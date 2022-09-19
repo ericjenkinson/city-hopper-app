@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA19A95C28CD0FC5006C7ABF /* ListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViews.swift */; };
+		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
@@ -24,11 +24,17 @@
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
+		BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5928D64CB600E1AEF8 /* Category.swift */; };
+		BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5B28D6555500E1AEF8 /* Country.swift */; };
+		BAF2DF5F28D66C2900E1AEF8 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF5E28D66C2900E1AEF8 /* HomeTab.swift */; };
+		BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6028D6979B00E1AEF8 /* CityListTab.swift */; };
+		BAF2DF6628D799AC00E1AEF8 /* ListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */; };
+		BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA19A95B28CD0FC5006C7ABF /* ListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViews.swift; sourceTree = "<group>"; };
+		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BAF2DF5928D64CB600E1AEF8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BAF2DF5B28D6555500E1AEF8 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		BAF2DF5E28D66C2900E1AEF8 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
+		BAF2DF6028D6979B00E1AEF8 /* CityListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListTab.swift; sourceTree = "<group>"; };
+		BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViews.swift; sourceTree = "<group>"; };
+		BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,13 +87,12 @@
 		BA5B482728B1C53600308D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAF2DF6428D6CD9000E1AEF8 /* ReusableViews */,
+				BAF2DF5D28D66C0500E1AEF8 /* TabViews */,
 				BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */,
-				BAB8067228B1CE6E009E81E4 /* TextViews.swift */,
-				BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */,
 				BAB8067628B1E03B009E81E4 /* OnBoarding.swift */,
-				BA19A95B28CD0FC5006C7ABF /* ListViews.swift */,
-				BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */,
 				BA63588628CD3B370021F9D3 /* DetailView.swift */,
+				BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +107,8 @@
 				BAB8068428BC0166009E81E4 /* City.swift */,
 				BAB8068628BC8321009E81E4 /* Destination.swift */,
 				BAFDE72D28C475320067F27F /* Cart.swift */,
+				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
+				BAF2DF5B28D6555500E1AEF8 /* Country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +166,27 @@
 				BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BAF2DF5D28D66C0500E1AEF8 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAF2DF5E28D66C2900E1AEF8 /* HomeTab.swift */,
+				BAF2DF6028D6979B00E1AEF8 /* CityListTab.swift */,
+			);
+			path = TabViews;
+			sourceTree = "<group>";
+		};
+		BAF2DF6428D6CD9000E1AEF8 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */,
+				BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */,
+				BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */,
+				BAB8067228B1CE6E009E81E4 /* TextViews.swift */,
+				BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,13 +263,19 @@
 				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* Destination.swift in Sources */,
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
+				BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,
 				BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */,
+				BAF2DF5F28D66C2900E1AEF8 /* HomeTab.swift in Sources */,
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
-				BA19A95C28CD0FC5006C7ABF /* ListViews.swift in Sources */,
+				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
+				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
+				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
+				BAF2DF5A28D64CB600E1AEF8 /* Category.swift in Sources */,
+				BAF2DF6628D799AC00E1AEF8 /* ListViews.swift in Sources */,
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
 				BAB8068528BC0166009E81E4 /* City.swift in Sources */,
 				BAB8067D28BC0101009E81E4 /* Person.swift in Sources */,
@@ -375,6 +415,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +445,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
