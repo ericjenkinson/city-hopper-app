@@ -20,7 +20,7 @@
 		BAB8068128BC012A009E81E4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068028BC012A009E81E4 /* Trip.swift */; };
 		BAB8068328BC0140009E81E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068228BC0140009E81E4 /* Review.swift */; };
 		BAB8068528BC0166009E81E4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068428BC0166009E81E4 /* City.swift */; };
-		BAB8068728BC8321009E81E4 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068628BC8321009E81E4 /* Destination.swift */; };
+		BAB8068728BC8321009E81E4 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068628BC8321009E81E4 /* DestinationViewModel.swift */; };
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
@@ -49,7 +49,7 @@
 		BAB8068028BC012A009E81E4 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		BAB8068228BC0140009E81E4 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		BAB8068428BC0166009E81E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		BAB8068628BC8321009E81E4 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
+		BAB8068628BC8321009E81E4 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		BAB8068828C28BF0009E81E4 /* HomeworkWeek3.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HomeworkWeek3.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				BAB8068028BC012A009E81E4 /* Trip.swift */,
 				BAB8068228BC0140009E81E4 /* Review.swift */,
 				BAB8068428BC0166009E81E4 /* City.swift */,
-				BAB8068628BC8321009E81E4 /* Destination.swift */,
+				BAB8068628BC8321009E81E4 /* DestinationViewModel.swift */,
 				BAFDE72D28C475320067F27F /* Cart.swift */,
 				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
 				BAF2DF5B28D6555500E1AEF8 /* Country.swift */,
@@ -261,7 +261,7 @@
 			files = (
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
-				BAB8068728BC8321009E81E4 /* Destination.swift in Sources */,
+				BAB8068728BC8321009E81E4 /* DestinationViewModel.swift in Sources */,
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,

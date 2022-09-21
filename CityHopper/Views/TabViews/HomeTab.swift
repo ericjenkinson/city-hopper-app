@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
-  @EnvironmentObject var destinations: Destination
+  @EnvironmentObject var destinations: DestinationViewModel
   
   var body: some View {
     
@@ -63,6 +63,6 @@ struct OnboardingButton: View {
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {
         HomeTab()
-          .environmentObject(Destination(loadTestData: true))
+          .environmentObject(DestinationViewModel(loadTestData: true))
     }
 }

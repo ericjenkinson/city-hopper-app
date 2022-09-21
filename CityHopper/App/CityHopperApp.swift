@@ -11,7 +11,7 @@ import SwiftUI
 struct CityHopperApp: App {
   var body: some Scene {
     WindowGroup {
-      HomeScreen().environmentObject(Destination(loadTestData: true))
+      HomeScreen().environmentObject(DestinationViewModel(loadTestData: true))
     }
   }
 }

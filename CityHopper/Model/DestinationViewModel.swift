@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Destination: ObservableObject {
+class DestinationViewModel: ObservableObject {
   @Published var cities: [City] = []
   
   init(loadTestData: Bool = false) {
