@@ -105,7 +105,6 @@
 				BAB8068028BC012A009E81E4 /* Trip.swift */,
 				BAB8068228BC0140009E81E4 /* Review.swift */,
 				BAB8068428BC0166009E81E4 /* City.swift */,
-				BAB8068628BC8321009E81E4 /* DestinationViewModel.swift */,
 				BAFDE72D28C475320067F27F /* Cart.swift */,
 				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
 				BAF2DF5B28D6555500E1AEF8 /* Country.swift */,
@@ -154,6 +153,7 @@
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
 				BA5B482828B1C55B00308D00 /* Model */,
 				BA5B482728B1C53600308D00 /* Views */,
+				BAFF85DB28DBAA4C00A13F11 /* ViewModel */,
 				BA5B482628B1C51500308D00 /* App */,
 				BAEB2F4028B13C4C002FBBAD /* Preview Content */,
 			);
@@ -187,6 +187,14 @@
 				BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		BAFF85DB28DBAA4C00A13F11 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BAB8068628BC8321009E81E4 /* DestinationViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
