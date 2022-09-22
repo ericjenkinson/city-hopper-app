@@ -9,7 +9,7 @@ import Foundation
 
 struct Review {
   let id: UUID
-  let tripId: UUID
+  let cityId: UUID
   let appUserId: UUID
   let rating: Double
   let description: String
