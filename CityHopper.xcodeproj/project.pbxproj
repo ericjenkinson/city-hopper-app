@@ -31,6 +31,7 @@
 		BAF2DF6628D799AC00E1AEF8 /* ListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */; };
 		BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
+		BAFF85DD28DBACC700A13F11 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85DC28DBACC700A13F11 /* AppUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		BAF2DF6528D799AC00E1AEF8 /* ListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViews.swift; sourceTree = "<group>"; };
 		BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		BAFF85DC28DBACC700A13F11 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		BA5B482828B1C55B00308D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAFF85DC28DBACC700A13F11 /* AppUser.swift */,
 				BAB8067C28BC0101009E81E4 /* Person.swift */,
 				BAB8067E28BC011F009E81E4 /* Group.swift */,
 				BAB8068028BC012A009E81E4 /* Trip.swift */,
@@ -289,6 +292,7 @@
 				BAB8067D28BC0101009E81E4 /* Person.swift in Sources */,
 				BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */,
 				BA5B482A28B1C57300308D00 /* Constants.swift in Sources */,
+				BAFF85DD28DBACC700A13F11 /* AppUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

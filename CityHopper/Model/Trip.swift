@@ -6,3 +6,15 @@
 //
 
 import Foundation
+import SwiftUI
+
+/// Information detailing a trip. 
+struct Trip {
+  let id: UUID
+  let appUserId: UUID
+  let name: String
+  let date: Date
+  var members: Group
+  var cities: [City]
+  var images: [Image]?
+}

@@ -15,7 +15,7 @@ struct HomeScreen: View {
     case tab1, tab2, tab3, tab4
   }
   
-  @State var defaultTab = Tabs.tab3
+  @State var defaultTab = Tabs.tab1
   
   var body: some View {
     TabView(selection: $defaultTab) {
