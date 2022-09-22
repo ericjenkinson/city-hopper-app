@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DestinationViewModel: ObservableObject {
+class CityViewModel: ObservableObject {
   @Published var cities: [City] = []
   
   init(loadTestData: Bool = false) {
@@ -21,7 +21,7 @@ class DestinationViewModel: ObservableObject {
     cities.append(City(name: "Berlin", image: "imageBerlin", country: "Germany", description: "Ich bin ein Berliner", reviews: nil, price: 1200.00))
     cities.append(City(name: "Denver", image: "imageDenver", country: "United States", description: "Mile High!", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 4.3, description: "Great!")], price: 1600.00))
     cities.append(City(name: "London", image: "imageLondon", country: "United Kingdom", description: "Bangers and Mash!", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 3.3, description: "Great!")], price: 1000.00))
-    cities.append(City(name: "Los Angeles", image: "imageLosAngeles", country: "United States", description: "Hollywood1", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 5.0, description: "Wonderful!")], price: 2000.00))
+    cities.append(City(name: "Los Angeles", image: "imageLosAngeles", country: "United States", description: "Hollywood!", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 5.0, description: "Wonderful!")], price: 2000.00))
     cities.append(City(name: "Santorini", image: "imageSantorini", country: "Greece", description: "Blue", reviews: nil, price: 900.00))
     cities.append(City(name: "Paris", image: "imageParis", country: "France", description: "Croissants!", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 4.1, description: "Wonderful!")], price: 2400.00))
     cities.append(City(name: "San Francisco", image: "imageSanFrancisco", country: "United States", description: "", reviews: nil, price: 900.00))

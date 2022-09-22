@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  @EnvironmentObject var destinations: DestinationViewModel
+  @EnvironmentObject var destinations: CityViewModel
   
   
   enum Tabs {
@@ -48,15 +48,15 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
-      .environmentObject(DestinationViewModel(loadTestData: true))
+      .environmentObject(CityViewModel(loadTestData: true))
     HomeScreen()
-      .environmentObject(DestinationViewModel(loadTestData: true))
+      .environmentObject(CityViewModel(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
-      .environmentObject(DestinationViewModel(loadTestData: true))
+      .environmentObject(CityViewModel(loadTestData: true))
       .preferredColorScheme(.dark)
     HomeScreen()
-      .environmentObject(DestinationViewModel(loadTestData: true))
+      .environmentObject(CityViewModel(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }

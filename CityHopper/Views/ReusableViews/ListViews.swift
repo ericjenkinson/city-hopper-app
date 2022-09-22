@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
-  @EnvironmentObject var destinations: DestinationViewModel
+  @EnvironmentObject var destinations: CityViewModel
   
   var body: some View {
     
@@ -31,6 +31,6 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
   static var previews: some View {
     ListView()
-      .environmentObject(DestinationViewModel(loadTestData: true))
+      .environmentObject(CityViewModel(loadTestData: true))
   }
 }
