@@ -8,5 +8,16 @@
 import Foundation
 
 struct Group {
-  var members: [Person]
+  var members = [Person]()
+  
+  mutating func addToGroup(person: Person) {
+    members.append(person)
+  }
+  
+  mutating func removeFromGroup(person: Person) {
+    if members.contains(person) {
+      guard let index = members.firstIndex(of: person) else { return }
+      members.remove(at: index)
+    }
+  }
 }

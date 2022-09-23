@@ -32,6 +32,7 @@
 		BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */; };
 		BAFDE72E28C475320067F27F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE72D28C475320067F27F /* Cart.swift */; };
 		BAFF85DD28DBACC700A13F11 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85DC28DBACC700A13F11 /* AppUser.swift */; };
+		BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsToDo.swift; sourceTree = "<group>"; };
 		BAFDE72D28C475320067F27F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		BAFF85DC28DBACC700A13F11 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
+		BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		BA5B482828B1C55B00308D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAFF85E028DE1C6000A13F11 /* Builders */,
 				BAFF85DC28DBACC700A13F11 /* AppUser.swift */,
 				BAB8067C28BC0101009E81E4 /* Person.swift */,
 				BAB8067E28BC011F009E81E4 /* Group.swift */,
@@ -200,6 +203,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BAFF85E028DE1C6000A13F11 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +291,7 @@
 				BAF2DF5F28D66C2900E1AEF8 /* HomeTab.swift in Sources */,
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
+				BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,

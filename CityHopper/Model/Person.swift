@@ -13,3 +13,5 @@ struct Person {
   let lastName: String
   var age: Int
 }
+
+extension Person: Equatable { }

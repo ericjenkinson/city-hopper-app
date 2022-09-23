@@ -18,6 +18,11 @@ struct City {
   let thingsToDo = ["Sight seeing", "Theater", "Shopping", "Museums", "Live Music", "Arts and Crafts", "Theme Parks", "Convention"]
 }
 
-extension City: Identifiable {
-  
+extension City: Identifiable { }
+
+extension City: Equatable {
+  static func == (lhs: City, rhs: City) -> Bool {
+    return lhs.name == rhs.name && lhs.country == rhs.country
+  }
 }
+
