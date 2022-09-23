@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LargeListViewElement: View {
-  @Binding var city: City
+  var city: City
   
   var body: some View {
     ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
@@ -100,15 +100,13 @@ struct SmallListViewElement: View {
 }
 
 struct ListViews_Previews: PreviewProvider {
-  static private var city = Binding.constant(City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00))
-
-  static private var city2 = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
+  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
   
   static var previews: some View {
     VStack {
       LargeListViewElement(city: city)
       Spacer()
-      SmallListViewElement(city: city2)
+      SmallListViewElement(city: city)
     }
   }
 }

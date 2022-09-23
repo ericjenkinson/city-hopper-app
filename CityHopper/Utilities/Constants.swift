@@ -52,5 +52,7 @@ enum Constants {
     public static let filledStar = "star.fill"
     public static let location = "location"
     public static let filledHouse = "house.fill"
+    public static let tripList = "airplane.departure"
+    public static let heartFill = "heart.fill"
   }
 }

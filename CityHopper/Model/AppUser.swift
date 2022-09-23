@@ -12,6 +12,7 @@ struct AppUser {
   let firstName: String
   let lastName: String
   var age: Int
+  var likes: [City]?
   var trips: [Trip]?
   var reviews: [Review]?
 }

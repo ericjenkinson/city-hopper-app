@@ -12,7 +12,7 @@ struct HomeScreen: View {
   
   
   enum Tabs {
-    case tab1, tab2, tab3, tab4
+    case tab1, tab2, tab3, tab4, tab5
   }
   
   @State var defaultTab = Tabs.tab1
@@ -32,12 +32,24 @@ struct HomeScreen: View {
           }
           .badge(destinations.cities.count)
           .tag(Tabs.tab2)
+        LikesListTab()
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.heartFill)
+            Text("Likes")
+          }
+        .tag(Tabs.tab3)
+        TripListTab()
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.tripList)
+            Text("Trips")
+          }
+          .tag(Tabs.tab4)
         ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
           .tabItem {
             Image(systemName: "sun.max")
             Text("Things to Do")
           }
-          .tag(Tabs.tab3)
+          .tag(Tabs.tab5)
       }
   }
 }

@@ -18,7 +18,7 @@ struct HomeTab: View {
         HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
         Divider()
         Spacer()
-        ListView()
+        ListView(cities: destinations.cities)
       }
       .navigationBarHidden(true)
     }
