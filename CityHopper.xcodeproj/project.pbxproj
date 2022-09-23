@@ -35,6 +35,7 @@
 		BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */; };
 		BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E128DE370000A13F11 /* TripListTab.swift */; };
 		BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E328DE3C6C00A13F11 /* LikesListTab.swift */; };
+		BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E528DE40E600A13F11 /* TripViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBuilder.swift; sourceTree = "<group>"; };
 		BAFF85E128DE370000A13F11 /* TripListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListTab.swift; sourceTree = "<group>"; };
 		BAFF85E328DE3C6C00A13F11 /* LikesListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesListTab.swift; sourceTree = "<group>"; };
+		BAFF85E528DE40E600A13F11 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB8068628BC8321009E81E4 /* CityViewModel.swift */,
+				BAFF85E528DE40E600A13F11 /* TripViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
+				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */,

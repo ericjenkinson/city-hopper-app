@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct TripListTab: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  let trips: [Trip]
+  
+  var body: some View {
+    List(trips, id: \.id) { trip in
+      Text(trip.name)
     }
+  }
 }
 
 struct TripListTab_Previews: PreviewProvider {
-    static var previews: some View {
-        TripListTab()
-    }
+  static private let trips = [Trip(appUserId: UUID(), name: "Trip to Munich", date: Date(), members: Group(members: [Person(firstName: "Eric", lastName: "Jenkinson", age: 54)]), cities: [City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)])]
+  
+  static var previews: some View {
+    TripListTab(trips: trips)
+  }
 }

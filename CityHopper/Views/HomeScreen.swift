@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
   @EnvironmentObject var destinations: CityViewModel
+  @EnvironmentObject var trips1: TripViewModel
   
   
   enum Tabs {
@@ -38,7 +39,7 @@ struct HomeScreen: View {
             Text("Likes")
           }
         .tag(Tabs.tab3)
-        TripListTab()
+        TripListTab(trips: trips1.trips)
           .tabItem {
             Image(systemName: Constants.SFSymbols.tripList)
             Text("Trips")
@@ -61,14 +62,18 @@ struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
       .environmentObject(CityViewModel(loadTestData: true))
+      .environmentObject(TripViewModel(loadTestData: true))
     HomeScreen()
       .environmentObject(CityViewModel(loadTestData: true))
+      .environmentObject(TripViewModel(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
       .environmentObject(CityViewModel(loadTestData: true))
+      .environmentObject(TripViewModel(loadTestData: true))
       .preferredColorScheme(.dark)
     HomeScreen()
       .environmentObject(CityViewModel(loadTestData: true))
+      .environmentObject(TripViewModel(loadTestData: true))
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }
