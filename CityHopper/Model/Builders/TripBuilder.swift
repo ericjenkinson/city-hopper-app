@@ -18,7 +18,7 @@
 import Foundation
 
 
-class TripBuilder {
+final class TripBuilder {
   
   var tripName = ""
   var tripDate = Date()

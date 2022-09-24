@@ -14,6 +14,7 @@ struct CityHopperApp: App {
       HomeScreen()
         .environmentObject(CityViewModel(loadTestData: true))
         .environmentObject(TripViewModel(loadTestData: true))
+        .environmentObject(UserViewModel(loadTestData: true))
     }
   }
 }

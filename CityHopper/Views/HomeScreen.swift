@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
   @EnvironmentObject var destinations: CityViewModel
   @EnvironmentObject var trips1: TripViewModel
-  
+  @EnvironmentObject var appUser: UserViewModel
   
   enum Tabs {
     case tab1, tab2, tab3, tab4, tab5
@@ -31,7 +31,6 @@ struct HomeScreen: View {
             Image(systemName: Constants.SFSymbols.location)
             Text(Constants.AppData.tabTextCities)
           }
-          .badge(destinations.cities.count)
           .tag(Tabs.tab2)
         LikesListTab()
           .tabItem {
@@ -39,11 +38,12 @@ struct HomeScreen: View {
             Text("Likes")
           }
         .tag(Tabs.tab3)
-        TripListTab(trips: trips1.trips)
+        TripListTab(trips: appUser.appUser.trips!)
           .tabItem {
             Image(systemName: Constants.SFSymbols.tripList)
             Text("Trips")
           }
+          .badge(appUser.numberOfTrips)
           .tag(Tabs.tab4)
         ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
           .tabItem {
@@ -61,19 +61,15 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
-      .environmentObject(CityViewModel(loadTestData: true))
-      .environmentObject(TripViewModel(loadTestData: true))
+      .environmentObjectModifiers()
     HomeScreen()
-      .environmentObject(CityViewModel(loadTestData: true))
-      .environmentObject(TripViewModel(loadTestData: true))
+      .environmentObjectModifiers()
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
-      .environmentObject(CityViewModel(loadTestData: true))
-      .environmentObject(TripViewModel(loadTestData: true))
+      .environmentObjectModifiers()
       .preferredColorScheme(.dark)
     HomeScreen()
-      .environmentObject(CityViewModel(loadTestData: true))
-      .environmentObject(TripViewModel(loadTestData: true))
+      .environmentObjectModifiers()
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }

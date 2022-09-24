@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
 		BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */; };
+		BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */; };
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
 		BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectModifier.swift; sourceTree = "<group>"; };
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5B482928B1C57300308D00 /* Constants.swift */,
+				BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
 				BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */,
+				BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */,

@@ -12,6 +12,7 @@ struct AppUser {
   var firstName: String?
   var lastName: String?
   var age: Int?
+  var email: String?
   var likes: [City]?
   var trips: [Trip]?
   var reviews: [Review]?
