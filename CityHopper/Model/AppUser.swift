@@ -14,6 +14,6 @@ struct AppUser {
   var age: Int?
   var email: String?
   var likes: [City]?
-  var trips: [Trip]?
+  var trips: [Trip] = []
   var reviews: [Review]?
 }

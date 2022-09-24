@@ -11,10 +11,9 @@ import Foundation
 public class UserViewModel: ObservableObject {
   @Published var appUser: AppUser
   
-  lazy var numberOfTrips: Int = {
-    guard let numOfTrips = appUser.trips?.count else { return 0 }
-    return numOfTrips
-  }()
+  var numberOfTrips: Int {
+    appUser.trips.count
+  }
   
   init(loadTestData: Bool = false) {
     appUser = AppUser(id: UUID())

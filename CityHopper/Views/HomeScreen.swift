@@ -38,7 +38,7 @@ struct HomeScreen: View {
             Text("Likes")
           }
         .tag(Tabs.tab3)
-        TripListTab(trips: appUser.appUser.trips!)
+      TripListTab(trips: $appUser.appUser.trips)
           .tabItem {
             Image(systemName: Constants.SFSymbols.tripList)
             Text("Trips")
