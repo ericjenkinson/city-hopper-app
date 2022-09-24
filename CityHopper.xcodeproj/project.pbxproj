@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
+		BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */; };
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
+		BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				BAB8068628BC8321009E81E4 /* CityViewModel.swift */,
 				BAFF85E528DE40E600A13F11 /* TripViewModel.swift */,
+				BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
 				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
+				BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */,
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,

@@ -9,9 +9,9 @@ import Foundation
 
 struct AppUser {
   let id: UUID
-  let firstName: String
-  let lastName: String
-  var age: Int
+  var firstName: String?
+  var lastName: String?
+  var age: Int?
   var likes: [City]?
   var trips: [Trip]?
   var reviews: [Review]?
