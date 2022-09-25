@@ -14,7 +14,7 @@ struct NewTripView: View {
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
   @State private var members: [Person] = []
-  
+  @State private var cities = ""
   @State private var firstName = ""
   @State private var lastName = ""
   
@@ -25,6 +25,7 @@ struct NewTripView: View {
           DatePicker("Trip Date", selection: $tripDate, displayedComponents: .date)
         }
         Section(header: Text("Cities")) {
+          TextField("1st CIty", text: $cities)
           
         }
         Section(header: Text("Group")) {

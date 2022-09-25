@@ -32,6 +32,5 @@ public class UserViewModel: ObservableObject {
     tripBuilder.setTripOwner(to: appUser.id)
     tripBuilder.add(person: Person(firstName: firstName, lastName: lastName))
     appUser.trips.append(tripBuilder.build())
-    
   }
 }
