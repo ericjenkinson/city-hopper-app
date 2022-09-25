@@ -11,6 +11,7 @@
 		BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */; };
 		BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */; };
 		BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11728DFEDAD00C7D1B4 /* NewTripView.swift */; };
+		BA3CF11B28E0452600C7D1B4 /* TripBuilderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11A28E0452600C7D1B4 /* TripBuilderDelegate.swift */; };
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
@@ -46,6 +47,7 @@
 		BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectModifier.swift; sourceTree = "<group>"; };
 		BA3CF11728DFEDAD00C7D1B4 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
+		BA3CF11A28E0452600C7D1B4 /* TripBuilderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBuilderDelegate.swift; sourceTree = "<group>"; };
 		BA5B482928B1C57300308D00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA3CF11928E044FD00C7D1B4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BA3CF11A28E0452600C7D1B4 /* TripBuilderDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		BA5B482628B1C51500308D00 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		BAEB2F3928B13C47002FBBAD /* CityHopper */ = {
 			isa = PBXGroup;
 			children = (
+				BA3CF11928E044FD00C7D1B4 /* Protocols */,
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
 				BA5B482828B1C55B00308D00 /* Model */,
 				BA5B482728B1C53600308D00 /* Views */,
@@ -303,6 +314,7 @@
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
+				BA3CF11B28E0452600C7D1B4 /* TripBuilderDelegate.swift in Sources */,
 				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
 				BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */,

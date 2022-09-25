@@ -35,7 +35,7 @@ struct NewTripView: View {
         Section {
           Button(action: {
             withAnimation {
-              appUser.newTripWithPartialData(tripName: tripName, tripDate: tripDate, firstName: firstName, lastName: lastName)
+              appUser.buildTripWithPartialData(tripName: tripName, tripDate: tripDate, firstName: firstName, lastName: lastName)
               self.mode.wrappedValue.dismiss()
             }
           }) {
