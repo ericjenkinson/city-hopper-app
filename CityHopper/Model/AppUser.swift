@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// The AppUser object holds basic details of the application user including
+/// all trips, reviews, and likes
 struct AppUser {
   let id: UUID
   var firstName: String?

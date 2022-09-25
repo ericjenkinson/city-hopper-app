@@ -17,7 +17,7 @@
 
 import Foundation
 
-
+/// Builder of Trip objects. 
 final class TripBuilder {
   
   var tripName = ""

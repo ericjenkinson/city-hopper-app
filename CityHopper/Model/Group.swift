@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// The Group object represents one or more Person objects. Group contains the
+/// members of a group for a Trip
 struct Group {
   var members = [Person]()
   

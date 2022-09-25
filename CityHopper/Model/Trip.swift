@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-/// Information detailing a trip. 
+/// The Trip object represents a trip to one or more cities. Trip objects
+/// are created with the TripBuilder object.
 struct Trip {
   let id = UUID()
   let appUserId: UUID?
