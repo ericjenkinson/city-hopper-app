@@ -20,13 +20,18 @@ import Foundation
 /// Builder of Trip objects. 
 final class TripBuilder {
   
-  var tripName = ""
-  var tripDate = Date()
-  var tripMembers: [Person] = []
-  var tripCities: [City] = []
+  public private(set) var tripName = ""
+  public private(set) var tripOwnerId = UUID()
+  public private(set) var tripDate = Date()
+  public private(set) var tripMembers: [Person] = []
+  public private(set) var tripCities: [City] = []
   
   public func setTripName(to name: String) {
     tripName = name
+  }
+  
+  public func setTripOwner(to id: UUID) {
+    tripOwnerId = id
   }
   
   public func setTripDate(to date: Date) {
@@ -37,16 +42,22 @@ final class TripBuilder {
     tripCities.append(city)
   }
   
-  public func add(person: Person) {
-    tripMembers.append(person)
-  }
-  
   public func add(cities: [City]) {
     tripCities = cities
   }
   
+  public func add(person: Person) {
+    tripMembers.append(person)
+  }
+  
   public func add(group: [Person]) {
     tripMembers = group
+  }
+  
+  public func build() -> Trip {
+    var group = Group()
+    group.addToGroup(group: tripMembers)
+    return Trip(id: UUID(), appUserId: tripOwnerId, name: tripName, date: tripDate, members: group, cities: tripCities)
   }
   
 }

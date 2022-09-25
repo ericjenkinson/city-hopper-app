@@ -16,6 +16,10 @@ struct Group {
     members.append(person)
   }
   
+  mutating func addToGroup(group: [Person]) {
+    members = group
+  }
+  
   mutating func removeFromGroup(person: Person) {
     if members.contains(person) {
       guard let index = members.firstIndex(of: person) else { return }

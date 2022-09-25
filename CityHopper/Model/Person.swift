@@ -9,9 +9,9 @@ import Foundation
 
 /// Basic info for a person in the App. Used for group members
 struct Person {
-  let firstName: String
-  let lastName: String
-  var age: Int
+  var firstName: String
+  var lastName: String
+  var age: Int?
 }
 
 extension Person: Equatable { }

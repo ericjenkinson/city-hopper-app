@@ -11,7 +11,7 @@ import SwiftUI
 /// The Trip object represents a trip to one or more cities. Trip objects
 /// are created with the TripBuilder object.
 struct Trip {
-  let id = UUID()
+  let id: UUID
   let appUserId: UUID?
   var name = Constants.AppData.defaultTripName
   var date = Date()
