@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  @EnvironmentObject var destinations: Destination
-  
+  @EnvironmentObject var destinations: CityViewModel
+  @EnvironmentObject var trips1: TripViewModel
+  @EnvironmentObject var appUser: UserViewModel
   
   enum Tabs {
-    case tab1, tab2, tab3, tab4
+    case tab1, tab2, tab3, tab4, tab5
   }
   
-  @State var defaultTab = Tabs.tab3
+  @State var defaultTab = Tabs.tab1
   
   var body: some View {
     TabView(selection: $defaultTab) {
@@ -30,14 +31,26 @@ struct HomeScreen: View {
             Image(systemName: Constants.SFSymbols.location)
             Text(Constants.AppData.tabTextCities)
           }
-          .badge(destinations.cities.count)
           .tag(Tabs.tab2)
+        LikesListTab()
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.heartFill)
+            Text("Likes")
+          }
+        .tag(Tabs.tab3)
+      TripListTab(trips: $appUser.appUser.trips)
+          .tabItem {
+            Image(systemName: Constants.SFSymbols.tripList)
+            Text("Trips")
+          }
+          .badge(appUser.numberOfTrips)
+          .tag(Tabs.tab4)
         ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
           .tabItem {
             Image(systemName: "sun.max")
             Text("Things to Do")
           }
-          .tag(Tabs.tab3)
+          .tag(Tabs.tab5)
       }
   }
 }
@@ -48,15 +61,15 @@ struct HomeScreen: View {
 struct HomeScreen_Previews: PreviewProvider {
   static var previews: some View {
     HomeScreen()
-      .environmentObject(Destination(loadTestData: true))
+      .environmentObjectModifiers()
     HomeScreen()
-      .environmentObject(Destination(loadTestData: true))
+      .environmentObjectModifiers()
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
     HomeScreen()
-      .environmentObject(Destination(loadTestData: true))
+      .environmentObjectModifiers()
       .preferredColorScheme(.dark)
     HomeScreen()
-      .environmentObject(Destination(loadTestData: true))
+      .environmentObjectModifiers()
       .previewLayout(.fixed(width: Constants.General.samplePortraitViewWidth, height: Constants.General.samplePortraitViewHeight))
       .preferredColorScheme(.dark)
   }

@@ -18,13 +18,17 @@ The apps HomeScreen now displays a scrollable list of cities. Each item in the l
 an image of the city, name and location, rating and like button. Clicking the city will display
 a detail view with the picture and details of the city.
 
+## Data Model used in City Hopper
+![City Hopper Data Model](resources/DataModel-09252022.png "City Hopper Data Model")
+
 ## Concepts learned this week.
 
-* SwiftUI NavigationView
-* SwiftUI NavigationItem
-* SwiftUI List
-* SwiftUI List section header and footers
-* SwiftUI Scrollview
-* SwiftUI TabView
-* SwiftUI Alignment
-* SwiftUI LazyVStack, LazyHStack, LazyGrid
+* Design Patterns
+* Model View Controller
+* Model-View View-Model
+* Factory
+* Builder
+* Delegation
+* Iterator
+* State
+* Observer

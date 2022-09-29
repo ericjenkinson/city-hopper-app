@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
   @State var showingThingsToDo = false
-  @Binding var city: City
+  var city: City
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   var body: some View {
     GeometryReader { proxy in
@@ -90,7 +90,7 @@ struct CityDetails: View {
 }
 
 struct DetailView_Previews: PreviewProvider {
-  static private var city = Binding.constant(City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00))
+  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
   
   static var previews: some View {
     DetailView(city: city)

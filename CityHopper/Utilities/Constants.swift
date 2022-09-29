@@ -40,6 +40,7 @@ enum Constants {
     public static let obBodyLine4 = "Share your trip with others."
     public static let tabTextHome = "Home"
     public static let tabTextCities = "Cities"
+    public static let defaultTripName = "Name of trip"
     
   }
   enum SFSymbols {
@@ -51,5 +52,7 @@ enum Constants {
     public static let filledStar = "star.fill"
     public static let location = "location"
     public static let filledHouse = "house.fill"
+    public static let tripList = "airplane.departure"
+    public static let heartFill = "heart.fill"
   }
 }
