@@ -48,4 +48,13 @@ class CityViewModel: ObservableObject {
     return countries
   }
   
+  func cityNames() -> [String] {
+    var names = [String]()
+    cities.forEach {
+      if !names.contains($0.name) {
+        names.append($0.name)
+      }
+    }
+    return names
+  }
 }
