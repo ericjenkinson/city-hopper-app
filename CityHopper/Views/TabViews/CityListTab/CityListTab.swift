@@ -19,7 +19,7 @@ struct CityListTab: View {
       ){
         ForEach(countries, id: \.self) { country in
           
-          Section(header: SectionHeader(headerText: country)) {
+          Section(header: CityListSectionHeader(headerText: country)) {
             ForEach(cities) { city in
               if city.country == country {
                 SmallListViewElement(city: city)
@@ -32,23 +32,7 @@ struct CityListTab: View {
   }
 }
 
-struct SectionHeader: View {
-  let headerText: String
-  var body: some View {
-    HStack {
-      Text(headerText)
-        .font(.title2)
-        .fontWeight(.bold)
-        .padding(.leading)
-        .padding(.vertical, 8)
-      Spacer()
-    }
-    .background(
-      UIBlurEffect.View(blurStyle: .systemThinMaterial)
-    )
-    .frame(maxWidth: .infinity)
-  }
-}
+
 
 struct CityListTab_Previews: PreviewProvider {
   static private var cities = [City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00), City(name: "Los Angeles", image: "imageLosAngeles", country: "United States", description: "Hollywood1", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 5.0, description: "Wonderful!")], price: 2000.00)]
