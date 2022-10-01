@@ -17,14 +17,19 @@
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
 		BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8628E78E700023D09E /* HorizontalListView.swift */; };
+		BAA23A8928E8B2CB0023D09E /* HorizontalButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8828E8B2CA0023D09E /* HorizontalButtonList.swift */; };
+		BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */; };
+		BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */; };
+		BAA23A9128E8B61E0023D09E /* BigThinHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A9028E8B61E0023D09E /* BigThinHeading.swift */; };
+		BAA23A9328E8B65C0023D09E /* ButtonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A9228E8B65C0023D09E /* ButtonText.swift */; };
+		BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A9428E8B6AF0023D09E /* UnorderedListLabelText.swift */; };
 		BAA3253428E5ECD900E27F50 /* HomeTabHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253328E5ECD900E27F50 /* HomeTabHeader.swift */; };
 		BAA3253628E5EE2500E27F50 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253528E5EE2500E27F50 /* OnboardingButton.swift */; };
 		BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253928E5EEDE00E27F50 /* CityListSectionHeader.swift */; };
 		BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253D28E5F01C00E27F50 /* CityDetails.swift */; };
 		BAA3254028E73BCD00E27F50 /* Week 7.playgroundbook in Resources */ = {isa = PBXBuildFile; fileRef = BAA3253F28E73BCD00E27F50 /* Week 7.playgroundbook */; };
 		BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */; };
-		BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067228B1CE6E009E81E4 /* TextViews.swift */; };
-		BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */; };
+		BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */; };
 		BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067628B1E03B009E81E4 /* OnBoarding.swift */; };
 		BAB8067D28BC0101009E81E4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067C28BC0101009E81E4 /* Person.swift */; };
 		BAB8067F28BC011F009E81E4 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067E28BC011F009E81E4 /* Group.swift */; };
@@ -61,14 +66,19 @@
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
 		BA63588628CD3B370021F9D3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BAA23A8628E78E700023D09E /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
+		BAA23A8828E8B2CA0023D09E /* HorizontalButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalButtonList.swift; sourceTree = "<group>"; };
+		BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageViewStroked.swift; sourceTree = "<group>"; };
+		BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBoldHeading.swift; sourceTree = "<group>"; };
+		BAA23A9028E8B61E0023D09E /* BigThinHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigThinHeading.swift; sourceTree = "<group>"; };
+		BAA23A9228E8B65C0023D09E /* ButtonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonText.swift; sourceTree = "<group>"; };
+		BAA23A9428E8B6AF0023D09E /* UnorderedListLabelText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnorderedListLabelText.swift; sourceTree = "<group>"; };
 		BAA3253328E5ECD900E27F50 /* HomeTabHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabHeader.swift; sourceTree = "<group>"; };
 		BAA3253528E5EE2500E27F50 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		BAA3253928E5EEDE00E27F50 /* CityListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListSectionHeader.swift; sourceTree = "<group>"; };
 		BAA3253D28E5F01C00E27F50 /* CityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetails.swift; sourceTree = "<group>"; };
 		BAA3253F28E73BCD00E27F50 /* Week 7.playgroundbook */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Week 7.playgroundbook"; sourceTree = "<group>"; };
 		BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		BAB8067228B1CE6E009E81E4 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
-		BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
+		BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 		BAB8067B28B6DDCC009E81E4 /* HomeworkWeek2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HomeworkWeek2.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BAB8067C28BC0101009E81E4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -168,8 +178,29 @@
 			children = (
 				BAF2DF6528D799AC00E1AEF8 /* ListView.swift */,
 				BAA23A8628E78E700023D09E /* HorizontalListView.swift */,
+				BAA23A8828E8B2CA0023D09E /* HorizontalButtonList.swift */,
 			);
 			path = ListViews;
+			sourceTree = "<group>";
+		};
+		BAA23A8A28E8B4460023D09E /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */,
+				BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */,
+			);
+			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		BAA23A8D28E8B57D0023D09E /* TextViews */ = {
+			isa = PBXGroup;
+			children = (
+				BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */,
+				BAA23A9028E8B61E0023D09E /* BigThinHeading.swift */,
+				BAA23A9228E8B65C0023D09E /* ButtonText.swift */,
+				BAA23A9428E8B6AF0023D09E /* UnorderedListLabelText.swift */,
+			);
+			path = TextViews;
 			sourceTree = "<group>";
 		};
 		BAA3253128E5EC6100E27F50 /* HomeTab */ = {
@@ -298,11 +329,11 @@
 		BAF2DF6428D6CD9000E1AEF8 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				BAA23A8D28E8B57D0023D09E /* TextViews */,
+				BAA23A8A28E8B4460023D09E /* ImageViews */,
 				BAA23A8528E78E2F0023D09E /* ListViews */,
 				BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */,
 				BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */,
-				BAB8067428B1D4A1009E81E4 /* ButtonViews.swift */,
-				BAB8067228B1CE6E009E81E4 /* TextViews.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -399,27 +430,32 @@
 			files = (
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
-				BAB8067328B1CE6E009E81E4 /* TextViews.swift in Sources */,
 				BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
 				BA3CF11B28E0452600C7D1B4 /* TripBuilderDelegate.swift in Sources */,
 				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
+				BAA23A9328E8B65C0023D09E /* ButtonText.swift in Sources */,
+				BAA23A8928E8B2CB0023D09E /* HorizontalButtonList.swift in Sources */,
 				BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */,
 				BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */,
+				BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */,
 				BAFDE72E28C475320067F27F /* Cart.swift in Sources */,
 				BAF2DF6128D6979B00E1AEF8 /* CityListTab.swift in Sources */,
-				BAB8067528B1D4A1009E81E4 /* ButtonViews.swift in Sources */,
+				BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */,
 				BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */,
 				BAF2DF5F28D66C2900E1AEF8 /* HomeTab.swift in Sources */,
 				BAB8068128BC012A009E81E4 /* Trip.swift in Sources */,
 				BAB8067F28BC011F009E81E4 /* Group.swift in Sources */,
 				BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */,
+				BAA23A9128E8B61E0023D09E /* BigThinHeading.swift in Sources */,
 				BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */,
 				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
+				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
+				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
