@@ -16,7 +16,6 @@ struct TripListTab: View {
       List(trips, id: \.id) { trip in
         Text(trip.name)
       }
-      Spacer()
       Button(action: {
         withAnimation {
           self.addingNewTrip.toggle()
@@ -27,6 +26,7 @@ struct TripListTab: View {
       }.sheet(isPresented: $addingNewTrip) {
         NewTripView()
       }
+      Spacer()
     }
   }
 }

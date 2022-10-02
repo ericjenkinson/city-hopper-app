@@ -11,7 +11,7 @@ struct HorizontalListView: View {
   var cities: [City]
   var body: some View {
     GeometryReader { proxy in
-      ScrollView(.horizontal) {
+      ScrollView(.horizontal, showsIndicators: false) {
         HStack {
           ForEach(cities.indices, id: \.self) { i in
             NavigationLink (

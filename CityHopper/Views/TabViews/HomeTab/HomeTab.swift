@@ -18,7 +18,7 @@ struct HomeTab: View {
         HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
         Divider()
         Spacer()
-        //ListView(cities: destinations.cities)
+        CategoryButtonList()
         HorizontalListView(cities: destinations.cities)
       }
       .navigationBarHidden(true)
