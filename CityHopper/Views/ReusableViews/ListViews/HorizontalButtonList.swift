@@ -9,8 +9,44 @@ import SwiftUI
 
 struct HorizontalButtonList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      HStack {
+        Image(Category.themeParks.icon)
+          .resizable()
+          .scaledToFit()
+          .frame(width: 28.0)
+      
+        Text(Category.themeParks.name)
+          .foregroundColor(Constants.Colors.textColor)
+          .font(.caption2)
+          .bold()
+      }
+      .padding(8)
+      .cornerRadius(12.0)
+      .shadow(radius: 10)
+      .border(Color.orange, width: 2)
     }
+}
+
+
+struct CategoryButtonIconAndText: View {
+  private var category: Category
+  var body: some View {
+    HStack {
+      Image(category.icon)
+        .resizable()
+        .scaledToFit()
+        .frame(width: 28.0)
+    
+      Text(category.name)
+        .foregroundColor(Constants.Colors.textColor)
+        .font(.caption2)
+        .bold()
+    }
+    .padding(8)
+    .cornerRadius(12.0)
+    .shadow(radius: 10)
+    .border(Color.orange, width: 2)
+  }
 }
 
 struct HorizontalButtonList_Previews: PreviewProvider {

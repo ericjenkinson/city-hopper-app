@@ -17,11 +17,10 @@ struct HorizontalListView: View {
             NavigationLink (
               destination: DetailView(city: cities[i]),
               label: {
-                           
+                LargeListViewElement(city: cities[i])
+                  .frame(width: proxy.size.width * 0.9,
+                         height: proxy.size.height * 0.9)
             })
-            LargeListViewElement(city: cities[i])
-              .frame(width: proxy.size.width * 0.9,
-                     height: proxy.size.height * 0.9)
           }
           
         }

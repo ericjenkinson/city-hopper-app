@@ -43,28 +43,28 @@ enum Category {
     }
   }
   
-  var icon: Image {
+  var icon: String {
     switch self {
     case .beach:
-      return Image(systemName: "imageBeach")
+      return "iconBeach"
     case .museums:
-      return Image(systemName: "imageMuseums")
+      return "iconMuseums"
     case .cultural:
-      return Image(systemName: "imageCultural")
+      return "iconCultural"
     case .historical:
-      return Image(systemName: "imageHistorical")
+      return "iconHistorical"
     case .monuments:
-      return Image(systemName: "imageMonuments")
+      return "iconMonuments"
     case .festivals:
-      return Image(systemName: "imageFestivals")
+      return "iconFestivals"
     case .theaters:
-      return Image(systemName: "imageTheaters")
+      return "iconTheaters"
     case .themeParks:
-      return Image(systemName: "imageThemeParks")
+      return "iconThemeParks"
     case .dining:
-      return Image(systemName: "imageDining")
+      return "iconDining"
     case .nightLife:
-      return Image(systemName: "imageNightLife")
+      return "iconNightLife"
     }
   }
 }
