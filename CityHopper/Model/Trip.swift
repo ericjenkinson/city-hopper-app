@@ -15,6 +15,8 @@ struct Trip {
   let appUserId: UUID?
   var name = Constants.AppData.defaultTripName
   var date = Date()
-  var members = Group()
+  var members = 1
+  var totalCost = 0.0
+  var costPerMember = 0.0
   var cities: [City] = []
 }

@@ -32,7 +32,7 @@ struct TripListTab: View {
 }
 
 struct TripListTab_Previews: PreviewProvider {
-  static private var trips = Binding.constant([Trip(id: UUID(), appUserId: UUID(), name: "Trip to Munich", date: Date(), members: Group(members: [Person(firstName: "Eric", lastName: "Jenkinson", age: 54)]), cities: [City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)])])
+  static private var trips = Binding.constant([Trip(id: UUID(), appUserId: UUID(), name: "Trip to Munich", date: Date(), members: 1, cities: [City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)])])
   
   static var previews: some View {
     TripListTab(trips: trips)
