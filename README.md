@@ -23,12 +23,13 @@ a detail view with the picture and details of the city.
 
 ## Concepts learned this week.
 
-* Design Patterns
-* Model View Controller
-* Model-View View-Model
-* Factory
-* Builder
-* Delegation
-* Iterator
-* State
-* Observer
+* Grand Central Dispatch
+* Dispatch Queues
+* Priority Inversion
+* Dispatch Work Items
+* Dispatch Semaphores
+* Threadsafe Classes
+* Operations
+* Operation Queues
+* Dependencies
+* Concurrency Problems

@@ -23,7 +23,7 @@ final class TripBuilder {
   public private(set) var tripName = ""
   public private(set) var tripOwnerId = UUID()
   public private(set) var tripDate = Date()
-  public private(set) var tripMembers: [Person] = []
+  public private(set) var tripMembers = 1
   public private(set) var tripCities: [City] = []
   
   public func setTripName(to name: String) {
@@ -46,18 +46,12 @@ final class TripBuilder {
     tripCities = cities
   }
   
-  public func add(person: Person) {
-    tripMembers.append(person)
-  }
-  
-  public func add(group: [Person]) {
-    tripMembers = group
+  public func add(members: Int) {
+    tripMembers = members
   }
   
   public func build() -> Trip {
-    var group = Group()
-    group.addToGroup(group: tripMembers)
-    return Trip(id: UUID(), appUserId: tripOwnerId, name: tripName, date: tripDate, members: group, cities: tripCities)
+    return Trip(id: UUID(), appUserId: tripOwnerId, name: tripName, date: tripDate, members: tripMembers, cities: tripCities)
   }
   
 }
