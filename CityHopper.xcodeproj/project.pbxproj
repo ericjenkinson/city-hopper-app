@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
 		BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */; };
+		BA350B1A28F07A31008B3FFA /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B1928F07A31008B3FFA /* DataDownloader.swift */; };
 		BA3CF11228DE4F8F00C7D1B4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */; };
 		BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */; };
 		BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3CF11728DFEDAD00C7D1B4 /* NewTripView.swift */; };
@@ -58,6 +59,9 @@
 /* Begin PBXFileReference section */
 		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
 		BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonIconAndText.swift; sourceTree = "<group>"; };
+		BA350B1928F07A31008B3FFA /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		BA350B1F28F0A303008B3FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentObjectModifier.swift; sourceTree = "<group>"; };
 		BA3CF11728DFEDAD00C7D1B4 /* NewTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA350B1B28F07B72008B3FFA /* DataDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				BA350B1928F07A31008B3FFA /* DataDownloader.swift */,
+			);
+			path = DataDownloader;
+			sourceTree = "<group>";
+		};
+		BA350B1C28F0978F008B3FFA /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		BA3CF11928E044FD00C7D1B4 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +281,7 @@
 		BAB8067828B6D4F2009E81E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BA350B1B28F07B72008B3FFA /* DataDownloader */,
 				BA5B482928B1C57300308D00 /* Constants.swift */,
 				BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */,
 			);
@@ -279,6 +300,7 @@
 		BAEB2F2E28B13C47002FBBAD = {
 			isa = PBXGroup;
 			children = (
+				BA350B1C28F0978F008B3FFA /* Configuration */,
 				BA3CF11C28E12DA700C7D1B4 /* Resources */,
 				BAB8067928B6DC18009E81E4 /* Playgrounds */,
 				BA5B482B28B1C5CA00308D00 /* README.md */,
@@ -298,6 +320,7 @@
 		BAEB2F3928B13C47002FBBAD /* CityHopper */ = {
 			isa = PBXGroup;
 			children = (
+				BA350B1F28F0A303008B3FFA /* Info.plist */,
 				BA3CF11928E044FD00C7D1B4 /* Protocols */,
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
 				BA5B482828B1C55B00308D00 /* Model */,
@@ -431,6 +454,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA350B1A28F07A31008B3FFA /* DataDownloader.swift in Sources */,
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */,
@@ -481,6 +505,7 @@
 /* Begin XCBuildConfiguration section */
 		BAEB2F4328B13C4C002FBBAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -541,6 +566,7 @@
 		};
 		BAEB2F4428B13C4C002FBBAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -604,6 +630,7 @@
 				DEVELOPMENT_TEAM = BBK84N9JY9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityHopper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -634,6 +661,7 @@
 				DEVELOPMENT_TEAM = BBK84N9JY9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CityHopper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
