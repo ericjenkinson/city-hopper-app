@@ -2,9 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TRIPSO_ACCOUNT</key>
-	<string>$(TRIPSO_ACCOUNT)</string>
-	<key>TRIPSO_TOKEN</key>
-	<string>$(TRIPSO_TOKEN)</string>
+	<key>TRIPOSO_ACCOUNT</key>
+	<string>$(TRIPOSO_ACCOUNT)</string>
+	<key>TRIPOSO_TOKEN</key>
+	<string>$(TRIPOSO_TOKEN)</string>
 </dict>
 </plist>

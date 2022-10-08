@@ -18,6 +18,8 @@ struct HomeScreen: View {
   
   @State var defaultTab = Tabs.tab1
   
+  private var dataDownloader = DataDownloader()
+  
   var body: some View {
     TabView(selection: $defaultTab) {
         HomeTab()
@@ -52,7 +54,24 @@ struct HomeScreen: View {
           }
           .tag(Tabs.tab5)
       }
+      .onAppear(perform: {
+        Task {
+          await getData()
+        }
+      })
   }
+   
+  // methods
+  private func getData() async {
+    do {
+      let output = try await dataDownloader.getData()
+      
+      let _ = print(output)
+    } catch {
+      print(error)
+    }
+  }
+  
 }
 
 
