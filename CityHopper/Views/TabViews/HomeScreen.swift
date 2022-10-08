@@ -70,6 +70,10 @@ struct HomeScreen: View {
     } catch {
       print(error)
     }
+    
+    let output = await dataDownloader.getCookies()
+    let _ = print(output)
+    
   }
   
 }
