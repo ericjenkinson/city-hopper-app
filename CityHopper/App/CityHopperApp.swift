@@ -11,10 +11,11 @@ import SwiftUI
 struct CityHopperApp: App {
   var body: some Scene {
     WindowGroup {
-      HomeScreen()
-        .environmentObject(CityViewModel(loadTestData: true))
-        .environmentObject(TripViewModel(loadTestData: true))
-        .environmentObject(UserViewModel(loadTestData: true))
+      SplashScreen()
+//      HomeScreen()
+//        .environmentObject(CityViewModel(loadTestData: true))
+//        .environmentObject(TripViewModel(loadTestData: true))
+//        .environmentObject(UserViewModel(loadTestData: true))
     }
   }
 }
