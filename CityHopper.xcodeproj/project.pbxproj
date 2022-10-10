@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
+		BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA337EAB28F3B3D9004B3AE4 /* HTTPErrorCode.swift */; };
+		BA337EAF28F3B58E004B3AE4 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA337EAE28F3B58E004B3AE4 /* DataDownloader.swift */; };
 		BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */; };
-		BA350B1A28F07A31008B3FFA /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B1928F07A31008B3FFA /* DataDownloader.swift */; };
-		BA350B2228F0BE74008B3FFA /* HTTPErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2128F0BE74008B3FFA /* HTTPErrorCodes.swift */; };
+		BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B1928F07A31008B3FFA /* DataRetriever.swift */; };
 		BA350B2428F233B7008B3FFA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2328F233B7008B3FFA /* SplashScreen.swift */; };
 		BA350B2828F26F78008B3FFA /* RotatingGlobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2728F26F78008B3FFA /* RotatingGlobe.swift */; };
 		BA350B2A28F27C3B008B3FFA /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2928F27C3B008B3FFA /* State.swift */; };
@@ -63,11 +64,12 @@
 
 /* Begin PBXFileReference section */
 		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
+		BA337EAB28F3B3D9004B3AE4 /* HTTPErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorCode.swift; sourceTree = "<group>"; };
+		BA337EAE28F3B58E004B3AE4 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
 		BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonIconAndText.swift; sourceTree = "<group>"; };
-		BA350B1928F07A31008B3FFA /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		BA350B1928F07A31008B3FFA /* DataRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRetriever.swift; sourceTree = "<group>"; };
 		BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		BA350B1F28F0A303008B3FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		BA350B2128F0BE74008B3FFA /* HTTPErrorCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorCodes.swift; sourceTree = "<group>"; };
 		BA350B2328F233B7008B3FFA /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		BA350B2728F26F78008B3FFA /* RotatingGlobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGlobe.swift; sourceTree = "<group>"; };
 		BA350B2928F27C3B008B3FFA /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -133,10 +135,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BA350B1B28F07B72008B3FFA /* DataDownloader */ = {
+		BA337EAA28F3B3B4004B3AE4 /* HTTPErrorCode */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B1928F07A31008B3FFA /* DataDownloader.swift */,
+				BA337EAB28F3B3D9004B3AE4 /* HTTPErrorCode.swift */,
+			);
+			path = HTTPErrorCode;
+			sourceTree = "<group>";
+		};
+		BA337EAD28F3B550004B3AE4 /* DataDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				BA337EAE28F3B58E004B3AE4 /* DataDownloader.swift */,
 				BA350B2028F0BE3A008B3FFA /* Extensions */,
 			);
 			path = DataDownloader;
@@ -153,7 +163,6 @@
 		BA350B2028F0BE3A008B3FFA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B2128F0BE74008B3FFA /* HTTPErrorCodes.swift */,
 				BA350B2928F27C3B008B3FFA /* State.swift */,
 			);
 			path = Extensions;
@@ -337,7 +346,9 @@
 		BAB8067828B6D4F2009E81E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B1B28F07B72008B3FFA /* DataDownloader */,
+				BA337EAD28F3B550004B3AE4 /* DataDownloader */,
+				BA350B1928F07A31008B3FFA /* DataRetriever.swift */,
+				BA337EAA28F3B3B4004B3AE4 /* HTTPErrorCode */,
 				BA5B482928B1C57300308D00 /* Constants.swift */,
 				BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */,
 			);
@@ -510,17 +521,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA350B2428F233B7008B3FFA /* SplashScreen.swift in Sources */,
-				BA350B1A28F07A31008B3FFA /* DataDownloader.swift in Sources */,
+				BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */,
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
 				BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
 				BA3CF11B28E0452600C7D1B4 /* TripBuilderDelegate.swift in Sources */,
 				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
-				BA350B2228F0BE74008B3FFA /* HTTPErrorCodes.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
 				BAA23A9328E8B65C0023D09E /* ButtonText.swift in Sources */,
 				BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */,
+				BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */,
 				BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */,
 				BA350B2A28F27C3B008B3FFA /* State.swift in Sources */,
 				BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */,
@@ -543,6 +554,7 @@
 				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
+				BA337EAF28F3B58E004B3AE4 /* DataDownloader.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
 				BA350B2C28F33F5C008B3FFA /* AnimatedAppName.swift in Sources */,

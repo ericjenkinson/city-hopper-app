@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension DataDownloader {
+extension DataRetriever {
   enum State {
     case paused
     case downloading

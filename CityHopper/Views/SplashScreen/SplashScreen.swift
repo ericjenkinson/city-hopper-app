@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashScreen: View {
   
-  private var dataDownloader = DataDownloader()
+  private var dataRetriever = DataRetriever()
   
   var body: some View {
     GeometryReader { geo in
@@ -38,14 +38,14 @@ struct SplashScreen: View {
   // methods
   private func getData() async {
     do {
-      let output = try await dataDownloader.getData()
+      let output = try await dataRetriever.getData()
       
       let _ = print(output)
     } catch {
       print(error)
     }
     
-    let output = await dataDownloader.getCookies()
+    let output = await dataRetriever.getCookies()
     let _ = print(output)
     
   }
