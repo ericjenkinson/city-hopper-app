@@ -30,3 +30,4 @@ a detail view with the picture and details of the city.
 * Pause/Resume/Cancel Download
 * Modern Swift Concurrency using Async/Wait
 * SwiftUI Animation
+* Property Lists
