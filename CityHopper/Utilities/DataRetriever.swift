@@ -56,7 +56,7 @@ class DataRetriever: NSObject {
     
     // get url
     guard let url = URL(string: "https://www.triposo.com/api/20220705/location.json") else {
-      print("Error encountered (DataDownloader.getData(): \(HTTPErrorCode.invalidURL.message)")
+      print("Error encountered (DataRetriever.getData(): \(HTTPErrorCode.invalidURL.message)")
       throw HTTPErrorCode.invalidURL
     }
     
