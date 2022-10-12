@@ -41,15 +41,28 @@ struct OnboardingBody: View {
 
 struct OnboardingFooter: View {
   @Binding var onboardingIsVisible: Bool
+  @State private var isPressed = false
+  
   var body: some View {
     Button(action: {
       withAnimation {
         self.onboardingIsVisible.toggle()
       }
-    }) {
+    }, label:  {
       ButtonText(text: Constants.AppData.closeOnboarding)
         .padding(.bottom)
-    }
+    })
+    .scaleEffect(isPressed ? 1.05 : 1.0)
+    .opacity(isPressed ? 0.6 : 1.0)
+    .pressEvents(onPress: {
+      withAnimation(.easeInOut(duration: 0.1)) {
+        isPressed = true
+      }
+    }, onRelease: {
+      withAnimation {
+        isPressed = false
+      }
+    })
   }
 }
 
