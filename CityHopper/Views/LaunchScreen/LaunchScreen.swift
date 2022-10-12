@@ -42,12 +42,12 @@ struct LaunchScreen: View {
         if let error = error {
           completion(.failure(error))
         }
-        
+
         if let data = data {
           completion(.success(data))
         }
       }
-      
+
       urlSession.resume()
     }
   }
@@ -73,7 +73,6 @@ struct LaunchScreen: View {
         print(error)
       }
     }
-    
   }
   
 }

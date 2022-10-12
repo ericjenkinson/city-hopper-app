@@ -71,6 +71,13 @@ class DataRetriever: NSObject {
       throw error
     }
     
+    let decoder = JSONDecoder()
+    
+    do {
+      let jsonData = try decoder.decode(Location.self, from: data)
+      print(jsonData)
+    }
+    
     return "Data downloaded: \(data) bytes"
   }
   
