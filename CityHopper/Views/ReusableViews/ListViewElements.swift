@@ -11,18 +11,20 @@ struct LargeListViewElement: View {
   var city: City
   
   var body: some View {
-    ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-      Image(city.image)
-        .resizable()
-      VStack {
-        ListElementViewHeader()
-        Spacer()
-        ListElementViewFooter(city: city.name, country: city.country)
+    GeometryReader { geo in
+      ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
+        Image(city.image)
+          .resizable()
+        VStack {
+          ListElementViewHeader()
+          Spacer()
+          ListElementViewFooter(city: city.name, country: city.country)
+        }
       }
+      .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
+      .scaledToFit()
+      .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
-    .scaledToFit()
-    .cornerRadius(Constants.General.listViewElementCornerRadius)
-    .padding()
   }
 }
 
@@ -100,7 +102,7 @@ struct SmallListViewElement: View {
 }
 
 struct ListViews_Previews: PreviewProvider {
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
+  static private var city = City(name: "Munich", image: "imageCairo", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
   
   static var previews: some View {
     VStack {
