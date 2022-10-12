@@ -68,7 +68,7 @@
 		BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonIconAndText.swift; sourceTree = "<group>"; };
 		BA350B1928F07A31008B3FFA /* DataRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRetriever.swift; sourceTree = "<group>"; };
 		BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
-		BA350B1F28F0A303008B3FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA350B1F28F0A303008B3FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA350B2328F233B7008B3FFA /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		BA350B2728F26F78008B3FFA /* RotatingGlobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGlobe.swift; sourceTree = "<group>"; };
 		BA350B2B28F33F5C008B3FFA /* AnimatedAppName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAppName.swift; sourceTree = "<group>"; };
@@ -204,6 +204,7 @@
 		BA5B482628B1C51500308D00 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				BA350B1F28F0A303008B3FFA /* Info.plist */,
 				BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */,
 				BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */,
 			);
@@ -213,6 +214,7 @@
 		BA5B482728B1C53600308D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAAA86DE28F66C0600ADC200 /* Modifiers */,
 				BA350B2528F26F37008B3FFA /* SplashScreen */,
 				BA350B2D28F37454008B3FFA /* HomeScreen */,
 				BAF2DF6428D6CD9000E1AEF8 /* ReusableViews */,
@@ -324,14 +326,21 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		BAAA86DE28F66C0600ADC200 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */,
+				BA337EB028F3CA85004B3AE4 /* ViewPressModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		BAB8067828B6D4F2009E81E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				BA350B1928F07A31008B3FFA /* DataRetriever.swift */,
 				BA337EAA28F3B3B4004B3AE4 /* HTTPErrorCode */,
 				BA5B482928B1C57300308D00 /* Constants.swift */,
-				BA3CF11528DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift */,
-				BA337EB028F3CA85004B3AE4 /* ViewPressModifier.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -368,7 +377,6 @@
 		BAEB2F3928B13C47002FBBAD /* CityHopper */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B1F28F0A303008B3FFA /* Info.plist */,
 				BA3CF11928E044FD00C7D1B4 /* Protocols */,
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
 				BA5B482828B1C55B00308D00 /* Model */,
