@@ -12,7 +12,7 @@
 		BA337EB128F3CA85004B3AE4 /* ViewPressModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA337EB028F3CA85004B3AE4 /* ViewPressModifier.swift */; };
 		BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */; };
 		BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B1928F07A31008B3FFA /* DataRetriever.swift */; };
-		BA350B2428F233B7008B3FFA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2328F233B7008B3FFA /* SplashScreen.swift */; };
+		BA350B2428F233B7008B3FFA /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2328F233B7008B3FFA /* LaunchScreen.swift */; };
 		BA350B2828F26F78008B3FFA /* RotatingGlobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2728F26F78008B3FFA /* RotatingGlobe.swift */; };
 		BA350B2C28F33F5C008B3FFA /* AnimatedAppName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2B28F33F5C008B3FFA /* AnimatedAppName.swift */; };
 		BA350B3028F3753F008B3FFA /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B2F28F3753F008B3FFA /* HomeTabView.swift */; };
@@ -69,7 +69,7 @@
 		BA350B1928F07A31008B3FFA /* DataRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRetriever.swift; sourceTree = "<group>"; };
 		BA350B1E28F09B5F008B3FFA /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		BA350B1F28F0A303008B3FFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA350B2328F233B7008B3FFA /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		BA350B2328F233B7008B3FFA /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		BA350B2728F26F78008B3FFA /* RotatingGlobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingGlobe.swift; sourceTree = "<group>"; };
 		BA350B2B28F33F5C008B3FFA /* AnimatedAppName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedAppName.swift; sourceTree = "<group>"; };
 		BA350B2F28F3753F008B3FFA /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
@@ -149,13 +149,13 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		BA350B2528F26F37008B3FFA /* SplashScreen */ = {
+		BA350B2528F26F37008B3FFA /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B2328F233B7008B3FFA /* SplashScreen.swift */,
+				BA350B2328F233B7008B3FFA /* LaunchScreen.swift */,
 				BA350B2628F26F4B008B3FFA /* Components */,
 			);
-			path = SplashScreen;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		BA350B2628F26F4B008B3FFA /* Components */ = {
@@ -204,7 +204,6 @@
 		BA5B482628B1C51500308D00 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				BA350B1F28F0A303008B3FFA /* Info.plist */,
 				BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */,
 				BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */,
 			);
@@ -214,10 +213,10 @@
 		BA5B482728B1C53600308D00 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BAAA86DE28F66C0600ADC200 /* Modifiers */,
-				BA350B2528F26F37008B3FFA /* SplashScreen */,
-				BA350B2D28F37454008B3FFA /* HomeScreen */,
 				BAF2DF6428D6CD9000E1AEF8 /* ReusableViews */,
+				BAAA86DE28F66C0600ADC200 /* Modifiers */,
+				BA350B2528F26F37008B3FFA /* LaunchScreen */,
+				BA350B2D28F37454008B3FFA /* HomeScreen */,
 				BAF2DF5D28D66C0500E1AEF8 /* TabViews */,
 				BAB8067628B1E03B009E81E4 /* OnBoarding.swift */,
 				BAA3253B28E5EFE200E27F50 /* DetailView */,
@@ -377,6 +376,7 @@
 		BAEB2F3928B13C47002FBBAD /* CityHopper */ = {
 			isa = PBXGroup;
 			children = (
+				BA350B1F28F0A303008B3FFA /* Info.plist */,
 				BA3CF11928E044FD00C7D1B4 /* Protocols */,
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
 				BA5B482828B1C55B00308D00 /* Model */,
@@ -509,7 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA350B2428F233B7008B3FFA /* SplashScreen.swift in Sources */,
+				BA350B2428F233B7008B3FFA /* LaunchScreen.swift in Sources */,
 				BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */,
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,

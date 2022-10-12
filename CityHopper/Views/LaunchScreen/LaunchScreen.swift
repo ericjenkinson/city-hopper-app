@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashScreen: View {
+struct LaunchScreen: View {
   
   private var dataRetriever = DataRetriever()
   
@@ -81,6 +81,6 @@ struct SplashScreen: View {
 
 struct SplashScreen_Previews: PreviewProvider {
   static var previews: some View {
-    SplashScreen()
+    LaunchScreen()
   }
 }

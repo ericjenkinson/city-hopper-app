@@ -14,7 +14,7 @@ struct HomeScreen: View {
   var body: some View {
     ZStack {
       if showSplashScreen {
-        SplashScreen()
+        LaunchScreen()
           .opacity(showSplashScreen ? 1 : 0)
           .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
