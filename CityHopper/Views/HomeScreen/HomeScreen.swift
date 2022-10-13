@@ -28,12 +28,11 @@ struct HomeScreen: View {
             }
           }
     
-    }
-//    .onAppear(perform: {
-//                Task {
-//                  await getData()
-//                }
-//    })
+      }
+      .task {
+        await getData()
+      }
+
   }
   
   // methods
