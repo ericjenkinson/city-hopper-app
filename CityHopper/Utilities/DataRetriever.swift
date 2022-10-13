@@ -75,9 +75,11 @@ class DataRetriever: NSObject {
     
     do {
       let jsonData = try decoder.decode(Location.self, from: data)
-      print(jsonData)
+      
+      //print(jsonData)
     }
     
+    print("Sandbox Document Directory: \(FileManager.documentsDirectoryURL)")
     return "Data downloaded: \(data) bytes"
   }
   

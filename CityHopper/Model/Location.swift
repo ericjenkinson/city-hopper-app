@@ -26,7 +26,7 @@ struct Location: Codable {
 // MARK: - Result
 struct LocationResult: Codable {
   let id: String
-  let coordinates: Coordinates
+  let coordinates: LocationCoordinates
   let score: Double
   let countryID: String
   let images: [LocationImage]
@@ -43,28 +43,28 @@ struct LocationResult: Codable {
 }
 
 // MARK: - Coordinates
-struct Coordinates: Codable {
+struct LocationCoordinates: Codable {
   let latitude, longitude: Double
 }
 
 // MARK: - Image
 struct LocationImage: Codable {
-  let sizes: Sizes
+  let sizes: LocationImageSizes
 }
 
 // MARK: - Sizes
-struct Sizes: Codable {
-  let medium, original, thumbnail: Medium
+struct LocationImageSizes: Codable {
+  let medium, original, thumbnail: LocationImageSizeMedium
 }
 
 // MARK: - Medium
-struct Medium: Codable {
+struct LocationImageSizeMedium: Codable {
   let url: String
   let bytes, width: Int
-  let format: Format
+  let format: LocationImageFormat
   let height: Int
 }
 
-enum Format: String, Codable {
+enum LocationImageFormat: String, Codable {
   case jpg = "jpg"
 }
