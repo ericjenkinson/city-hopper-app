@@ -8,7 +8,7 @@
 import Foundation
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
-class DataRetriever: NSObject {
+final class DataRetriever: NSObject {
   
   /// properties
   private let session: URLSession
@@ -71,13 +71,13 @@ class DataRetriever: NSObject {
       throw error
     }
     
-    let decoder = JSONDecoder()
-    
-    do {
-      let jsonData = try decoder.decode(Location.self, from: data)
-      
-      //print(jsonData)
-    }
+//    let decoder = JSONDecoder()
+//
+//    do {
+//      let jsonData = try decoder.decode(Location.self, from: data)
+//
+//      //print(jsonData)
+//    }
     
     print("Sandbox Document Directory: \(FileManager.documentsDirectoryURL)")
     return "Data downloaded: \(data) bytes"
