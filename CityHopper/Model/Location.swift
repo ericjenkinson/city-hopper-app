@@ -16,7 +16,7 @@ struct Location: Codable {
   let results: [LocationResult]
   let more: Bool
   let isDeprecated: String
-  
+
   enum CodingKeys: String, CodingKey {
     case results, more
     case isDeprecated = "is_deprecated"
@@ -33,7 +33,7 @@ struct LocationResult: Codable {
   let name: String
   let generatedIntro: String?
   let price = Int.random(in: 500..<2000)
-  
+
   enum CodingKeys: String, CodingKey {
     case id, coordinates, score
     case countryID = "country_id"
@@ -66,5 +66,5 @@ struct LocationImageSizeMedium: Codable {
 }
 
 enum LocationImageFormat: String, Codable {
-  case jpg = "jpg"
+  case jpg
 }

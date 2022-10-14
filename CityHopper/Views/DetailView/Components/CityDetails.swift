@@ -19,19 +19,19 @@ struct CityDetails: View {
         Text(String(city.price))
           .foregroundColor(Constants.Colors.listViewElementTextColor)
       }
-      HStack() {
-        HStack() {
+      HStack {
+        HStack {
           RoundedImageView(systemName: "location", textColor: Constants.Colors.listViewElementTextColor)
             .padding(-10)
           Text(city.country)
             .foregroundColor(Constants.Colors.listViewElementTextColor)
             .padding(-10)
         }
-    
+
         Spacer()
         Text("/ per person")
           .foregroundColor(Constants.Colors.listViewElementTextColor)
-        
+
       }
       HStack {
         Button(action: {
@@ -40,11 +40,11 @@ struct CityDetails: View {
           }
         }) {
           ButtonText(text: "Things to do!")
-            
+
         }.sheet(isPresented: $showingThingsToDo) {
           ThingsToDo(thingsToDo: city.thingsToDo)
         }
-        
+
       }
     }
     .padding()
@@ -57,8 +57,9 @@ struct CityDetails: View {
 
 struct CityDetails_Previews: PreviewProvider {
   static private var showingThingsToDo = Binding.constant(false)
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
-  
+  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany",
+                                 description: "Octoberfest!!", reviews: nil, price: 1200.00)
+
     static var previews: some View {
         CityDetails(showingThingsToDo: showingThingsToDo, city: city)
     }

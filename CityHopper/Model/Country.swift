@@ -18,9 +18,5 @@ enum Country: String {
   case unitedKingdom = "United Kingdom"
   case unitedStates = "United States"
 }
-  
-extension Country: CaseIterable {
-  
-}
-  
-  
+
+extension Country: CaseIterable { }

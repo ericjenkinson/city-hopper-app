@@ -25,9 +25,6 @@ struct CategoryButtonList: View {
     }
 }
 
-
-
-
 struct HorizontalButtonList_Previews: PreviewProvider {
     static var previews: some View {
         CategoryButtonList()

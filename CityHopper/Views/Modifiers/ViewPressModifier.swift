@@ -13,7 +13,7 @@ import SwiftUI
 struct ViewPressModifier: ViewModifier {
     var onPress: () -> Void
     var onRelease: () -> Void
-    
+
     func body(content: Content) -> some View {
         content
             .simultaneousGesture(

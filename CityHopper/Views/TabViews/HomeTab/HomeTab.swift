@@ -10,9 +10,8 @@ import SwiftUI
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
   @EnvironmentObject var destinations: CityViewModel
-  
+
   var body: some View {
-    
     NavigationView {
       VStack {
         HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
@@ -25,10 +24,6 @@ struct HomeTab: View {
     }
   }
 }
-
-
-
-
 
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {

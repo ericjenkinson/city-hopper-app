@@ -41,7 +41,7 @@ enum Constants {
     public static let tabTextHome = "Home"
     public static let tabTextCities = "Cities"
     public static let defaultTripName = "Name of trip"
-    
+
   }
   enum SFSymbols {
     public static let walking = "figure.walk"

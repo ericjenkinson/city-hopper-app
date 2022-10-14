@@ -9,20 +9,20 @@ import SwiftUI
 
 struct RotatingGlobe: View {
   @State private var isRotating = false
-  
+
   var animation: Animation {
     Animation.linear
       .speed(0.005)
       .repeatForever(autoreverses: false)
   }
-  
+
   var body: some View {
     ZStack {
       Image("destinationsGlobe")
         .rotationEffect(Angle.degrees(isRotating ? 360 : 0))
         .animation(animation, value: isRotating)
     }
-    .onAppear() {
+    .onAppear {
       isRotating.toggle()
     }
   }

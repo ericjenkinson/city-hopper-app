@@ -7,17 +7,15 @@
 
 import SwiftUI
 
-
-
 struct HomeTabView: View {
   enum Tabs {
     case tab1, tab2, tab3, tab4, tab5
   }
-  
+
   @State var defaultTab = Tabs.tab1
   @EnvironmentObject var destinations: CityViewModel
   @EnvironmentObject var appUser: UserViewModel
-  
+
   var body: some View {
     TabView(selection: $defaultTab) {
       HomeTab()
@@ -52,7 +50,7 @@ struct HomeTabView: View {
         }
         .tag(Tabs.tab5)
     }
-    
+
   }
 }
 

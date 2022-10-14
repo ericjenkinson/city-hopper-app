@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BigBoldHeading: View {
   let text: String
-  
+
   var body: some View {
     Text(text)
       .foregroundColor(Constants.Colors.textColor)

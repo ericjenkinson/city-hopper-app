@@ -11,7 +11,7 @@ struct NewTripView: View {
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   @EnvironmentObject var appUser: UserViewModel
   @EnvironmentObject var cities: CityViewModel
-  
+
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
   @State private var members: [Person] = []
@@ -20,7 +20,6 @@ struct NewTripView: View {
   @State private var splitBill = false
   @State private var firstName = ""
   @State private var lastName = ""
-  
     var body: some View {
       NavigationView {
         Form {
@@ -34,7 +33,6 @@ struct NewTripView: View {
                 Text($0)
               }
             }
-            
           }
           Section(header: Text("Group")) {
             Stepper("Group size: \(groupSize)", value: $groupSize, in: 1...20)
@@ -44,7 +42,9 @@ struct NewTripView: View {
           Section {
             Button(action: {
               withAnimation {
-                appUser.buildTripWithPartialData(tripName: tripName, tripDate: tripDate, firstName: firstName, lastName: lastName)
+                appUser.buildTripWithPartialData(tripName: tripName, tripDate:
+                                                  tripDate, firstName: firstName,
+                                                 lastName: lastName)
                 self.mode.wrappedValue.dismiss()
               }
             }) {
@@ -56,10 +56,7 @@ struct NewTripView: View {
     }
 }
 
-
-
 struct NewTripView_Previews: PreviewProvider {
-  
     static var previews: some View {
         NewTripView()
         .environmentObjectModifiers()

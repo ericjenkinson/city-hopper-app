@@ -10,17 +10,17 @@ import SwiftUI
 struct AnimatedAppName: View {
   @State private var isTextAnimating = false
   @State private var isPlaneAnimating = false
-  
+
   var textAnimation: Animation {
     Animation.spring()
       .speed(0.1)
   }
-  
+
   var planeAnimation: Animation {
     Animation.linear
       .speed(0.1)
   }
-  
+
   var body: some View {
     ZStack {
       Text("City\nHopper")

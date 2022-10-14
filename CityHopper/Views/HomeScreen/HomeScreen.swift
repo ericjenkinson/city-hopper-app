@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  
+
   private var dataRetriever = DataRetriever()
-  
+
   @State var showLaunchScreen = true
- 
+
   var body: some View {
     ZStack {
       HomeTabView()
         .opacity(showLaunchScreen ? 0 : 1)
-    
+
       LaunchScreen()
         .opacity(showLaunchScreen ? 1 : 0)
         .onAppear {

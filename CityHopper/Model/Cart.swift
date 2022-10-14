@@ -15,17 +15,16 @@ enum DiscountType: Double, CaseIterable {
   case noDiscount = 0.0
 }
 
-
 struct Cart {
   var items: [String]?
   var itemPrices: [Double]?
   var discount = DiscountType.noDiscount
-  
+
   init(loadTestData: Bool = false) {
     self.itemPrices = [1200.00, 1600.00, 1000.00, 2000.00, 900.00, 2400.00]
     self.discount = .multiCity
   }
-  
+
   var currentDiscountedAmount: Double {
     guard itemPrices != nil else {
       return 0.0

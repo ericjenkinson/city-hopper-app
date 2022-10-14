@@ -17,7 +17,7 @@ enum Category {
   case themeParks
   case dining
   case nightLife
-  
+
   var name: String {
     switch self {
     case .beach:
@@ -42,7 +42,7 @@ enum Category {
       return "Night Life"
     }
   }
-  
+
   var icon: String {
     switch self {
     case .beach:

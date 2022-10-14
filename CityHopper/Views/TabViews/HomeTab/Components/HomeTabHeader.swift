@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTabHeader: View {
   @Binding var onboardingIsVisible: Bool
-  
+
   var body: some View {
     HStack {
       VStack(alignment: .leading) {
