@@ -141,10 +141,10 @@ final class DataRetriever: NSObject, ObservableObject {
       throw HTTPErrorCode.invalidURL
     }
 
-    let urlRequst = getURLRequest(for: url)
+    let urlRequest = getURLRequest(for: url)
 
     // swiftlint:disable:next force_try
-    let (data, response) = try! await session.data(for: urlRequst)
+    let (data, response) = try! await session.data(for: urlRequest)
 
     do {
       try getResponseStatus(for: response)
