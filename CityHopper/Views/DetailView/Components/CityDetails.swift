@@ -38,10 +38,10 @@ struct CityDetails: View {
           withAnimation {
             self.showingThingsToDo.toggle()
           }
-        }) {
+        }, label: {
           ButtonText(text: "Things to do!")
 
-        }.sheet(isPresented: $showingThingsToDo) {
+        }).sheet(isPresented: $showingThingsToDo) {
           ThingsToDo(thingsToDo: city.thingsToDo)
         }
 

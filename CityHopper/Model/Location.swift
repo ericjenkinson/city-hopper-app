@@ -14,13 +14,6 @@ import Foundation
 // MARK: - Empty
 struct Location: Codable {
   let results: [LocationResult]
-  let more: Bool
-  let isDeprecated: String
-
-  enum CodingKeys: String, CodingKey {
-    case results, more
-    case isDeprecated = "is_deprecated"
-  }
 }
 
 // MARK: - Result

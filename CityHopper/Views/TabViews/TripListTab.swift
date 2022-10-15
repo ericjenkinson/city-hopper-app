@@ -20,9 +20,9 @@ struct TripListTab: View {
         withAnimation {
           self.addingNewTrip.toggle()
         }
-      }) {
+      }, label: {
         ButtonText(text: "Add New Trip")
-      }.sheet(isPresented: $addingNewTrip) {
+      }).sheet(isPresented: $addingNewTrip) {
         NewTripView()
       }
       Spacer()

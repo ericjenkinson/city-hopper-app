@@ -8,12 +8,22 @@
 import Foundation
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
-final class DataRetriever: NSObject {
+final class DataRetriever: NSObject, ObservableObject {
   /// properties
   private let session: URLSession
   private let sessionConfiguration: URLSessionConfiguration
   private let triposoAccount: String?
   private let triposoToken: String?
+  // swiftlint:disable:next line_length
+  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=50"
+  private var locationJSON = URL(fileURLWithPath: "Location",
+                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
+  private var locationPlist = URL(fileURLWithPath: "Location",
+                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
+  private var locationPlistBinary = URL(fileURLWithPath: "Location",
+                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("binary")
+  @Published var locationData: Location?
+  var locationDataPlist: Location?
 
   /// initialization
   override init() {
@@ -21,8 +31,28 @@ final class DataRetriever: NSObject {
     self.session = URLSession(configuration: sessionConfiguration)
     self.triposoAccount = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_ACCOUNT") as? String
     self.triposoToken = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_TOKEN") as? String
+    super.init()
+    self.createAppDirectory()
   }
   /// methods
+
+  private func createAppDirectory() {
+    let appDocumentLocation = FileManager.documentsDirectoryURL.appendingPathComponent("CityHopper")
+    // check if folder exists then create
+    do {
+      if !FileManager.default.fileExists(atPath: appDocumentLocation.path) {
+        try FileManager.default.createDirectory(at: appDocumentLocation, withIntermediateDirectories: false)
+      }
+      locationJSON = URL(fileURLWithPath: "Location",
+                         relativeTo: appDocumentLocation).appendingPathExtension("json")
+      locationPlist = URL(fileURLWithPath: "Location",
+                                relativeTo: appDocumentLocation).appendingPathExtension("plist")
+      locationPlistBinary = URL(fileURLWithPath: "Location",
+                                relativeTo: appDocumentLocation).appendingPathExtension("binary")
+    } catch {
+      print(error)
+    }
+  }
 
   /// Throws an error if the HTTPURLResponse could not be created or it the
   /// the status code indicates an error
@@ -48,18 +78,73 @@ final class DataRetriever: NSObject {
     return request
   }
 
-  func getData() async throws -> String {
+  func saveJSON() {
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = .prettyPrinted
+
+    do {
+      let locationData = try encoder.encode(locationData)
+
+      try locationData.write(to: locationJSON, options: .atomicWrite)
+    } catch let error {
+      print(error)
+    }
+  }
+
+  func savePlist() {
+    let encoder = PropertyListEncoder()
+    encoder.outputFormat = .xml
+
+    do {
+      let locationData = try encoder.encode(locationData)
+
+      try locationData.write(to: locationPlist, options: .atomicWrite)
+    } catch let error {
+      print(error)
+    }
+  }
+
+  func savePlistBinary() {
+    let encoder = PropertyListEncoder()
+    encoder.outputFormat = .binary
+
+    do {
+      let locationData = try encoder.encode(locationData)
+
+      try locationData.write(to: locationPlistBinary, options: .atomicWrite)
+    } catch let error {
+      print(error)
+    }
+  }
+
+  func loadPlist() {
+    guard FileManager.default.fileExists(atPath: locationPlist.path) else {
+      return
+    }
+
+    let decoder = PropertyListDecoder()
+
+    do {
+      let locationData = try Data(contentsOf: locationPlist)
+      locationDataPlist = try decoder.decode(Location.self, from: locationData)
+    } catch let error {
+      print(error)
+    }
+    print(locationDataPlist!)
+  }
+
+  func getData() async throws {
 
     // get url
-    guard let url = URL(string: "https://www.triposo.com/api/20220705/location.json") else {
+    guard let url = URL(string: triposoLocationURLString) else {
       print("Error encountered (DataRetriever.getData(): \(HTTPErrorCode.invalidURL.message)")
       throw HTTPErrorCode.invalidURL
     }
 
-    let request = getURLRequest(for: url)
+    let urlRequst = getURLRequest(for: url)
 
     // swiftlint:disable:next force_try
-    let (data, response) = try! await session.data(for: request)
+    let (data, response) = try! await session.data(for: urlRequst)
 
     do {
       try getResponseStatus(for: response)
@@ -68,42 +153,18 @@ final class DataRetriever: NSObject {
       throw error
     }
 
-//    let decoder = JSONDecoder()
-//
-//    do {
-//      let jsonData = try decoder.decode(Location.self, from: data)
-//
-//      //print(jsonData)
-//    }
-
-    print("Sandbox Document Directory: \(FileManager.documentsDirectoryURL)")
-    return "Data downloaded: \(data) bytes"
-  }
-
-  func getCookies() async -> String {
-    var description = ""
-
-    guard let url = URL(string: "https://raywenderlich.com") else {
-      return "Cookies: N/A"
-    }
+    let jsonDecoder = JSONDecoder()
 
     do {
-      let (_, response) = try await URLSession.shared.data(from: url)
-
-      guard let httpResponse = response as? HTTPURLResponse,
-        let fields = httpResponse.allHeaderFields as? [String: String]
-      else {
-        return "Cookies: N/A"
-      }
-
-      let cookies = HTTPCookie.cookies(withResponseHeaderFields: fields, for: url)
-
-      for cookie in cookies {
-        description += "\(cookie.name): \(cookie.value)\n"
-      }
-    } catch {
-      return "Cookies: N/A"
+      locationData = try jsonDecoder.decode(Location.self, from: data)
+    } catch let error {
+      print(error)
     }
-    return description
+
+    saveJSON()
+    savePlist()
+    savePlistBinary()
+    loadPlist()
   }
+
 }

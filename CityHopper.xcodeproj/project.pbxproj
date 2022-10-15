@@ -37,9 +37,6 @@
 		BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253D28E5F01C00E27F50 /* CityDetails.swift */; };
 		BAAA86E028F70D8500ADC200 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86DF28F70D8500ADC200 /* Location.swift */; };
 		BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86E228F777AD00ADC200 /* FileManager.swift */; };
-		BAAA86EE28F9093100ADC200 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86ED28F9093100ADC200 /* DataDownloader.swift */; };
-		BAAA86F228F90A2900ADC200 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86F128F90A2900ADC200 /* State.swift */; };
-		BAAA86FD28F9145900ADC200 /* DataDownloadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86FC28F9145900ADC200 /* DataDownloadError.swift */; };
 		BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */; };
 		BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */; };
 		BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067628B1E03B009E81E4 /* OnBoarding.swift */; };
@@ -99,9 +96,6 @@
 		BAA3253D28E5F01C00E27F50 /* CityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetails.swift; sourceTree = "<group>"; };
 		BAAA86DF28F70D8500ADC200 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BAAA86E228F777AD00ADC200 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
-		BAAA86ED28F9093100ADC200 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
-		BAAA86F128F90A2900ADC200 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		BAAA86FC28F9145900ADC200 /* DataDownloadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloadError.swift; sourceTree = "<group>"; };
 		BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
@@ -348,28 +342,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		BAAA86EF28F9099900ADC200 /* DataDownloader */ = {
-			isa = PBXGroup;
-			children = (
-				BAAA86ED28F9093100ADC200 /* DataDownloader.swift */,
-				BAAA86F028F909D500ADC200 /* Extensions */,
-			);
-			path = DataDownloader;
-			sourceTree = "<group>";
-		};
-		BAAA86F028F909D500ADC200 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				BAAA86F128F90A2900ADC200 /* State.swift */,
-				BAAA86FC28F9145900ADC200 /* DataDownloadError.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		BAB8067828B6D4F2009E81E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				BAAA86EF28F9099900ADC200 /* DataDownloader */,
 				BA350B1928F07A31008B3FFA /* DataRetriever.swift */,
 				BA337EAA28F3B3B4004B3AE4 /* HTTPErrorCode */,
 				BA5B482928B1C57300308D00 /* Constants.swift */,
@@ -554,7 +529,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA350B2428F233B7008B3FFA /* LaunchScreen.swift in Sources */,
-				BAAA86EE28F9093100ADC200 /* DataDownloader.swift in Sources */,
 				BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */,
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
@@ -565,7 +539,6 @@
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
 				BAA23A9328E8B65C0023D09E /* ButtonText.swift in Sources */,
 				BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */,
-				BAAA86FD28F9145900ADC200 /* DataDownloadError.swift in Sources */,
 				BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */,
 				BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */,
 				BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */,
@@ -589,7 +562,6 @@
 				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
-				BAAA86F228F90A2900ADC200 /* State.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */,
 				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,

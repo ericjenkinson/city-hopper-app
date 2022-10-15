@@ -47,9 +47,9 @@ struct NewTripView: View {
                                                  lastName: lastName)
                 self.mode.wrappedValue.dismiss()
               }
-            }) {
+            }, label: {
               Text("Save Trip")
-            }
+            })
           }
         }
       }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LaunchScreen: View {
+  private var dataRetriever = DataRetriever()
 
   var body: some View {
     GeometryReader { geo in
@@ -25,6 +26,15 @@ struct LaunchScreen: View {
 
       }
       .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
+      .onAppear {
+        Task {
+          do {
+            try await dataRetriever.getData()
+          } catch {
+            print(error)
+          }
+        }
+      }
     }
   }
 }
