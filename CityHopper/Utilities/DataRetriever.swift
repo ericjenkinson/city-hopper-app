@@ -149,8 +149,15 @@ final class DataRetriever: NSObject, ObservableObject {
 
     let urlRequest = getURLRequest(for: url)
 
-    // swiftlint:disable:next force_try
-    let (data, response) = try! await session.data(for: urlRequest)
+    var response: URLResponse
+    var data: Data
+
+    do {
+      (data, response) = try await session.data(for: urlRequest)
+    } catch let error {
+      print("Error encountered: \(error.localizedDescription)")
+      throw error
+    }
 
     do {
       try getResponseStatus(for: response)

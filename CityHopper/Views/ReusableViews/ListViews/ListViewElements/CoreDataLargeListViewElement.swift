@@ -29,8 +29,8 @@ struct CoreDataLargeListViewElement: View {
   }
 }
 
-//struct CoreDataLargeListViewElement_Previews: PreviewProvider {
+// struct CoreDataLargeListViewElement_Previews: PreviewProvider {
 //  static var previews: some View {
 //    CoreDataLargeListViewElement(location: )
 //  }
-//}
+// }

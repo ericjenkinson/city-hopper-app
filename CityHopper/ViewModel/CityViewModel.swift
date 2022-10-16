@@ -10,6 +10,7 @@ import Foundation
 class CityViewModel: ObservableObject {
   @Published var cities: [City] = []
 
+  // swiftlint:disable:next function_body_length
   init(loadTestData: Bool = false) {
     if loadTestData {
       cities.append(City(name: "Munich", image: "imageMunich", country: "Germany",

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CoreDataCityDetails: View {
   @Binding var showingThingsToDo: Bool
-  
   var location: Location
   var body: some View {
     VStack(spacing: 0.0) {
