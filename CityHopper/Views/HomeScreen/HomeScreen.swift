@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct HomeScreen: View {
-
+  // MARK: - Properties
   private var dataRetriever = DataRetriever()
 
+  // MARK: - State Properties
   @State var showLaunchScreen = true
 
   var body: some View {

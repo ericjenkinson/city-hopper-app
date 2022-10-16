@@ -24,6 +24,7 @@
 		BA5B482A28B1C57300308D00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B482928B1C57300308D00 /* Constants.swift */; };
 		BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */; };
 		BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA63588628CD3B370021F9D3 /* DetailView.swift */; };
+		BA68374228FB9B9B006548F8 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */; };
 		BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8628E78E700023D09E /* HorizontalListView.swift */; };
 		BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */; };
 		BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */; };
@@ -35,8 +36,10 @@
 		BAA3253628E5EE2500E27F50 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253528E5EE2500E27F50 /* OnboardingButton.swift */; };
 		BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253928E5EEDE00E27F50 /* CityListSectionHeader.swift */; };
 		BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3253D28E5F01C00E27F50 /* CityDetails.swift */; };
-		BAAA86E028F70D8500ADC200 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86DF28F70D8500ADC200 /* Location.swift */; };
+		BAAA86E028F70D8500ADC200 /* TriposoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86DF28F70D8500ADC200 /* TriposoLocation.swift */; };
 		BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86E228F777AD00ADC200 /* FileManager.swift */; };
+		BAAA870428FB489D00ADC200 /* Locations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAAA870228FB489D00ADC200 /* Locations.xcdatamodeld */; };
+		BAAA870628FB491500ADC200 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA870528FB491500ADC200 /* Persistence.swift */; };
 		BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */; };
 		BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */; };
 		BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067628B1E03B009E81E4 /* OnBoarding.swift */; };
@@ -45,6 +48,7 @@
 		BAB8068328BC0140009E81E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068228BC0140009E81E4 /* Review.swift */; };
 		BAB8068528BC0166009E81E4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068428BC0166009E81E4 /* City.swift */; };
 		BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068628BC8321009E81E4 /* CityViewModel.swift */; };
+		BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */; };
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
@@ -83,6 +87,7 @@
 		BA5B482B28B1C5CA00308D00 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlurEffect.swift; sourceTree = "<group>"; };
 		BA63588628CD3B370021F9D3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BAA23A8628E78E700023D09E /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
 		BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonList.swift; sourceTree = "<group>"; };
 		BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageViewStroked.swift; sourceTree = "<group>"; };
@@ -94,8 +99,10 @@
 		BAA3253528E5EE2500E27F50 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		BAA3253928E5EEDE00E27F50 /* CityListSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListSectionHeader.swift; sourceTree = "<group>"; };
 		BAA3253D28E5F01C00E27F50 /* CityDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetails.swift; sourceTree = "<group>"; };
-		BAAA86DF28F70D8500ADC200 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		BAAA86DF28F70D8500ADC200 /* TriposoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriposoLocation.swift; sourceTree = "<group>"; };
 		BAAA86E228F777AD00ADC200 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		BAAA870328FB489D00ADC200 /* Locations.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Locations.xcdatamodel; sourceTree = "<group>"; };
+		BAAA870528FB491500ADC200 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 		BAB8068228BC0140009E81E4 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		BAB8068428BC0166009E81E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAB8068628BC8321009E81E4 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +236,7 @@
 		BA5B482828B1C55B00308D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA68374028FB9B71006548F8 /* Location */,
 				BAFF85E028DE1C6000A13F11 /* Builders */,
 				BAFF85DC28DBACC700A13F11 /* AppUser.swift */,
 				BAB8067C28BC0101009E81E4 /* Person.swift */,
@@ -237,9 +246,19 @@
 				BAFDE72D28C475320067F27F /* Cart.swift */,
 				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
 				BAF2DF5B28D6555500E1AEF8 /* Country.swift */,
-				BAAA86DF28F70D8500ADC200 /* Location.swift */,
+				BAAA870528FB491500ADC200 /* Persistence.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BA68374028FB9B71006548F8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				BAAA86DF28F70D8500ADC200 /* TriposoLocation.swift */,
+				BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */,
+				BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		BAA23A8528E78E2F0023D09E /* ListViews */ = {
@@ -342,6 +361,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BAAA870128FB485F00ADC200 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BAAA870228FB489D00ADC200 /* Locations.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		BAB8067828B6D4F2009E81E4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				BA350B1F28F0A303008B3FFA /* Info.plist */,
+				BAAA870128FB485F00ADC200 /* CoreData */,
 				BAAA86E128F7779000ADC200 /* Extensions */,
 				BA3CF11928E044FD00C7D1B4 /* Protocols */,
 				BAB8067828B6D4F2009E81E4 /* Utilities */,
@@ -529,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA350B2428F233B7008B3FFA /* LaunchScreen.swift in Sources */,
+				BAAA870428FB489D00ADC200 /* Locations.xcdatamodeld in Sources */,
 				BA350B1A28F07A31008B3FFA /* DataRetriever.swift in Sources */,
 				BA3CF11828DFEDAD00C7D1B4 /* NewTripView.swift in Sources */,
 				BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */,
@@ -559,10 +588,13 @@
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,
+				BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */,
 				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
+				BAAA870628FB491500ADC200 /* Persistence.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
+				BA68374228FB9B9B006548F8 /* Location+CoreDataClass.swift in Sources */,
 				BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */,
 				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
 				BA350B2C28F33F5C008B3FFA /* AnimatedAppName.swift in Sources */,
@@ -577,7 +609,7 @@
 				BA5B482A28B1C57300308D00 /* Constants.swift in Sources */,
 				BAA3253628E5EE2500E27F50 /* OnboardingButton.swift in Sources */,
 				BAFF85DD28DBACC700A13F11 /* AppUser.swift in Sources */,
-				BAAA86E028F70D8500ADC200 /* Location.swift in Sources */,
+				BAAA86E028F70D8500ADC200 /* TriposoLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +816,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BAAA870228FB489D00ADC200 /* Locations.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BAAA870328FB489D00ADC200 /* Locations.xcdatamodel */,
+			);
+			currentVersion = BAAA870328FB489D00ADC200 /* Locations.xcdatamodel */;
+			path = Locations.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BAEB2F2F28B13C47002FBBAD /* Project object */;
 }

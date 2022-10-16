@@ -12,7 +12,7 @@
 import Foundation
 
 // MARK: - Empty
-struct Location: Codable {
+struct TriposoLocation: Codable {
   let results: [LocationResult]
 }
 

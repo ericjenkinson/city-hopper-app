@@ -6,26 +6,31 @@
 //
 
 import Foundation
+import CoreData
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
 final class DataRetriever: NSObject, ObservableObject {
-  /// properties
+  // MARK: - Private Properties
+  let persistenceController = PersistenceController.shared
   private let session: URLSession
   private let sessionConfiguration: URLSessionConfiguration
   private let triposoAccount: String?
   private let triposoToken: String?
   // swiftlint:disable:next line_length
-  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=50"
-  private var locationJSON = URL(fileURLWithPath: "Location",
-                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
+  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=50&type=city"
+
   private var locationPlist = URL(fileURLWithPath: "Location",
                             relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
   private var locationPlistBinary = URL(fileURLWithPath: "Location",
                             relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("binary")
-  @Published var locationData: Location?
-  var locationDataPlist: Location?
 
-  /// initialization
+  // MARK: - Published Properties
+  @Published var locationData: TriposoLocation?
+  @Published var locationJSON = URL(fileURLWithPath: "Location",
+                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
+  var locationDataPlist: TriposoLocation?
+
+  // MARK: - Initialization
   override init() {
     self.sessionConfiguration = URLSessionConfiguration.default
     self.session = URLSession(configuration: sessionConfiguration)
@@ -34,11 +39,11 @@ final class DataRetriever: NSObject, ObservableObject {
     super.init()
     self.createAppDirectory()
   }
-  /// methods
 
+  // MARK: - Methods
   private func createAppDirectory() {
     let appDocumentLocation = FileManager.documentsDirectoryURL.appendingPathComponent("CityHopper")
-    // check if folder exists then create
+
     do {
       if !FileManager.default.fileExists(atPath: appDocumentLocation.path) {
         try FileManager.default.createDirectory(at: appDocumentLocation, withIntermediateDirectories: false)
@@ -126,7 +131,7 @@ final class DataRetriever: NSObject, ObservableObject {
 
     do {
       let locationData = try Data(contentsOf: locationPlist)
-      locationDataPlist = try decoder.decode(Location.self, from: locationData)
+      locationDataPlist = try decoder.decode(TriposoLocation.self, from: locationData)
     } catch let error {
       print(error)
     }
@@ -156,7 +161,7 @@ final class DataRetriever: NSObject, ObservableObject {
     let jsonDecoder = JSONDecoder()
 
     do {
-      locationData = try jsonDecoder.decode(Location.self, from: data)
+      locationData = try jsonDecoder.decode(TriposoLocation.self, from: data)
     } catch let error {
       print(error)
     }
@@ -164,7 +169,17 @@ final class DataRetriever: NSObject, ObservableObject {
     saveJSON()
     savePlist()
     savePlistBinary()
-    loadPlist()
+    // loadPlist()
+    persistJSON()
   }
 
+  func persistJSON() {
+    guard let locations = locationData?.results else {
+      return
+    }
+
+    for location in locations {
+      print("\(location.name) image: \(location.images[0].sizes.original.url)")
+    }
+  }
 }
