@@ -14,7 +14,6 @@ struct NewTripView: View {
 
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
-  @State private var members: [Person] = []
   @State private var selectedCity = "Munich"
   @State private var groupSize = 1
   @State private var splitBill = false
