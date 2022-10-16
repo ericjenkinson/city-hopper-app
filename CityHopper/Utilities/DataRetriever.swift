@@ -18,7 +18,7 @@ final class DataRetriever: NSObject, ObservableObject {
   private let triposoAccount: String?
   private let triposoToken: String?
   // swiftlint:disable:next line_length
-  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=50&type=city"
+  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
 
   private var locationPlist = URL(fileURLWithPath: "Location",
                             relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")

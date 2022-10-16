@@ -24,7 +24,7 @@ struct HomeTabView: View {
           Text(Constants.AppData.tabTextHome)
         }
         .tag(Tabs.tab1)
-      CityListTab(cities: destinations.cities, countries: destinations.getCountries())
+      CoreDataHorizontalListView()
         .tabItem {
           Image(systemName: Constants.SFSymbols.location)
           Text(Constants.AppData.tabTextCities)
