@@ -101,7 +101,7 @@ struct SmallListViewElement: View {
 
 struct ListViews_Previews: PreviewProvider {
   static private var city = City(name: "Munich", image: "imageCairo", country: "Germany",
-                                 description: "Octoberfest!!", reviews: nil, price: 1200.00)
+                                 description: "Octoberfest!!", price: 1200.00)
 
   static var previews: some View {
     VStack {

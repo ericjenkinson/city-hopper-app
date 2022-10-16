@@ -17,5 +17,4 @@ struct AppUser {
   var email: String?
   var likes: [City]?
   var trips: [Trip] = []
-  var reviews: [Review]?
 }

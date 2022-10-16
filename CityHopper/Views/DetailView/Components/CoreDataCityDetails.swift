@@ -45,7 +45,7 @@ struct CoreDataCityDetails: View {
 struct CoreDataCityDetails_Previews: PreviewProvider {
   static private var showingThingsToDo = Binding.constant(false)
   static private var city = City(name: "Munich", image: "imageMunich", country: "Germany",
-                                 description: "Octoberfest!!", reviews: nil, price: 1200.00)
+                                 description: "Octoberfest!!", price: 1200.00)
 
     static var previews: some View {
         CityDetails(showingThingsToDo: showingThingsToDo, city: city)

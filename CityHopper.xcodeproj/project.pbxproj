@@ -45,7 +45,6 @@
 		BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067628B1E03B009E81E4 /* OnBoarding.swift */; };
 		BAB8067D28BC0101009E81E4 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067C28BC0101009E81E4 /* Person.swift */; };
 		BAB8068128BC012A009E81E4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068028BC012A009E81E4 /* Trip.swift */; };
-		BAB8068328BC0140009E81E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068228BC0140009E81E4 /* Review.swift */; };
 		BAB8068528BC0166009E81E4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068428BC0166009E81E4 /* City.swift */; };
 		BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068628BC8321009E81E4 /* CityViewModel.swift */; };
 		BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */; };
@@ -114,7 +113,6 @@
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
 		BAB8067C28BC0101009E81E4 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BAB8068028BC012A009E81E4 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		BAB8068228BC0140009E81E4 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		BAB8068428BC0166009E81E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAB8068628BC8321009E81E4 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 				BAFF85DC28DBACC700A13F11 /* AppUser.swift */,
 				BAB8067C28BC0101009E81E4 /* Person.swift */,
 				BAB8068028BC012A009E81E4 /* Trip.swift */,
-				BAB8068228BC0140009E81E4 /* Review.swift */,
 				BAB8068428BC0166009E81E4 /* City.swift */,
 				BAFDE72D28C475320067F27F /* Cart.swift */,
 				BAF2DF5928D64CB600E1AEF8 /* Category.swift */,
@@ -614,7 +611,6 @@
 				BA337EB128F3CA85004B3AE4 /* ViewPressModifier.swift in Sources */,
 				BAC55DA928FC58A3004652DF /* CoreDataDetailView.swift in Sources */,
 				BA3CF11628DFBEA200C7D1B4 /* EnvironmentObjectModifier.swift in Sources */,
-				BAB8068328BC0140009E81E4 /* Review.swift in Sources */,
 				BA63588728CD3B370021F9D3 /* DetailView.swift in Sources */,
 				BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */,
 				BAF2DF5C28D6555500E1AEF8 /* Country.swift in Sources */,

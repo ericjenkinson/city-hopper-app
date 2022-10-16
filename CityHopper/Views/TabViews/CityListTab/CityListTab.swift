@@ -34,11 +34,9 @@ struct CityListTab: View {
 
 struct CityListTab_Previews: PreviewProvider {
   static private var cities = [City(name: "Munich", image: "imageMunich", country: "Germany",
-                                    description: "Octoberfest!!", reviews: nil, price: 1200.00),
+                                    description: "Octoberfest!!", price: 1200.00),
                                City(name: "Los Angeles", image: "imageLosAngeles", country: "United States",
-                                    description: "Hollywood1",
-                                    reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 5.0,
-                                                     description: "Wonderful!")], price: 2000.00)]
+                                    description: "Hollywood1", price: 2000.00)]
   static private var countries = ["Germany", "United States"]
 
   static var previews: some View {
