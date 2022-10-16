@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
 final class DataRetriever: NSObject, ObservableObject {
@@ -170,16 +171,55 @@ final class DataRetriever: NSObject, ObservableObject {
     savePlist()
     savePlistBinary()
     // loadPlist()
-    persistJSON()
+    await persistJSON()
   }
 
-  func persistJSON() {
+  private func getImage(at url: String) async throws -> Data {
+    guard let imageURL = URL(string: url) else {
+      print("Error encountered (DataRetriever.getData(): \(HTTPErrorCode.invalidURL.message)")
+      throw HTTPErrorCode.invalidURL
+    }
+
+    // swiftlint:disable:next force_try
+    let (data, response) = try! await session.data(from: imageURL)
+
+    do {
+      try getResponseStatus(for: response)
+    } catch let error {
+      print("Error encountered: \(error.localizedDescription)")
+      throw error
+    }
+    return data
+  }
+
+  func persistJSON() async {
     guard let locations = locationData?.results else {
       return
     }
 
     for location in locations {
       print("\(location.name) image: \(location.images[0].sizes.original.url)")
+      let newRow = Location(context: persistenceController.container.viewContext)
+      newRow.id = location.id
+      newRow.name = location.name
+      newRow.country = location.countryID
+      newRow.intro = location.generatedIntro
+      newRow.price = Double(location.price)
+      newRow.score = location.score
+      newRow.latitude = location.coordinates.latitude
+      newRow.longitude = location.coordinates.longitude
+      do {
+        newRow.image = try await getImage(at: location.images[0].sizes.original.url)
+      } catch let error {
+        print("Error encountered: \(error.localizedDescription)")
+      }
+    }
+    // save the row
+    do {
+      try persistenceController.container.viewContext.save()
+    } catch {
+      let nserror = error as NSError
+      fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
     }
   }
 }

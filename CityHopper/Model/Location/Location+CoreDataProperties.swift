@@ -17,6 +17,5 @@ extension Location {
   @NSManaged public var price: Double
   @NSManaged public var latitude: Double
   @NSManaged public var longitude: Double
-  @NSManaged public var image: UIImage?
-  @NSManaged public var thumbnail: UIImage?
+  @NSManaged public var image: Data?
 }
