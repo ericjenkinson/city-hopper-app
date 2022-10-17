@@ -18,6 +18,39 @@ extension Location {
   @NSManaged public var latitude: Double
   @NSManaged public var longitude: Double
   @NSManaged public var image: Data?
+  @NSManaged public var liked: LikedCities?
+
+  // swiftlint:disable:next function_parameter_count
+  static func createWith(id: String,
+                         name: String,
+                         country: String,
+                         intro: String,
+                         score: Double,
+                         price: Double,
+                         latitude: Double,
+                         longitude: Double,
+                         image: Data,
+                         in isLiked: LikedCities,
+                         using managedObjectContext: NSManagedObjectContext) {
+    let newRow = Location(context: managedObjectContext)
+    newRow.id = id
+    newRow.name = name
+    newRow.country = country
+    newRow.intro = intro
+    newRow.score = score
+    newRow.price = price
+    newRow.latitude = latitude
+    newRow.longitude = longitude
+    newRow.image = image
+    newRow.liked = isLiked
+
+    do {
+      try managedObjectContext.save()
+    } catch {
+      let nserror = error as NSError
+      fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+    }
+  }
 
   static func basicFetchRequest() -> FetchRequest<Location> {
     FetchRequest(entity: Location.entity(), sortDescriptors: [])

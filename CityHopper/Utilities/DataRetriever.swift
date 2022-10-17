@@ -68,6 +68,7 @@ final class DataRetriever: NSObject, ObservableObject {
       throw HTTPErrorCode.couldNotCreateURLResponse
     }
     for code in HTTPErrorCode.allCases {
+      // swiftlint:disable:next for_where
       if code.code == httpResponse.statusCode, code.isError {
         print("Error encountered: \(code.message)")
         throw code
@@ -206,27 +207,25 @@ final class DataRetriever: NSObject, ObservableObject {
 
     for location in locations {
       print("\(location.name) image: \(location.images[0].sizes.original.url)")
-      let newRow = Location(context: persistenceController.container.viewContext)
-      newRow.id = location.id
-      newRow.name = location.name
-      newRow.country = location.countryID
-      newRow.intro = location.generatedIntro
-      newRow.price = Double(location.price)
-      newRow.score = location.score
-      newRow.latitude = location.coordinates.latitude
-      newRow.longitude = location.coordinates.longitude
       do {
-        newRow.image = try await getImage(at: location.images[0].sizes.original.url)
+        let likedCity = LikedCities(context: persistenceController.container.viewContext)
+        likedCity.isLiked = Bool.random()
+        let retrievedImage = try await getImage(at: location.images[0].sizes.original.url)
+
+        Location.createWith(id: location.id,
+                            name: location.name,
+                            country: location.countryID,
+                            intro: location.generatedIntro ?? "",
+                            score: location.score,
+                            price: Double(location.price),
+                            latitude: location.coordinates.latitude,
+                            longitude: location.coordinates.longitude,
+                            image: retrievedImage,
+                            in: likedCity,
+                            using: persistenceController.container.viewContext)
       } catch let error {
         print("Error encountered: \(error.localizedDescription)")
       }
-    }
-    // save the row
-    do {
-      try persistenceController.container.viewContext.save()
-    } catch {
-      let nserror = error as NSError
-      fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
     }
   }
 }

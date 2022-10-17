@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct LikesListTab: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+  let likedCitiesFetchRequest = LikedCities.citiesLiked()
+  var likedCities: FetchedResults<LikedCities> {
+    likedCitiesFetchRequest.wrappedValue
+  }
 
-struct LikesListTab_Previews: PreviewProvider {
-    static var previews: some View {
-        LikesListTab()
+  var body: some View {
+    NavigationView {
+      VStack {
+        List {
+          Section {
+            ForEach(likedCities, id: \.self) { city in
+              Text(city.locations?.name ?? "")
+            }
+          }
+        }
+      }
     }
+  }
 }
