@@ -23,7 +23,6 @@ struct UnorderedListLabelText: View {
   }
 }
 
-
 struct UnorderedListLabelText_Previews: PreviewProvider {
     static var previews: some View {
       UnorderedListLabelText(sfSymbol: Constants.SFSymbols.walking, text: Constants.AppData.obBodyLine1)

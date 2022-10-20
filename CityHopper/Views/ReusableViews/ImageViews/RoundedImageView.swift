@@ -18,7 +18,6 @@ struct RoundedImageView: View {
   }
 }
 
-
 struct RoundedImageView_Previews: PreviewProvider {
     static var previews: some View {
       RoundedImageView(systemName: Constants.AppData.buttonSFSymbol)

@@ -13,9 +13,9 @@ struct City {
   let image: String
   let country: String
   let description: String
-  let reviews: [Review]?  
   let price: Double
-  let thingsToDo = ["Sight seeing", "Theater", "Shopping", "Museums", "Live Music", "Arts and Crafts", "Theme Parks", "Convention"]
+  let thingsToDo = ["Sight seeing", "Theater", "Shopping", "Museums",
+                    "Live Music", "Arts and Crafts", "Theme Parks", "Convention"]
 }
 
 extension City: Identifiable { }
@@ -25,4 +25,3 @@ extension City: Equatable {
     return lhs.name == rhs.name && lhs.country == rhs.country
   }
 }
-

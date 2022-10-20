@@ -9,6 +9,5 @@ import Foundation
 
 /// Protocol for the BuilderDelegate
 public protocol TripBuilderDelegate: AnyObject {
-  
   func buildTripWithPartialData(tripName: String, tripDate: Date, firstName: String, lastName: String)
 }

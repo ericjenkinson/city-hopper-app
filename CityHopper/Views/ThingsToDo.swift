@@ -22,6 +22,7 @@ struct ThingsToDo: View {
 
 struct ThingsToDo_Previews: PreviewProvider {
   static var previews: some View {
-    ThingsToDo(thingsToDo: ["Sight seeing", "Theater", "Shopping", "Museums", "Live Music", "Arts and Crafts", "Theme Parks", "Convention"])
+    ThingsToDo(thingsToDo: ["Sight seeing", "Theater", "Shopping", "Museums",
+                            "Live Music", "Arts and Crafts", "Theme Parks", "Convention"])
   }
 }

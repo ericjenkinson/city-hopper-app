@@ -15,7 +15,7 @@ struct CategoryButtonIconAndText: View {
         .resizable()
         .scaledToFit()
         .frame(width: 28.0)
-    
+
       Text(category.name)
         .foregroundColor(Constants.Colors.textColor)
         .font(.caption2)

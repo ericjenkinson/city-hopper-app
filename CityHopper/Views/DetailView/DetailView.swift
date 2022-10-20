@@ -19,7 +19,7 @@ struct DetailView: View {
           .scaledToFill()
           .ignoresSafeArea(.container, edges: .top)
           .padding(.bottom)
-        
+
         VStack {
           Spacer()
           CityDetails(showingThingsToDo: $showingThingsToDo, city: city)
@@ -41,10 +41,10 @@ struct DetailView: View {
   }
 }
 
-
 struct DetailView_Previews: PreviewProvider {
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
-  
+  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany",
+                                 description: "Octoberfest!!", price: 1200.00)
+
   static var previews: some View {
     DetailView(city: city)
     DetailView(city: city)

@@ -12,17 +12,16 @@ struct HorizontalListView: View {
   var body: some View {
     GeometryReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
-        HStack {
-          ForEach(cities.indices, id: \.self) { i in
-            NavigationLink (
-              destination: DetailView(city: cities[i]),
+        HStack(spacing: -20) {
+          ForEach(cities.indices, id: \.self) { index in
+            NavigationLink(
+              destination: DetailView(city: cities[index]),
               label: {
-                LargeListViewElement(city: cities[i])
-                  .frame(width: proxy.size.width * 0.9,
-                         height: proxy.size.height * 0.9)
+                LargeListViewElement(city: cities[index])
+                  .frame(width: proxy.size.width,
+                         height: proxy.size.height)
             })
           }
-          
         }
       }
     }
@@ -30,8 +29,15 @@ struct HorizontalListView: View {
 }
 
 struct HorizontalListView_Previews: PreviewProvider {
-  static private var cities = [City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00), City(name: "Los Angeles", image: "imageLosAngeles", country: "United States", description: "Hollywood1", reviews: [Review(id: UUID(), cityId: UUID(), appUserId: UUID(), rating: 5.0, description: "Wonderful!")], price: 2000.00)]
-  
+  static private var cities = [City(name: "Munich", image: "imageMunich", country: "Germany",
+                                    description: "Octoberfest!!", price: 1200.00),
+                               City(name: "Cairo", image: "imageCairo", country: "Egypt",
+                                    description: "Pyramids!!", price: 1600.00),
+                               City(name: "Los Angeles", image: "imageLosAngeles", country: "United States",
+                                    description: "Hollywood!", price: 2000.00),
+    City(name: "Santorini", image: "imageSantorini", country: "Greece",
+         description: "Blue", price: 900.00)]
+
     static var previews: some View {
         HorizontalListView(cities: cities)
     }

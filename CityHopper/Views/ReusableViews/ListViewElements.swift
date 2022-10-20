@@ -9,20 +9,22 @@ import SwiftUI
 
 struct LargeListViewElement: View {
   var city: City
-  
+
   var body: some View {
-    ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-      Image(city.image)
-        .resizable()
-      VStack {
-        ListElementViewHeader()
-        Spacer()
-        ListElementViewFooter(city: city.name, country: city.country)
+    GeometryReader { geo in
+      ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
+        Image(city.image)
+          .resizable()
+        VStack {
+          ListElementViewHeader()
+          Spacer()
+          ListElementViewFooter(city: city.name, country: city.country)
+        }
       }
+      .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
+      .scaledToFit()
+      .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
-    .scaledToFit()
-    .cornerRadius(Constants.General.listViewElementCornerRadius)
-    .padding()
   }
 }
 
@@ -40,7 +42,6 @@ struct ListElementViewHeader: View {
         UIBlurEffect.View(blurStyle: .regular)
       )
       .cornerRadius(Constants.General.listViewElementCornerRadius)
-      
       Spacer()
       RoundedImageView(systemName: Constants.SFSymbols.heart, textColor: Constants.Colors.listViewElementTextColor)
         .background(
@@ -49,14 +50,14 @@ struct ListElementViewHeader: View {
         .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
     .padding()
-    
+
   }
 }
 
 struct ListElementViewFooter: View {
   let city: String
   let country: String
-  
+
   var body: some View {
     HStack {
       RoundedImageView(systemName: Constants.SFSymbols.location, textColor: Constants.Colors.listViewElementTextColor)
@@ -80,7 +81,7 @@ struct ListElementViewFooter: View {
 
 struct SmallListViewElement: View {
   var city: City
-  
+
   var body: some View {
     Image(city.image)
       .resizable()
@@ -94,14 +95,14 @@ struct SmallListViewElement: View {
           .padding(10)
           .frame(alignment: .bottomLeading),
         alignment: .bottomLeading
-          
       )
   }
 }
 
 struct ListViews_Previews: PreviewProvider {
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany", description: "Octoberfest!!", reviews: nil, price: 1200.00)
-  
+  static private var city = City(name: "Munich", image: "imageCairo", country: "Germany",
+                                 description: "Octoberfest!!", price: 1200.00)
+
   static var previews: some View {
     VStack {
       LargeListViewElement(city: city)

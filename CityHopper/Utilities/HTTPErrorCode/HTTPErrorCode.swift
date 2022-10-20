@@ -8,8 +8,8 @@
 import Foundation
 
 enum HTTPErrorCode: Error, CaseIterable {
-  
-  case ok
+
+  case httpOK
   case created
   case noContent
   case notModified
@@ -22,11 +22,11 @@ enum HTTPErrorCode: Error, CaseIterable {
   case invalidURL
   case nonConfiguredCode
   case couldNotCreateURLResponse
-  
-  ///code
+
+  /// code
   var code: Int {
     switch self {
-    case .ok:
+    case .httpOK:
       return 200
     case .created:
       return 201
@@ -54,11 +54,11 @@ enum HTTPErrorCode: Error, CaseIterable {
       return 4002
     }
   }
-  
-  ///message
+
+  /// message
   var message: String {
     switch self {
-    case .ok:
+    case .httpOK:
       return "200 OK"
     case .created:
       return "201 Created"
@@ -86,7 +86,7 @@ enum HTTPErrorCode: Error, CaseIterable {
       return "4002 Could not create URLResponse"
     }
   }
-  
+
   var isError: Bool {
     if self.code >= 300 {
       return true

@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct HomeScreen: View {
-  
-  @State var showSplashScreen = true
-  
+  // MARK: - Properties
+  private var dataRetriever = DataRetriever()
+
+  // MARK: - State Properties
+  @State var showLaunchScreen = true
+
   var body: some View {
     ZStack {
-      if showSplashScreen {
-        SplashScreen()
-          .opacity(showSplashScreen ? 1 : 0)
-          .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-              withAnimation() {
-                showSplashScreen.toggle()
+      HomeTabView()
+        .opacity(showLaunchScreen ? 0 : 1)
+
+      LaunchScreen()
+        .opacity(showLaunchScreen ? 1 : 0)
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+              withAnimation(.easeOut(duration: 2)) {
+                showLaunchScreen = false
               }
             }
           }
-      } else {
-        HomeTabView()
       }
-    }
   }
 }
 

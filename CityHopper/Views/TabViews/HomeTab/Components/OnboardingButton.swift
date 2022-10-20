@@ -15,7 +15,7 @@ struct OnboardingButton: View {
       withAnimation {
         onboardingIsVisible.toggle()
       }
-    }, label:  {
+    }, label: {
       RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
     })
     .sheet(isPresented: $onboardingIsVisible) {
