@@ -174,11 +174,6 @@ final class DataRetriever: NSObject, ObservableObject {
     } catch let error {
       print(error)
     }
-
-    saveJSON()
-    savePlist()
-    savePlistBinary()
-    // loadPlist()
     await persistJSON()
   }
 
