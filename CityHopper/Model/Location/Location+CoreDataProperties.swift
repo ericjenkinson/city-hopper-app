@@ -72,4 +72,8 @@ extension Location {
     let locationScoreSortDescriptor = NSSortDescriptor(key: "score", ascending: false)
     return FetchRequest(entity: Location.entity(), sortDescriptors: [locationScoreSortDescriptor])
   }
+
+  @nonobjc public class func fetchRequest() -> NSFetchRequest<Location> {
+    return NSFetchRequest<Location>(entityName: "Location")
+  }
 }

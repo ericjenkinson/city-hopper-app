@@ -11,17 +11,30 @@ import SwiftUI
 
 class TestCoreDataStack: XCTestCase {
 
-//  var context = PersistenceController.unitTests.container.viewContext
+  var context = PersistenceController.unitTests.container.viewContext
 
-//  override func setUpWithError() throws {
-//    //try await super.setUp()
-//    context = PersistenceController.unitTests.container.viewContext
-//  }
-//
-//  override func tearDownWithError() throws {
-//    // super.tearDown()
-//    context.
-//  }
+  override func setUp() async throws {
+    try await super.setUp()
+    context = PersistenceController.unitTests.container.viewContext
+  }
+
+  override func tearDown() {
+    super.tearDown()
+    flushData()
+  }
+
+  private func flushData() {
+    let context = PersistenceController.unitTests.container.viewContext
+    let likedCitiesFetchRequest: NSFetchRequest<NSFetchRequestResult> = LikedCities.fetchRequest()
+    let likedCitiesDeleteRequest = NSBatchDeleteRequest(fetchRequest: likedCitiesFetchRequest)
+
+    do {
+      try context.execute(likedCitiesDeleteRequest)
+      try context.save()
+    } catch {
+      print("failed flushing data")
+    }
+  }
 
   func test_Location_LikedCity_Relationship() {
     let context = PersistenceController.unitTests.container.viewContext
