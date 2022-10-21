@@ -55,7 +55,14 @@
 		BAC55DB428FCAB4B004652DF /* CoreDataListElementViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DB328FCAB4B004652DF /* CoreDataListElementViewHeader.swift */; };
 		BAC55DC128FCC0E5004652DF /* LikedCities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DBF28FCC0E5004652DF /* LikedCities+CoreDataClass.swift */; };
 		BAC55DC228FCC0E5004652DF /* LikedCities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DC028FCC0E5004652DF /* LikedCities+CoreDataProperties.swift */; };
-		BAC55DCA2901C37F004652DF /* CityHopperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DC92901C37F004652DF /* CityHopperTests.swift */; };
+		BAC55DD12901C501004652DF /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DD02901C501004652DF /* TestCoreDataStack.swift */; };
+		BAC55DD22901CA99004652DF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA870528FB491500ADC200 /* Persistence.swift */; };
+		BAC55DD42901CABD004652DF /* TriposoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86DF28F70D8500ADC200 /* TriposoLocation.swift */; };
+		BAC55DD52901CAC2004652DF /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */; };
+		BAC55DD62901CAC7004652DF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */; };
+		BAC55DD72901CB35004652DF /* LikedCities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DBF28FCC0E5004652DF /* LikedCities+CoreDataClass.swift */; };
+		BAC55DD82901CB38004652DF /* LikedCities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DC028FCC0E5004652DF /* LikedCities+CoreDataProperties.swift */; };
+		BAC55DD929023F25004652DF /* Locations.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BAAA870228FB489D00ADC200 /* Locations.xcdatamodeld */; };
 		BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */; };
 		BAEB2F3F28B13C4C002FBBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */; };
 		BAEB2F4228B13C4C002FBBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAEB2F4128B13C4C002FBBAD /* Preview Assets.xcassets */; };
@@ -134,7 +141,7 @@
 		BAC55DBF28FCC0E5004652DF /* LikedCities+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BAC55DC028FCC0E5004652DF /* LikedCities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAC55DC72901C37F004652DF /* CityHopperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityHopperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BAC55DC92901C37F004652DF /* CityHopperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperTests.swift; sourceTree = "<group>"; };
+		BAC55DD02901C501004652DF /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		BAEB2F3728B13C47002FBBAD /* City Hopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Hopper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEB2F3A28B13C47002FBBAD /* CityHopperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHopperApp.swift; sourceTree = "<group>"; };
 		BAEB2F3E28B13C4C002FBBAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -430,7 +437,7 @@
 		BAC55DC82901C37F004652DF /* CityHopperTests */ = {
 			isa = PBXGroup;
 			children = (
-				BAC55DC92901C37F004652DF /* CityHopperTests.swift */,
+				BAC55DD02901C501004652DF /* TestCoreDataStack.swift */,
 			);
 			path = CityHopperTests;
 			sourceTree = "<group>";
@@ -644,7 +651,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC55DCA2901C37F004652DF /* CityHopperTests.swift in Sources */,
+				BAC55DD52901CAC2004652DF /* Location+CoreDataClass.swift in Sources */,
+				BAC55DD12901C501004652DF /* TestCoreDataStack.swift in Sources */,
+				BAC55DD929023F25004652DF /* Locations.xcdatamodeld in Sources */,
+				BAC55DD42901CABD004652DF /* TriposoLocation.swift in Sources */,
+				BAC55DD22901CA99004652DF /* Persistence.swift in Sources */,
+				BAC55DD72901CB35004652DF /* LikedCities+CoreDataClass.swift in Sources */,
+				BAC55DD62901CAC7004652DF /* Location+CoreDataProperties.swift in Sources */,
+				BAC55DD82901CB38004652DF /* LikedCities+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
