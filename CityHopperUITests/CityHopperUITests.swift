@@ -39,9 +39,4 @@ class CityHopperUITests: XCTestCase {
     app.tables/*@START_MENU_TOKEN@*/.buttons["Save Trip"]/*[[".cells[\"Save Trip\"].buttons[\"Save Trip\"]",".buttons[\"Save Trip\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
     XCTAssert(app.tabBars["Tab Bar"].buttons["Trips"].exists)
   }
-
-  func testExample() throws {
-    XCUIApplication().scrollViews.otherElements.buttons["4.5, Munich, , Germany"].tap()
-  }
-
 }

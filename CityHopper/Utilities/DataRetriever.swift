@@ -11,6 +11,7 @@ import UIKit
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
 final class DataRetriever: NSObject, ObservableObject {
+
   // MARK: - Private Properties
   let persistenceController = PersistenceController.shared
   private let session: URLSession
@@ -18,7 +19,7 @@ final class DataRetriever: NSObject, ObservableObject {
   private let triposoAccount: String?
   private let triposoToken: String?
   // swiftlint:disable:next line_length
-  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
+  var triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
 
   private var locationPlist = URL(fileURLWithPath: "Location",
                             relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
@@ -85,7 +86,7 @@ final class DataRetriever: NSObject, ObservableObject {
     return request
   }
 
-  func saveJSON() {
+  func saveJSON() throws {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
 
@@ -93,12 +94,12 @@ final class DataRetriever: NSObject, ObservableObject {
       let locationData = try encoder.encode(locationData)
 
       try locationData.write(to: locationJSON, options: .atomicWrite)
-    } catch let error {
-      print(error)
+    } catch {
+      throw DataRetrieverErrors.errorSavingJSON
     }
   }
 
-  func savePlist() {
+  func savePlist() throws {
     let encoder = PropertyListEncoder()
     encoder.outputFormat = .xml
 
@@ -106,12 +107,12 @@ final class DataRetriever: NSObject, ObservableObject {
       let locationData = try encoder.encode(locationData)
 
       try locationData.write(to: locationPlist, options: .atomicWrite)
-    } catch let error {
-      print(error)
+    } catch {
+      throw DataRetrieverErrors.errorSavingPlist
     }
   }
 
-  func savePlistBinary() {
+  func savePlistBinary() throws {
     let encoder = PropertyListEncoder()
     encoder.outputFormat = .binary
 
@@ -119,12 +120,12 @@ final class DataRetriever: NSObject, ObservableObject {
       let locationData = try encoder.encode(locationData)
 
       try locationData.write(to: locationPlistBinary, options: .atomicWrite)
-    } catch let error {
-      print(error)
+    } catch {
+      throw DataRetrieverErrors.errorSavingBinaryPlist
     }
   }
 
-  func loadPlist() {
+  func loadPlist() throws {
     guard FileManager.default.fileExists(atPath: locationPlist.path) else {
       return
     }
@@ -134,8 +135,8 @@ final class DataRetriever: NSObject, ObservableObject {
     do {
       let locationData = try Data(contentsOf: locationPlist)
       locationDataPlist = try decoder.decode(TriposoLocation.self, from: locationData)
-    } catch let error {
-      print(error)
+    } catch {
+      throw DataRetrieverErrors.errorLoadingPlist
     }
     print(locationDataPlist!)
   }
@@ -157,24 +158,32 @@ final class DataRetriever: NSObject, ObservableObject {
       (data, response) = try await session.data(for: urlRequest)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingData
     }
 
     do {
       try getResponseStatus(for: response)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingResponse
     }
 
     let jsonDecoder = JSONDecoder()
 
     do {
       locationData = try jsonDecoder.decode(TriposoLocation.self, from: data)
-    } catch let error {
-      print(error)
+    } catch {
+      throw DataRetrieverErrors.errorDecodingJSON
     }
-    await persistJSON()
+    do {
+      try savePlist()
+      try savePlistBinary()
+      try loadPlist()
+      try saveJSON()
+      try await persistJSON()
+    } catch {
+      throw DataRetrieverErrors.errorInSaveBlock
+    }
   }
 
   private func getImage(at url: String) async throws -> Data {
@@ -190,14 +199,14 @@ final class DataRetriever: NSObject, ObservableObject {
       try getResponseStatus(for: response)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingResponse
     }
     return data
   }
 
-  func persistJSON() async {
+  func persistJSON() async throws {
     guard let locations = locationData?.results else {
-      return
+      throw DataRetrieverErrors.errorNoLocationsToPersist
     }
 
     for location in locations {
@@ -218,8 +227,8 @@ final class DataRetriever: NSObject, ObservableObject {
                             image: retrievedImage,
                             in: likedCity,
                             using: persistenceController.container.viewContext)
-      } catch let error {
-        print("Error encountered: \(error.localizedDescription)")
+      } catch {
+        throw DataRetrieverErrors.errorWritingToCoreData
       }
     }
   }
