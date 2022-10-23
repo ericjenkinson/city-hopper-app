@@ -186,7 +186,7 @@ final class DataRetriever: NSObject, ObservableObject {
     }
   }
 
-  private func getImage(at url: String) async throws -> Data {
+  func getImage(at url: String) async throws -> Data {
     guard let imageURL = URL(string: url) else {
       print("Error encountered (DataRetriever.getData(): \(HTTPErrorCode.invalidURL.message)")
       throw HTTPErrorCode.invalidURL
