@@ -23,6 +23,13 @@ struct PersistenceController {
     }
     return result
   }()
+  // used by Unit test
+  static var unitTests: PersistenceController = {
+    let result = PersistenceController(inMemory: true)
+    let viewContext = result.container.viewContext
+
+    return result
+  }()
 
   let container: NSPersistentContainer
 
