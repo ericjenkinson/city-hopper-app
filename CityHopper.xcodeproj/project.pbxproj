@@ -244,6 +244,7 @@
 		BA5B482828B1C55B00308D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAB855002909BE4900E45274 /* Trip */,
 				BAC55DBA28FCBF01004652DF /* LikedCity */,
 				BA68374028FB9B71006548F8 /* Location */,
 				BAFF85E028DE1C6000A13F11 /* Builders */,
@@ -387,6 +388,13 @@
 				BA5B482928B1C57300308D00 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BAB855002909BE4900E45274 /* Trip */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Trip;
 			sourceTree = "<group>";
 		};
 		BAC55DB028FCAA6F004652DF /* ListViewElements */ = {

@@ -40,8 +40,8 @@ final class TripBuilder {
   }
 
   public func build() -> Trip {
-    return Trip(id: UUID(), appUserId: tripOwnerId, name: tripName,
-                date: tripDate, members: tripMembers, cities: tripCities)
+    return Trip(name: tripName,
+                date: tripDate, members: tripMembers)
   }
 
 }
