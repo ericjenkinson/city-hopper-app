@@ -13,7 +13,7 @@ struct TripListTab: View {
 
   var body: some View {
     VStack {
-      List(trips, id: \.id) { trip in
+      List(trips, id: \.name) { trip in
         Text(trip.name)
       }
       Button(action: {
@@ -32,9 +32,7 @@ struct TripListTab: View {
 
 struct TripListTab_Previews: PreviewProvider {
   static private var trips = Binding.constant([
-    Trip(id: UUID(), appUserId: UUID(), name: "Trip to Munich", date: Date(), members: 1,
-         cities: [City(name: "Munich", image: "imageMunich", country: "Germany",
-                       description: "Octoberfest!!", price: 1200.00)])])
+    Trip(name: "Trip to Munich", date: Date(), members: 1)])
 
   static var previews: some View {
     TripListTab(trips: trips)

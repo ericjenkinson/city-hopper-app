@@ -16,48 +16,63 @@ struct NewTripView: View {
   @State private var tripDate: Date = Date()
   @State private var selectedCity = "Munich"
   @State private var groupSize = 1
-  @State private var splitBill = false
   @State private var firstName = ""
   @State private var lastName = ""
-    var body: some View {
-      NavigationView {
-        Form {
-          Section(header: Text("Trip Info")) {
-            TextField("Trip Name", text: $tripName)
-            DatePicker("Trip Date", selection: $tripDate, displayedComponents: .date)
-          }
-          Section(header: Text("Cities")) {
-            Picker("City", selection: $selectedCity) {
-              ForEach(cities.cityNames(), id: \.self) {
-                Text($0)
-              }
+  var pricePerPerson: String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+
+    let price = cities.getPrice(cityName: selectedCity)
+
+    return formatter.string(from: NSNumber(value: price)) ?? "$0"
+  }
+  var totalCost: String {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
+
+    let price = cities.getPrice(cityName: selectedCity) * Double(groupSize)
+    return formatter.string(from: NSNumber(value: price)) ?? "$0"
+  }
+
+  var body: some View {
+    NavigationView {
+      Form {
+        Section(header: Text("Trip Info")) {
+          TextField("Trip Name", text: $tripName)
+          DatePicker("Trip Date", selection: $tripDate, displayedComponents: .date)
+        }
+        Section(header: Text("Cities")) {
+          Picker("City", selection: $selectedCity) {
+            ForEach(cities.cityNames(), id: \.self) {
+              Text($0)
             }
           }
-          Section(header: Text("Group")) {
-            Stepper("Group size: \(groupSize)", value: $groupSize, in: 1...20)
-            Toggle("Split costs", isOn: $splitBill)
-              .disabled(groupSize == 1)
-          }
-          Section {
-            Button(action: {
-              withAnimation {
-                appUser.buildTripWithPartialData(tripName: tripName, tripDate:
-                                                  tripDate, firstName: firstName,
-                                                 lastName: lastName)
-                self.mode.wrappedValue.dismiss()
-              }
-            }, label: {
-              Text("Save Trip")
-            })
-          }
+        }
+        Section(header: Text("Group")) {
+          Stepper("Group size: \(groupSize)", value: $groupSize, in: 1...20)
+          Text("Cost per person: \(pricePerPerson)")
+          Text("Total cost: \(totalCost)")
+        }
+        Section {
+          Button(action: {
+            withAnimation {
+              appUser.buildTripWithPartialData(tripName: tripName, tripDate:
+                                                tripDate, firstName: firstName,
+                                               lastName: lastName)
+              self.mode.wrappedValue.dismiss()
+            }
+          }, label: {
+            Text("Save Trip")
+          })
         }
       }
     }
+  }
 }
 
 struct NewTripView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTripView()
-        .environmentObjectModifiers()
-    }
+  static var previews: some View {
+    NewTripView()
+      .environmentObjectModifiers()
+  }
 }
