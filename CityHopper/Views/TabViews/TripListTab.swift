@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct TripListTab: View {
-  @Binding var trips: [Trip]
+  @Binding var sTrips: [Trip]
   @State var addingNewTrip = false
+
+  @Environment(\.managedObjectContext) private var viewContext
+  @FetchRequest(sortDescriptors: [])
+  private var trips: FetchedResults<Trips>
 
   var body: some View {
     VStack {
-      List(trips, id: \.name) { trip in
+      List(sTrips, id: \.name) { trip in
         Text(trip.name)
       }
       Button(action: {
@@ -35,6 +39,6 @@ struct TripListTab_Previews: PreviewProvider {
     Trip(name: "Trip to Munich", date: Date(), members: 1)])
 
   static var previews: some View {
-    TripListTab(trips: trips)
+    TripListTab(sTrips: trips)
   }
 }

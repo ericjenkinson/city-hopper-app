@@ -11,7 +11,6 @@ struct EnvironmentObjectModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .environmentObject(CityViewModel(loadTestData: true))
-      .environmentObject(TripViewModel(loadTestData: true))
       .environmentObject(UserViewModel(loadTestData: true))
   }
 }

@@ -46,6 +46,8 @@
 		BAB8068128BC012A009E81E4 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068028BC012A009E81E4 /* Trip.swift */; };
 		BAB8068528BC0166009E81E4 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068428BC0166009E81E4 /* City.swift */; };
 		BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8068628BC8321009E81E4 /* CityViewModel.swift */; };
+		BAB855022909C12B00E45274 /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB855012909C12B00E45274 /* Trips+CoreDataClass.swift */; };
+		BAB855042909C14A00E45274 /* Trips+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB855032909C14A00E45274 /* Trips+CoreDataProperties.swift */; };
 		BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */; };
 		BAC55DA728FC577E004652DF /* CoreDataHorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA628FC577E004652DF /* CoreDataHorizontalListView.swift */; };
 		BAC55DA928FC58A3004652DF /* CoreDataDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC55DA828FC58A3004652DF /* CoreDataDetailView.swift */; };
@@ -67,7 +69,7 @@
 		BAFF85DF28DBE4FC00A13F11 /* TripBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */; };
 		BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E128DE370000A13F11 /* TripListTab.swift */; };
 		BAFF85E428DE3C6C00A13F11 /* LikesListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E328DE3C6C00A13F11 /* LikesListTab.swift */; };
-		BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E528DE40E600A13F11 /* TripViewModel.swift */; };
+		BAFF85E628DE40E600A13F11 /* TripsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFF85E528DE40E600A13F11 /* TripsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +115,8 @@
 		BAB8068028BC012A009E81E4 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		BAB8068428BC0166009E81E4 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		BAB8068628BC8321009E81E4 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		BAB855012909C12B00E45274 /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BAB855032909C14A00E45274 /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BAC55DA628FC577E004652DF /* CoreDataHorizontalListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHorizontalListView.swift; sourceTree = "<group>"; };
 		BAC55DA828FC58A3004652DF /* CoreDataDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDetailView.swift; sourceTree = "<group>"; };
@@ -135,7 +139,7 @@
 		BAFF85DE28DBE4FC00A13F11 /* TripBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripBuilder.swift; sourceTree = "<group>"; };
 		BAFF85E128DE370000A13F11 /* TripListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripListTab.swift; sourceTree = "<group>"; };
 		BAFF85E328DE3C6C00A13F11 /* LikesListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesListTab.swift; sourceTree = "<group>"; };
-		BAFF85E528DE40E600A13F11 /* TripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewModel.swift; sourceTree = "<group>"; };
+		BAFF85E528DE40E600A13F11 /* TripsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +248,7 @@
 		BA5B482828B1C55B00308D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BAB855002909BE4900E45274 /* Trip */,
+				BAB855002909BE4900E45274 /* Trips */,
 				BAC55DBA28FCBF01004652DF /* LikedCity */,
 				BA68374028FB9B71006548F8 /* Location */,
 				BAFF85E028DE1C6000A13F11 /* Builders */,
@@ -390,11 +394,13 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		BAB855002909BE4900E45274 /* Trip */ = {
+		BAB855002909BE4900E45274 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				BAB855012909C12B00E45274 /* Trips+CoreDataClass.swift */,
+				BAB855032909C14A00E45274 /* Trips+CoreDataProperties.swift */,
 			);
-			path = Trip;
+			path = Trips;
 			sourceTree = "<group>";
 		};
 		BAC55DB028FCAA6F004652DF /* ListViewElements */ = {
@@ -486,7 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB8068628BC8321009E81E4 /* CityViewModel.swift */,
-				BAFF85E528DE40E600A13F11 /* TripViewModel.swift */,
+				BAFF85E528DE40E600A13F11 /* TripsViewModel.swift */,
 				BA3CF11128DE4F8F00C7D1B4 /* UserViewModel.swift */,
 			);
 			path = ViewModel;
@@ -602,8 +608,9 @@
 				BAA3253E28E5F01C00E27F50 /* CityDetails.swift in Sources */,
 				BAB8068728BC8321009E81E4 /* CityViewModel.swift in Sources */,
 				BA3CF11B28E0452600C7D1B4 /* TripBuilderDelegate.swift in Sources */,
-				BAFF85E628DE40E600A13F11 /* TripViewModel.swift in Sources */,
+				BAFF85E628DE40E600A13F11 /* TripsViewModel.swift in Sources */,
 				BAFF85E228DE370000A13F11 /* TripListTab.swift in Sources */,
+				BAB855022909C12B00E45274 /* Trips+CoreDataClass.swift in Sources */,
 				BAA23A9328E8B65C0023D09E /* ButtonText.swift in Sources */,
 				BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */,
 				BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */,
@@ -629,6 +636,7 @@
 				BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */,
 				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
 				BAAA870628FB491500ADC200 /* Persistence.swift in Sources */,
+				BAB855042909C14A00E45274 /* Trips+CoreDataProperties.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
