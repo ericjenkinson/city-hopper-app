@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct TripListTab: View {
-  @Binding var sTrips: [Trip]
   @State var addingNewTrip = false
 
-  @Environment(\.managedObjectContext) private var viewContext
-  @FetchRequest(sortDescriptors: [])
-  private var trips: FetchedResults<Trips>
+  @EnvironmentObject var tripsVM: TripsViewModel
 
   var body: some View {
     VStack {
-      List(sTrips, id: \.name) { trip in
-        Text(trip.name)
+      if tripsVM.isEmpty() {
+        Text("No trips!")
+      } else {
+        List {
+          ForEach(tripsVM.trips, id: \.name) { trip in
+            Text(trip.name)
+          }
+        }
       }
       Button(action: {
         withAnimation {
@@ -34,11 +37,12 @@ struct TripListTab: View {
   }
 }
 
-struct TripListTab_Previews: PreviewProvider {
-  static private var trips = Binding.constant([
-    Trip(name: "Trip to Munich", date: Date(), members: 1)])
-
-  static var previews: some View {
-    TripListTab(sTrips: trips)
-  }
-}
+// struct TripListTab_Previews: PreviewProvider {
+//  static private var trips = Binding.constant([
+//    Trip(name: "Trip to Munich", date: Date(), members: 1)])
+//
+//  static var previews: some View {
+//    TripListTab(tripsVM: trips)
+//      .environmentObject(TripsViewModel())
+//  }
+// }

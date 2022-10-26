@@ -14,7 +14,7 @@ struct HomeTabView: View {
 
   @State var defaultTab = Tabs.tab1
   @EnvironmentObject var destinations: CityViewModel
-  @EnvironmentObject var appUser: UserViewModel
+  @EnvironmentObject var tripsVM: TripsViewModel
 
   var body: some View {
     TabView(selection: $defaultTab) {
@@ -36,12 +36,12 @@ struct HomeTabView: View {
           Text("Likes")
         }
         .tag(Tabs.tab3)
-      TripListTab(trips: $appUser.appUser.trips)
+      TripListTab()
         .tabItem {
           Image(systemName: Constants.SFSymbols.tripList)
           Text("Trips")
         }
-        .badge(appUser.numberOfTrips)
+        .badge(tripsVM.numberOfTrips())
         .tag(Tabs.tab4)
       ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
         .tabItem {

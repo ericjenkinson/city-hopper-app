@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NewTripView: View {
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-  @EnvironmentObject var appUser: UserViewModel
   @EnvironmentObject var cities: CityViewModel
+  @EnvironmentObject var tripsVM: TripsViewModel
 
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
@@ -18,6 +18,7 @@ struct NewTripView: View {
   @State private var groupSize = 1
   @State private var firstName = ""
   @State private var lastName = ""
+
   var pricePerPerson: String {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
@@ -56,9 +57,13 @@ struct NewTripView: View {
         Section {
           Button(action: {
             withAnimation {
-              appUser.buildTripWithPartialData(tripName: tripName, tripDate:
-                                                tripDate, firstName: firstName,
-                                               lastName: lastName)
+              tripsVM.newTrip(tripName: tripName,
+                              tripDate: tripDate,
+                              tripCity: selectedCity,
+                              groupSize: Int64(groupSize),
+                              costPerPerson: Double(pricePerPerson) ?? 0.0,
+                              totalCost: Double(totalCost) ?? 0.0,
+                              tripTaken: false)
               self.mode.wrappedValue.dismiss()
             }
           }, label: {
