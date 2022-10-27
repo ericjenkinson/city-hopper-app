@@ -17,6 +17,7 @@ struct CityHopperApp: App {
       HomeScreen()
         .environmentObject(CityViewModel(loadTestData: true))
         .environmentObject(TripsViewModel())
+        .environmentObject(LocationViewModel())
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
   }

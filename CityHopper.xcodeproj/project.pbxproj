@@ -25,6 +25,7 @@
 		BA68374228FB9B9B006548F8 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */; };
 		BA7C513D2909E4CC001C9D5E /* Trips+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C513C2909E4CC001C9D5E /* Trips+CoreDataClass.swift */; };
 		BA7C513F2909E4D2001C9D5E /* Trips+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C513E2909E4D2001C9D5E /* Trips+CoreDataProperties.swift */; };
+		BA7C5143290B331A001C9D5E /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C5142290B331A001C9D5E /* LocationViewModel.swift */; };
 		BAA23A8728E78E700023D09E /* HorizontalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8628E78E700023D09E /* HorizontalListView.swift */; };
 		BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */; };
 		BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */; };
@@ -89,6 +90,7 @@
 		BA68374128FB9B9B006548F8 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BA7C513C2909E4CC001C9D5E /* Trips+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BA7C513E2909E4D2001C9D5E /* Trips+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trips+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BA7C5142290B331A001C9D5E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		BAA23A8628E78E700023D09E /* HorizontalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListView.swift; sourceTree = "<group>"; };
 		BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonList.swift; sourceTree = "<group>"; };
 		BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageViewStroked.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			children = (
 				BAB8068628BC8321009E81E4 /* CityViewModel.swift */,
 				BAFF85E528DE40E600A13F11 /* TripsViewModel.swift */,
+				BA7C5142290B331A001C9D5E /* LocationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,
 				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BA68374228FB9B9B006548F8 /* Location+CoreDataClass.swift in Sources */,
+				BA7C5143290B331A001C9D5E /* LocationViewModel.swift in Sources */,
 				BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */,
 				BAF2DF6828D7C98200E1AEF8 /* ThingsToDo.swift in Sources */,
 				BA350B2C28F33F5C008B3FFA /* AnimatedAppName.swift in Sources */,
