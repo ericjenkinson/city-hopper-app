@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class CityViewModel: ObservableObject {
   @Published var cities: [City] = []
 

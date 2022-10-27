@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 ///// Information detailing a trip.
+@MainActor
 class TripsViewModel: ObservableObject {
   let viewContext = PersistenceController.shared.container.viewContext
 
