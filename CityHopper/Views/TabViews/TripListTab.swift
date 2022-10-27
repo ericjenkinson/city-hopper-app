@@ -21,6 +21,7 @@ struct TripListTab: View {
           ForEach(tripsVM.trips, id: \.name) { trip in
             Text(trip.name)
           }
+          .onDelete(perform: tripsVM.deleteTrip)
         }
       }
       Button(action: {

@@ -69,4 +69,11 @@ class TripsViewModel: ObservableObject {
     coreDataSave()
   }
 
+  func deleteTrip(indexSet: IndexSet) {
+    guard let index = indexSet.first else { return }
+    let entity = trips[index]
+    viewContext.delete(entity)
+    coreDataSave()
+
+  }
 }
