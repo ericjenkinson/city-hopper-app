@@ -22,11 +22,6 @@ struct HomeScreen: View {
       LaunchScreen()
         .opacity(showLaunchScreen ? 1 : 0)
         .onAppear {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//              withAnimation(.easeOut(duration: 2)) {
-//                showLaunchScreen = false
-//              }
-//            }
             Task {
               try? await Task.sleep(nanoseconds: 10 * 1_000_000_000)
               await MainActor.run {
