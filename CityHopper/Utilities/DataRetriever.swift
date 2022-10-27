@@ -12,7 +12,6 @@ import UIKit
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
 final class DataRetriever: NSObject, ObservableObject {
   // MARK: - Private Properties
-  let persistenceController = PersistenceController.shared
   private let session: URLSession
   private let sessionConfiguration: URLSessionConfiguration
   private let triposoAccount: String?
@@ -20,16 +19,8 @@ final class DataRetriever: NSObject, ObservableObject {
   // swiftlint:disable:next line_length
   private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
 
-  private var locationPlist = URL(fileURLWithPath: "Location",
-                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("plist")
-  private var locationPlistBinary = URL(fileURLWithPath: "Location",
-                            relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("binary")
-
   // MARK: - Published Properties
   @Published var locationData: TriposoLocation?
-  @Published var locationJSON = URL(fileURLWithPath: "Location",
-                           relativeTo: FileManager.documentsDirectoryURL).appendingPathExtension("json")
-  var locationDataPlist: TriposoLocation?
 
   // MARK: - Initialization
   override init() {
@@ -38,26 +29,6 @@ final class DataRetriever: NSObject, ObservableObject {
     self.triposoAccount = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_ACCOUNT") as? String
     self.triposoToken = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_TOKEN") as? String
     super.init()
-    self.createAppDirectory()
-  }
-
-  // MARK: - Methods
-  private func createAppDirectory() {
-    let appDocumentLocation = FileManager.documentsDirectoryURL.appendingPathComponent("CityHopper")
-
-    do {
-      if !FileManager.default.fileExists(atPath: appDocumentLocation.path) {
-        try FileManager.default.createDirectory(at: appDocumentLocation, withIntermediateDirectories: false)
-      }
-      locationJSON = URL(fileURLWithPath: "Location",
-                         relativeTo: appDocumentLocation).appendingPathExtension("json")
-      locationPlist = URL(fileURLWithPath: "Location",
-                                relativeTo: appDocumentLocation).appendingPathExtension("plist")
-      locationPlistBinary = URL(fileURLWithPath: "Location",
-                                relativeTo: appDocumentLocation).appendingPathExtension("binary")
-    } catch {
-      print(error)
-    }
   }
 
   /// Throws an error if the HTTPURLResponse could not be created or it the
@@ -83,61 +54,6 @@ final class DataRetriever: NSObject, ObservableObject {
     request.setValue(triposoToken, forHTTPHeaderField: "X-Triposo-Token")
 
     return request
-  }
-
-  func saveJSON() {
-    let encoder = JSONEncoder()
-    encoder.outputFormatting = .prettyPrinted
-
-    do {
-      let locationData = try encoder.encode(locationData)
-
-      try locationData.write(to: locationJSON, options: .atomicWrite)
-    } catch let error {
-      print(error)
-    }
-  }
-
-  func savePlist() {
-    let encoder = PropertyListEncoder()
-    encoder.outputFormat = .xml
-
-    do {
-      let locationData = try encoder.encode(locationData)
-
-      try locationData.write(to: locationPlist, options: .atomicWrite)
-    } catch let error {
-      print(error)
-    }
-  }
-
-  func savePlistBinary() {
-    let encoder = PropertyListEncoder()
-    encoder.outputFormat = .binary
-
-    do {
-      let locationData = try encoder.encode(locationData)
-
-      try locationData.write(to: locationPlistBinary, options: .atomicWrite)
-    } catch let error {
-      print(error)
-    }
-  }
-
-  func loadPlist() {
-    guard FileManager.default.fileExists(atPath: locationPlist.path) else {
-      return
-    }
-
-    let decoder = PropertyListDecoder()
-
-    do {
-      let locationData = try Data(contentsOf: locationPlist)
-      locationDataPlist = try decoder.decode(TriposoLocation.self, from: locationData)
-    } catch let error {
-      print(error)
-    }
-    print(locationDataPlist!)
   }
 
   func getData() async throws {
@@ -170,16 +86,15 @@ final class DataRetriever: NSObject, ObservableObject {
     let jsonDecoder = JSONDecoder()
 
     do {
-      locationData = try jsonDecoder.decode(TriposoLocation.self, from: data)
+      let parsedJSON = try jsonDecoder.decode(TriposoLocation.self, from: data)
+      await MainActor.run {
+        locationData = parsedJSON
+      }
     } catch let error {
       print(error)
     }
 
-    saveJSON()
-    savePlist()
-    savePlistBinary()
-    // loadPlist()
-    await persistJSON()
+    await saveJSONtoCoreData()
   }
 
   private func getImage(at url: String) async throws -> Data {
@@ -200,15 +115,16 @@ final class DataRetriever: NSObject, ObservableObject {
     return data
   }
 
-  func persistJSON() async {
+  func saveJSONtoCoreData() async {
     guard let locations = locationData?.results else {
       return
     }
 
+    let viewContext = PersistenceController.shared.container.viewContext
     for location in locations {
       print("\(location.name) image: \(location.images[0].sizes.original.url)")
       do {
-        let likedCity = LikedCities(context: persistenceController.container.viewContext)
+        let likedCity = LikedCities(context: viewContext)
         likedCity.isLiked = Bool.random()
         let retrievedImage = try await getImage(at: location.images[0].sizes.original.url)
 
@@ -222,7 +138,7 @@ final class DataRetriever: NSObject, ObservableObject {
                             longitude: location.coordinates.longitude,
                             image: retrievedImage,
                             in: likedCity,
-                            using: persistenceController.container.viewContext)
+                            using: viewContext)
       } catch let error {
         print("Error encountered: \(error.localizedDescription)")
       }
