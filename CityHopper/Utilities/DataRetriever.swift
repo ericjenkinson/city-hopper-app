@@ -11,13 +11,14 @@ import UIKit
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
 final class DataRetriever: NSObject, ObservableObject {
+
   // MARK: - Private Properties
   private let session: URLSession
   private let sessionConfiguration: URLSessionConfiguration
   private let triposoAccount: String?
   private let triposoToken: String?
   // swiftlint:disable:next line_length
-  private let triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
+  var triposoLocationURLString = "https://www.triposo.com/api/20220705/location.json?fields=id,name,country_id,score,coordinates,images,generated_intro&count=15&type=city"
 
   // MARK: - Published Properties
   @Published var locationData: TriposoLocation?
@@ -73,14 +74,14 @@ final class DataRetriever: NSObject, ObservableObject {
       (data, response) = try await session.data(for: urlRequest)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingData
     }
 
     do {
       try getResponseStatus(for: response)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingResponse
     }
 
     let jsonDecoder = JSONDecoder()
@@ -97,7 +98,7 @@ final class DataRetriever: NSObject, ObservableObject {
     await saveJSONtoCoreData()
   }
 
-  private func getImage(at url: String) async throws -> Data {
+  func getImage(at url: String) async throws -> Data {
     guard let imageURL = URL(string: url) else {
       print("Error encountered (DataRetriever.getData(): \(HTTPErrorCode.invalidURL.message)")
       throw HTTPErrorCode.invalidURL
@@ -110,14 +111,16 @@ final class DataRetriever: NSObject, ObservableObject {
       try getResponseStatus(for: response)
     } catch let error {
       print("Error encountered: \(error.localizedDescription)")
-      throw error
+      throw DataRetrieverErrors.errorGettingResponse
     }
     return data
   }
 
+
   func saveJSONtoCoreData() async {
+
     guard let locations = locationData?.results else {
-      return
+      throw DataRetrieverErrors.errorNoLocationsToPersist
     }
 
     let viewContext = PersistenceController.shared.container.viewContext

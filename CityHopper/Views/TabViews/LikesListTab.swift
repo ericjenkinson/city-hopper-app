@@ -19,7 +19,7 @@ struct LikesListTab: View {
         List {
           Section {
             ForEach(likedCities, id: \.self) { city in
-              Text(city.locations?.name ?? "")
+              Text(city.locations.name ?? "")
             }
           }
         }

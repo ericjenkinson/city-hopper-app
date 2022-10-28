@@ -12,7 +12,7 @@ import SwiftUI
 extension LikedCities {
 
   @NSManaged public var isLiked: Bool
-  @NSManaged public var locations: Location?
+  @NSManaged public var locations: Location
 
   static func create(withBool value: Bool, in managedObjectContext: NSManagedObjectContext) {
     let newLikedCity = self.init(context: managedObjectContext)
