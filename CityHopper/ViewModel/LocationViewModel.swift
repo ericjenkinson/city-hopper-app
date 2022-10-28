@@ -11,11 +11,21 @@ import CoreData
 @MainActor
 class LocationViewModel: ObservableObject {
   let viewContext = PersistenceController.shared.container.viewContext
-
+  let dataRetriever = DataRetriever()
   @Published var locations: [Location] = []
 
   init() {
     fetchLocations()
+    if isEmpty() {
+      Task {
+        do {
+          try await dataRetriever.getData()
+          fetchLocations()
+        } catch {
+          print("error getting data")
+        }
+      }
+    }
   }
 
   private func coreDataSave() {

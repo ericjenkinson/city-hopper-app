@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoreDataHorizontalListView: View {
   @EnvironmentObject var locationsVM: LocationViewModel
-  //var cities: [City]
+
   var body: some View {
     GeometryReader { proxy in
       ScrollView(.horizontal, showsIndicators: false) {
@@ -28,10 +28,3 @@ struct CoreDataHorizontalListView: View {
     }
   }
 }
-
-
-//struct CoreDataHorizontalListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CoreDataHorizontalListView()
-//    }
-//}
