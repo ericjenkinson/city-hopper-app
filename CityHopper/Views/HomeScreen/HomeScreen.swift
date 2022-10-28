@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeScreen: View {
   // MARK: - Properties
-  private var dataRetriever = DataRetriever()
 
   // MARK: - State Properties
   @State var showLaunchScreen = true
@@ -22,9 +21,12 @@ struct HomeScreen: View {
       LaunchScreen()
         .opacity(showLaunchScreen ? 1 : 0)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-              withAnimation(.easeOut(duration: 2)) {
-                showLaunchScreen = false
+            Task {
+              try? await Task.sleep(nanoseconds: 12 * 1_000_000_000)
+              await MainActor.run {
+                withAnimation(.easeOut(duration: 2)) {
+                  showLaunchScreen = false
+                }
               }
             }
           }

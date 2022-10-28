@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LaunchScreen: View {
   private var dataRetriever = DataRetriever()
+  @EnvironmentObject var locationsVM: LocationViewModel
 
   var body: some View {
     GeometryReader { geo in
@@ -29,7 +30,8 @@ struct LaunchScreen: View {
       .onAppear {
         Task {
           do {
-            try await dataRetriever.getData()
+            //try await dataRetriever.getData()
+            locationsVM.fetchLocations()
           } catch {
             print(error)
           }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class CityViewModel: ObservableObject {
   @Published var cities: [City] = []
 
@@ -67,5 +68,12 @@ class CityViewModel: ObservableObject {
       }
     }
     return names
+  }
+
+  func getPrice(cityName: String) -> Double {
+    if let city = cities.first(where: { $0.name == cityName}) {
+      return (city.price).rounded(toPlaces: 2)
+    }
+    return Double.zero
   }
 }
