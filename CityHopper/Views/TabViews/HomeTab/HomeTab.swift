@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
+  @EnvironmentObject var networkMonitor: NetworkMonitor
 
   var body: some View {
     NavigationView {
@@ -20,6 +21,9 @@ struct HomeTab: View {
         HorizontalListView()
       }
       .navigationBarHidden(true)
+      .popover(isPresented: $networkMonitor.isActive.not) {
+        Text("Network unavailable")
+      }
     }
   }
 }

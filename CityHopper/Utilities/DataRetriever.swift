@@ -27,6 +27,8 @@ final class DataRetriever: NSObject, ObservableObject {
   // MARK: - Initialization
   override init() {
     self.sessionConfiguration = URLSessionConfiguration.default
+    self.sessionConfiguration.waitsForConnectivity = true
+    self.sessionConfiguration.requestCachePolicy = .reloadRevalidatingCacheData
     self.session = URLSession(configuration: sessionConfiguration)
     self.triposoAccount = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_ACCOUNT") as? String
     self.triposoToken = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_TOKEN") as? String
