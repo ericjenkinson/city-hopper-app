@@ -17,7 +17,7 @@ extension Location {
   @NSManaged public var price: Double
   @NSManaged public var latitude: Double
   @NSManaged public var longitude: Double
-  @NSManaged public var image: Data?
+  @NSManaged public var image: String?
   @NSManaged public var liked: LikedCities?
 
   // swiftlint:disable:next function_parameter_count
@@ -29,7 +29,7 @@ extension Location {
                          price: Double,
                          latitude: Double,
                          longitude: Double,
-                         image: Data,
+                         image: String,
                          in isLiked: LikedCities,
                          using managedObjectContext: NSManagedObjectContext) {
     let newRow = Location(context: managedObjectContext)

@@ -16,13 +16,20 @@ struct CoreDataDetailView: View {
   var body: some View {
     GeometryReader { proxy in
       ZStack {
-        Image(uiImage: UIImage(data: location.image!)!)
-          .resizable()
-          .scaledToFill()
-          .ignoresSafeArea(.container, edges: .top)
-          .padding(.bottom)
+//        Image(uiImage: UIImage(data: location.image!)!)
+//          .resizable()
+//          .scaledToFill()
+//          .ignoresSafeArea(.container, edges: .top)
+//          .padding(.bottom)
           // .frame(width: proxy.size.width, height: proxy.size.height * 0.6)
-
+        AsyncImage(url: URL(string: location.image!)) { image in
+          image
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea(.container, edges: .top)
+        } placeholder: {
+          Image(systemName: "photo.fill")
+        }
         VStack {
           Spacer()
           CoreDataCityDetails(showingThingsToDo: $showingThingsToDo, location: location)

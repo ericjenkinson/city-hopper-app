@@ -13,8 +13,11 @@ struct CoreDataLargeListViewElement: View {
   var body: some View {
     GeometryReader { geo in
       ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-        Image(uiImage: UIImage(data: location.image!)!)
-          .resizable()
+        AsyncImage(url: URL(string: location.image!)) { image in
+          image.resizable()
+        } placeholder: {
+          Image(systemName: "photo.fill")
+        }
         VStack {
           CoreDataListElementViewHeader(score: location.score)
             .zIndex(1)

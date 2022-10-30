@@ -43,6 +43,7 @@ class CityHopperUITests: XCTestCase {
   func test_CitiesTab_CityDetails_View() throws {
     sleep(15)
     app.tabBars["Tab Bar"].buttons["Cities"].tap()
+    sleep(10)
     app.scrollViews
           .otherElements.containing(.button, identifier: "9.98, Paris, , France")
           .children(matching: .button).matching(identifier: "9.98, Paris, , France")
