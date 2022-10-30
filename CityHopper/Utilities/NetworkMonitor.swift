@@ -13,14 +13,14 @@ class NetworkMonitor: ObservableObject {
   private let monitor = NWPathMonitor()
   private let queue = DispatchQueue(label: "Monitor")
 
-  @Published var isActive = true
+  @Published var isActive = false
   var isExpensive = false
   var isConstrained = false
   var connectionType = NWInterface.InterfaceType.other
 
   init() {
     monitor.pathUpdateHandler = { path in
-      DispatchQueue.main.async {
+      OperationQueue.main.addOperation {
         self.isActive = path.status == .satisfied
       }
 

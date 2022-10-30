@@ -27,6 +27,7 @@
 		BA7C5143290B331A001C9D5E /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C5142290B331A001C9D5E /* LocationViewModel.swift */; };
 		BA7C5145290E1417001C9D5E /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C5144290E1417001C9D5E /* NetworkMonitor.swift */; };
 		BA7C5147290ED81E001C9D5E /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C5146290ED81E001C9D5E /* Binding.swift */; };
+		BA7C5149290EFBD6001C9D5E /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7C5148290EFBD6001C9D5E /* NoNetworkView.swift */; };
 		BAA23A8928E8B2CB0023D09E /* CategoryButtonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */; };
 		BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */; };
 		BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */; };
@@ -125,6 +126,7 @@
 		BA7C5142290B331A001C9D5E /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		BA7C5144290E1417001C9D5E /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		BA7C5146290ED81E001C9D5E /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		BA7C5148290EFBD6001C9D5E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 		BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonList.swift; sourceTree = "<group>"; };
 		BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageViewStroked.swift; sourceTree = "<group>"; };
 		BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBoldHeading.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				BAA3253B28E5EFE200E27F50 /* DetailView */,
 				BAF2DF6728D7C98200E1AEF8 /* ThingsToDo.swift */,
 				BA3CF11728DFEDAD00C7D1B4 /* NewTripView.swift */,
+				BA7C5148290EFBD6001C9D5E /* NoNetworkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				BAC55DA528FBA035004652DF /* Location+CoreDataProperties.swift in Sources */,
 				BAA23A8F28E8B5C90023D09E /* BigBoldHeading.swift in Sources */,
 				BAAA870628FB491500ADC200 /* Persistence.swift in Sources */,
+				BA7C5149290EFBD6001C9D5E /* NoNetworkView.swift in Sources */,
 				BA7C513F2909E4D2001C9D5E /* Trips+CoreDataProperties.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
 				BAA3253A28E5EEDE00E27F50 /* CityListSectionHeader.swift in Sources */,

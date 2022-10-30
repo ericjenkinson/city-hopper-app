@@ -9,8 +9,6 @@ import SwiftUI
 
 struct DetailView: View {
   @State var showingThingsToDo = false
-  @EnvironmentObject var networkMonitor: NetworkMonitor
-  
   var location: Location
 
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
@@ -42,9 +40,6 @@ struct DetailView: View {
           )
           .cornerRadius(Constants.General.listViewElementCornerRadius)
       })
-      .popover(isPresented: $networkMonitor.isActive.not) {
-        Text("Network unavailable")
-      }
     }
   }
 }

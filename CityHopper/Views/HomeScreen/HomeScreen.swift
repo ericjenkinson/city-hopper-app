@@ -15,10 +15,9 @@ struct HomeScreen: View {
 
   var body: some View {
     ZStack {
-//      if !showLaunchScreen {
-        HomeTabView()
-          .opacity(showLaunchScreen ? 0 : 1)
-//      }
+      HomeTabView()
+        .opacity(showLaunchScreen ? 0 : 1)
+
       LaunchScreen()
         .opacity(showLaunchScreen ? 1 : 0)
         .onAppear {

@@ -14,7 +14,6 @@ struct HomeTabView: View {
 
   @State var defaultTab = Tabs.tab1
   @EnvironmentObject var tripsVM: TripsViewModel
-  @EnvironmentObject var networkMonitor: NetworkMonitor
 
   var body: some View {
     TabView(selection: $defaultTab) {
@@ -44,10 +43,6 @@ struct HomeTabView: View {
         .badge(tripsVM.numberOfTrips())
         .tag(Tabs.tab4)
     }
-    .popover(isPresented: $networkMonitor.isActive.not) {
-      Text("Network unavailable")
-    }
-
   }
 }
 
