@@ -18,6 +18,7 @@ struct CityHopperApp: App {
         .environmentObject(CityViewModel(loadTestData: true))
         .environmentObject(TripsViewModel())
         .environmentObject(LocationViewModel())
+        .environmentObject(NetworkMonitor())
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
   }

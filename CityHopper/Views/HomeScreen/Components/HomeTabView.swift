@@ -13,7 +13,6 @@ struct HomeTabView: View {
   }
 
   @State var defaultTab = Tabs.tab1
-  @EnvironmentObject var destinations: CityViewModel
   @EnvironmentObject var tripsVM: TripsViewModel
 
   var body: some View {

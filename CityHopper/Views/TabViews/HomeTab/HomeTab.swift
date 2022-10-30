@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
-  @EnvironmentObject var destinations: CityViewModel
 
   var body: some View {
     NavigationView {
@@ -28,6 +27,5 @@ struct HomeTab: View {
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {
         HomeTab()
-          .environmentObject(CityViewModel(loadTestData: true))
     }
 }
