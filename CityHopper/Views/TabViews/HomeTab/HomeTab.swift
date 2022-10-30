@@ -18,8 +18,7 @@ struct HomeTab: View {
         Divider()
         Spacer()
         CategoryButtonList()
-        HorizontalListView(cities: destinations.cities)
-//        CoreDataHorizontalListView()
+        HorizontalListView()
       }
       .navigationBarHidden(true)
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoreDataListElementViewHeader: View {
+struct ListElementViewHeader: View {
   var score: Double
   var body: some View {
     HStack {
@@ -35,6 +35,6 @@ struct CoreDataListElementViewHeader: View {
 }
 struct CoreDataListElementViewHeader_Previews: PreviewProvider {
     static var previews: some View {
-      CoreDataListElementViewHeader(score: 8.94)
+      ListElementViewHeader(score: 8.94)
     }
 }

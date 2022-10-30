@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeTabView: View {
   enum Tabs {
-    case tab1, tab2, tab3, tab4, tab5
+    case tab1, tab2, tab3, tab4
   }
 
   @State var defaultTab = Tabs.tab1
@@ -24,7 +24,7 @@ struct HomeTabView: View {
           Text(Constants.AppData.tabTextHome)
         }
         .tag(Tabs.tab1)
-      CoreDataHorizontalListView()
+      HorizontalListView()
         .tabItem {
           Image(systemName: Constants.SFSymbols.location)
           Text(Constants.AppData.tabTextCities)
@@ -43,12 +43,6 @@ struct HomeTabView: View {
         }
         .badge(tripsVM.numberOfTrips())
         .tag(Tabs.tab4)
-      ThingsToDo(thingsToDo: destinations.cities[0].thingsToDo)
-        .tabItem {
-          Image(systemName: "sun.max")
-          Text("Things to Do")
-        }
-        .tag(Tabs.tab5)
     }
 
   }

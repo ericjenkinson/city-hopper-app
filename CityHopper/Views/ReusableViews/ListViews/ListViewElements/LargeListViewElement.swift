@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CoreDataLargeListViewElement: View {
+struct LargeListViewElement: View {
   var location: Location
 
   var body: some View {
@@ -19,7 +19,7 @@ struct CoreDataLargeListViewElement: View {
           Image(systemName: "photo.fill")
         }
         VStack {
-          CoreDataListElementViewHeader(score: location.score)
+          ListElementViewHeader(score: location.score)
             .zIndex(1)
           Spacer()
           ListElementViewFooter(city: location.name!, country: location.country!)
