@@ -15,7 +15,6 @@ struct CityHopperApp: App {
   var body: some Scene {
     WindowGroup {
       HomeScreen()
-        .environmentObject(CityViewModel(loadTestData: true))
         .environmentObject(TripsViewModel())
         .environmentObject(LocationViewModel())
         .environmentObject(NetworkMonitor())

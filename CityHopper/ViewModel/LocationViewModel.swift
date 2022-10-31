@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 @MainActor
 class LocationViewModel: ObservableObject {
@@ -56,5 +57,28 @@ class LocationViewModel: ObservableObject {
     } catch let error {
       print("Error fetching Trips. \(error.localizedDescription)")
     }
+  }
+
+  func priceFor(location: String) -> Double {
+    if locations.isEmpty {
+      fetchLocations()
+    }
+    if let locationPrice = locations.first(where: { $0.name == location }) {
+      return locationPrice.price
+    } else {
+      return 0.0
+    }
+  }
+
+  func getLocationNames() -> [String] {
+    var locationNames = [String]()
+    if locations.isEmpty {
+      fetchLocations()
+    }
+
+    locations.forEach {
+      locationNames.append($0.name!)
+    }
+    return locationNames
   }
 }

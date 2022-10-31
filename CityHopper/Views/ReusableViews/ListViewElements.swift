@@ -33,16 +33,16 @@ struct ListElementViewFooter: View {
 }
 
 struct SmallListViewElement: View {
-  var city: City
+  var location: Location
 
   var body: some View {
-    Image(city.image)
+    Image(location.image!)
       .resizable()
       .scaledToFill()
       .frame(width: 120, height: 120)
       .cornerRadius(20)
       .overlay(
-        Text(city.name)
+        Text(location.name!)
           .fontWeight(.bold)
           .foregroundColor(Constants.Colors.listViewElementTextColor)
           .padding(10)
@@ -52,14 +52,14 @@ struct SmallListViewElement: View {
   }
 }
 
-struct ListViews_Previews: PreviewProvider {
-  static private var city = City(name: "Munich", image: "imageCairo", country: "Germany",
-                                 description: "Octoberfest!!", price: 1200.00)
-
-  static var previews: some View {
-    VStack {
-      Spacer()
-      SmallListViewElement(city: city)
-    }
-  }
-}
+//struct ListViews_Previews: PreviewProvider {
+//  static private var city = City(name: "Munich", image: "imageCairo", country: "Germany",
+//                                 description: "Octoberfest!!", price: 1200.00)
+//
+//  static var previews: some View {
+//    VStack {
+//      Spacer()
+//      SmallListViewElement(location: city)
+//    }
+//  }
+//}

@@ -23,25 +23,19 @@ struct HomeTabView: View {
           Text(Constants.AppData.tabTextHome)
         }
         .tag(Tabs.tab1)
-      HorizontalListView()
-        .tabItem {
-          Image(systemName: Constants.SFSymbols.location)
-          Text(Constants.AppData.tabTextCities)
-        }
-        .tag(Tabs.tab2)
       LikesListTab()
         .tabItem {
           Image(systemName: Constants.SFSymbols.heartFill)
           Text("Likes")
         }
-        .tag(Tabs.tab3)
+        .tag(Tabs.tab2)
       TripListTab()
         .tabItem {
           Image(systemName: Constants.SFSymbols.tripList)
           Text("Trips")
         }
         .badge(tripsVM.numberOfTrips())
-        .tag(Tabs.tab4)
+        .tag(Tabs.tab3)
     }
   }
 }
@@ -49,6 +43,5 @@ struct HomeTabView: View {
 struct HomeTabView_Previews: PreviewProvider {
   static var previews: some View {
     HomeTabView()
-      .environmentObjectModifiers()
   }
 }
