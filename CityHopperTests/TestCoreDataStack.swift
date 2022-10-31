@@ -49,7 +49,7 @@ class TestCoreDataStack: XCTestCase {
                         price: 0,
                         latitude: 0,
                         longitude: 0,
-                        image: Data(),
+                        image: "",
                         in: likedCity,
                         using: context)
     let fetchRequest = NSFetchRequest<LikedCities>(entityName: "LikedCities")
@@ -84,7 +84,7 @@ class TestCoreDataStack: XCTestCase {
                         price: 0,
                         latitude: 0,
                         longitude: 0,
-                        image: Data(),
+                        image: "",
                         in: likedCity,
                         using: context)
     let fetchRequest = NSFetchRequest<Location>(entityName: "Location")

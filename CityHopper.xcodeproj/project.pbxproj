@@ -127,6 +127,7 @@
 		BA7C5144290E1417001C9D5E /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		BA7C5146290ED81E001C9D5E /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		BA7C5148290EFBD6001C9D5E /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
+		BA7C5163290F631A001C9D5E /* DailyQuotes.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = DailyQuotes.zip; sourceTree = "<group>"; };
 		BAA23A8828E8B2CA0023D09E /* CategoryButtonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonList.swift; sourceTree = "<group>"; };
 		BAA23A8B28E8B4750023D09E /* RoundedImageViewStroked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageViewStroked.swift; sourceTree = "<group>"; };
 		BAA23A8E28E8B5C90023D09E /* BigBoldHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigBoldHeading.swift; sourceTree = "<group>"; };
@@ -312,6 +313,7 @@
 		BA7C514A290F61B3001C9D5E /* DailyQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				BA7C5163290F631A001C9D5E /* DailyQuotes.zip */,
 			);
 			path = DailyQuotes;
 			sourceTree = "<group>";
