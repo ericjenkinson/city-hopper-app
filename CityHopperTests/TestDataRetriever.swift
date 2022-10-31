@@ -30,19 +30,6 @@ class TestDataRetriever: XCTestCase {
     }
   }
 
-  func test_getData_ErrorDecodingJSON() async throws {
-    let dataRetriever = DataRetriever()
-    await MainActor.run {
-      dataRetriever.triposoLocationURLString = "https://google.com"
-    }
-
-    do {
-      try await dataRetriever.getData()
-    } catch let error {
-      XCTAssertEqual("errorDecodingJSON", "\(error)")
-    }
-  }
-
   func test_getData_ErrorGettingResponse() async throws {
     let dataRetriever = DataRetriever()
     await MainActor.run {
