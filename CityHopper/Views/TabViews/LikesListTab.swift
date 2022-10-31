@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct LikesListTab: View {
-  let likedCitiesFetchRequest = LikedCities.citiesLiked()
-  var likedCities: FetchedResults<LikedCities> {
-    likedCitiesFetchRequest.wrappedValue
-  }
+  @EnvironmentObject var likedCitiesVM: LikedCitiesViewModel
 
   var body: some View {
     NavigationView {
       VStack {
         List {
           Section {
-            ForEach(likedCities, id: \.self) { city in
+            ForEach(likedCitiesVM.likedCities, id: \.self) { city in
               Text(city.locations.name ?? "")
             }
           }

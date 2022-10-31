@@ -17,6 +17,7 @@ struct CityHopperApp: App {
       HomeScreen()
         .environmentObject(TripsViewModel())
         .environmentObject(LocationViewModel())
+        .environmentObject(LikedCitiesViewModel())
         .environmentObject(NetworkMonitor())
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
