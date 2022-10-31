@@ -9,21 +9,23 @@ import SwiftUI
 
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
+  @State private var showPopOver = false
   @EnvironmentObject var networkMonitor: NetworkMonitor
 
   var body: some View {
-    NavigationView {
-      VStack {
-        HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
-        Divider()
-        Spacer()
-        CategoryButtonList()
-        HorizontalListView()
+    if networkMonitor.isConnected {
+      NavigationView {
+        VStack {
+          HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
+          Divider()
+          Spacer()
+          CategoryButtonList()
+          HorizontalListView()
+        }
+        .navigationBarHidden(true)
       }
-      .navigationBarHidden(true)
-      .popover(isPresented: $networkMonitor.isActive.not) {
-        Text("Network unavailable")
-      }
+    } else {
+      NoNetworkView()
     }
   }
 }

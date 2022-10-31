@@ -8,32 +8,19 @@
 import Foundation
 import Network
 
-@MainActor
 class NetworkMonitor: ObservableObject {
-  private let monitor = NWPathMonitor()
-  private let queue = DispatchQueue(label: "Monitor")
+  var isConnected = false
 
-  @Published var isActive = false
-  var isExpensive = false
-  var isConstrained = false
-  var connectionType = NWInterface.InterfaceType.other
+  private let networkMonitor = NWPathMonitor()
+  private let workerQueue = DispatchQueue.global()
 
   init() {
-    monitor.pathUpdateHandler = { path in
-      OperationQueue.main.addOperation {
-        self.isActive = path.status == .satisfied
-      }
-
-      self.isExpensive = path.isExpensive
-      self.isConstrained = path.isConstrained
-
-      let connectionTypes: [NWInterface.InterfaceType] = [.cellular, .wifi, .wiredEthernet]
-      self.connectionType = connectionTypes.first(where: path.usesInterfaceType) ?? .other
-
+    networkMonitor.pathUpdateHandler = { path in
+      self.isConnected = path.status == .satisfied
       DispatchQueue.main.async {
         self.objectWillChange.send()
       }
     }
-    monitor.start(queue: queue)
+    networkMonitor.start(queue: workerQueue)
   }
 }
