@@ -21,7 +21,7 @@ struct HomeTab: View {
         HorizontalListView()
       }
       .navigationBarHidden(true)
-      .popover(isPresented: $networkMonitor.isActive) {
+      .popover(isPresented: $networkMonitor.isActive.not) {
         Text("Network unavailable")
       }
     }
