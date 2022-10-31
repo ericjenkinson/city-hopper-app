@@ -18,10 +18,17 @@ struct LargeListViewElement: View {
         } placeholder: {
           Image(systemName: "photo.fill")
         }
-        .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
-        .scaledToFit()
-        .cornerRadius(Constants.General.listViewElementCornerRadius)
+        VStack {
+          ListElementViewHeader(score: location.score)
+            .zIndex(1)
+          Spacer()
+          ListElementViewFooter(city: location.name!, country: location.country!)
+            .zIndex(1)
+        }
       }
+      .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
+      .scaledToFit()
+      .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
   }
 }
