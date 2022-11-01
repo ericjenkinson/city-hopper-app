@@ -15,6 +15,11 @@
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="liked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LikedCities" inverseName="locations" inverseEntity="LikedCities"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Trips" representedClassName="Trips" syncable="YES">
         <attribute name="city" attributeType="String"/>
@@ -24,10 +29,15 @@
         <attribute name="name" attributeType="String"/>
         <attribute name="taken" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="totalcost" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="LikedCities" positionX="266.3828125" positionY="85.10137939453125" width="128" height="73"/>
-        <element name="Location" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="Location" positionX="-63" positionY="-18" width="128" height="179"/>
         <element name="Trips" positionX="99" positionY="63" width="128" height="134"/>
     </elements>
 </model>

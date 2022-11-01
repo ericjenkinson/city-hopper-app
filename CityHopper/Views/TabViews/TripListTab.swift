@@ -25,6 +25,8 @@ struct TripListTab: View {
             tripsVM.deleteTrip(indexSet: indexSet)
           }
         }
+        .listStyle(InsetGroupedListStyle())
+        .animation(.easeOut(duration: 0.33), value: tripsVM.trips)
       }
       Button(action: {
         withAnimation {

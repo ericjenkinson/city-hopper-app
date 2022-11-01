@@ -14,10 +14,8 @@ struct LikesListTab: View {
     NavigationView {
       VStack {
         List {
-          Section {
-            ForEach(likedCitiesVM.likedCities, id: \.self) { city in
-              Text(city.locations.name ?? "")
-            }
+          ForEach(likedCitiesVM.likedCities, id: \.self) { city in
+            Text(city.locations.name ?? "")
           }
         }
       }
