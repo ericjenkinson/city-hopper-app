@@ -134,7 +134,7 @@ final class DataRetriever: NSObject, ObservableObject {
 
       Location.createWith(id: location.id,
                           name: location.name,
-                          country: location.countryID,
+                          country: location.countryID.replacingOccurrences(of: "_", with: " "),
                           intro: location.generatedIntro ?? "",
                           score: location.score,
                           price: Double(location.price),
