@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */; };
 		BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA337EAB28F3B3D9004B3AE4 /* HTTPErrorCode.swift */; };
 		BA337EB128F3CA85004B3AE4 /* ViewPressModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA337EB028F3CA85004B3AE4 /* ViewPressModifier.swift */; };
 		BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */; };
@@ -43,6 +42,8 @@
 		BAB8066F28B1CA82009E81E4 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */; };
 		BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */; };
 		BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB8067628B1E03B009E81E4 /* OnBoarding.swift */; };
+		BAC149662911E708002C8228 /* SmallListViewElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC149652911E708002C8228 /* SmallListViewElement.swift */; };
+		BAC149682911E75A002C8228 /* ListElementViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC149672911E75A002C8228 /* ListElementViewFooter.swift */; };
 		BAC4F493290386CA000ED870 /* TestDataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC4F492290386CA000ED870 /* TestDataRetriever.swift */; };
 		BAC4F4942903878A000ED870 /* DataRetriever.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA350B1928F07A31008B3FFA /* DataRetriever.swift */; };
 		BAC4F495290388D2000ED870 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAA86E228F777AD00ADC200 /* FileManager.swift */; };
@@ -99,7 +100,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewElements.swift; sourceTree = "<group>"; };
 		BA337EAB28F3B3D9004B3AE4 /* HTTPErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorCode.swift; sourceTree = "<group>"; };
 		BA337EB028F3CA85004B3AE4 /* ViewPressModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPressModifier.swift; sourceTree = "<group>"; };
 		BA350B0928E93DE6008B3FFA /* CategoryButtonIconAndText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButtonIconAndText.swift; sourceTree = "<group>"; };
@@ -139,6 +139,8 @@
 		BAB8066E28B1CA82009E81E4 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		BAB8067428B1D4A1009E81E4 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		BAB8067628B1E03B009E81E4 /* OnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		BAC149652911E708002C8228 /* SmallListViewElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallListViewElement.swift; sourceTree = "<group>"; };
+		BAC149672911E75A002C8228 /* ListElementViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElementViewFooter.swift; sourceTree = "<group>"; };
 		BAC4F492290386CA000ED870 /* TestDataRetriever.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataRetriever.swift; sourceTree = "<group>"; };
 		BAC4F498290391EF000ED870 /* DataRetrieverErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRetrieverErrors.swift; sourceTree = "<group>"; };
 		BAC55DA428FBA035004652DF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -428,6 +430,8 @@
 			children = (
 				BAC55DB128FCAA96004652DF /* LargeListViewElement.swift */,
 				BAC55DB328FCAB4B004652DF /* ListElementViewHeader.swift */,
+				BAC149652911E708002C8228 /* SmallListViewElement.swift */,
+				BAC149672911E75A002C8228 /* ListElementViewFooter.swift */,
 			);
 			path = ListViewElements;
 			sourceTree = "<group>";
@@ -523,7 +527,6 @@
 				BAA23A8A28E8B4460023D09E /* ImageViews */,
 				BAA23A8528E78E2F0023D09E /* ListViews */,
 				BA63588428CD2AD30021F9D3 /* UIBlurEffect.swift */,
-				BA19A95B28CD0FC5006C7ABF /* ListViewElements.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -735,6 +738,7 @@
 				BA337EAC28F3B3D9004B3AE4 /* HTTPErrorCode.swift in Sources */,
 				BA350B0A28E93DE6008B3FFA /* CategoryButtonIconAndText.swift in Sources */,
 				BAA23A8C28E8B4750023D09E /* RoundedImageViewStroked.swift in Sources */,
+				BAC149662911E708002C8228 /* SmallListViewElement.swift in Sources */,
 				BAC55DB428FCAB4B004652DF /* ListElementViewHeader.swift in Sources */,
 				BAB8067528B1D4A1009E81E4 /* RoundedImageView.swift in Sources */,
 				BA63588528CD2AD30021F9D3 /* UIBlurEffect.swift in Sources */,
@@ -753,7 +757,6 @@
 				BA7C516529106454001C9D5E /* LikedCitiesViewModel.swift in Sources */,
 				BA7C513F2909E4D2001C9D5E /* Trips+CoreDataProperties.swift in Sources */,
 				BAA23A9528E8B6AF0023D09E /* UnorderedListLabelText.swift in Sources */,
-				BA19A95C28CD0FC5006C7ABF /* ListViewElements.swift in Sources */,
 				BA68374228FB9B9B006548F8 /* Location+CoreDataClass.swift in Sources */,
 				BA7C5143290B331A001C9D5E /* LocationViewModel.swift in Sources */,
 				BAAA86E328F777AD00ADC200 /* FileManager.swift in Sources */,
@@ -769,6 +772,7 @@
 				BAEB2F3B28B13C47002FBBAD /* CityHopperApp.swift in Sources */,
 				BAB8067728B1E03B009E81E4 /* OnBoarding.swift in Sources */,
 				BA5B482A28B1C57300308D00 /* Constants.swift in Sources */,
+				BAC149682911E75A002C8228 /* ListElementViewFooter.swift in Sources */,
 				BAA3253628E5EE2500E27F50 /* OnboardingButton.swift in Sources */,
 				BAC55DAB28FC5A90004652DF /* CityDetails.swift in Sources */,
 				BAC55DAF28FCA76F004652DF /* Double.swift in Sources */,
