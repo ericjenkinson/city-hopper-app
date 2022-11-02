@@ -17,8 +17,10 @@ class NetworkMonitor: ObservableObject {
   init() {
     networkMonitor.pathUpdateHandler = { path in
       self.isConnected = path.status == .satisfied
-      DispatchQueue.main.async {
-        self.objectWillChange.send()
+      Task {
+        await MainActor.run {
+          self.objectWillChange.send()
+        }
       }
     }
     networkMonitor.start(queue: workerQueue)

@@ -14,7 +14,7 @@ struct NewTripView: View {
 
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
-  @State private var selectedCity = "Munich"
+  @State private var selectedCity = ""
   @State private var groupSize = 1
   @State private var firstName = ""
   @State private var lastName = ""
@@ -69,8 +69,10 @@ struct NewTripView: View {
           }, label: {
             Text("Save Trip")
           })
+          .disabled(tripName.isEmpty || selectedCity.isEmpty)
         }
       }
+      .navigationTitle("Create a new Trip")
     }
   }
 }

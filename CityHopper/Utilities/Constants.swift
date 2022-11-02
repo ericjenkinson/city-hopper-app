@@ -30,7 +30,6 @@ enum Constants {
   }
   enum AppData {
     public static let appName = "City Hopper"
-    public static let buttonSFSymbol = "folder"
     public static let welcomeMessage = "Welcome, "
     public static let userName = "Eric"
     public static let closeOnboarding = "Back to App"
@@ -54,5 +53,6 @@ enum Constants {
     public static let filledHouse = "house.fill"
     public static let tripList = "airplane.departure"
     public static let heartFill = "heart.fill"
+    public static let info = "info"
   }
 }
