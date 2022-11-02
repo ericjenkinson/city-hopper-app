@@ -10,6 +10,7 @@ import CoreData
 import UIKit
 
 /// DataDownloader contains all of the functionality to download data from the Tripso API.
+@MainActor
 final class DataRetriever: NSObject, ObservableObject {
 
   // MARK: - Private Properties
@@ -26,6 +27,8 @@ final class DataRetriever: NSObject, ObservableObject {
   // MARK: - Initialization
   override init() {
     self.sessionConfiguration = URLSessionConfiguration.default
+    self.sessionConfiguration.waitsForConnectivity = true
+    self.sessionConfiguration.requestCachePolicy = .reloadRevalidatingCacheData
     self.session = URLSession(configuration: sessionConfiguration)
     self.triposoAccount = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_ACCOUNT") as? String
     self.triposoToken = Bundle.main.object(forInfoDictionaryKey: "TRIPOSO_TOKEN") as? String
@@ -95,7 +98,7 @@ final class DataRetriever: NSObject, ObservableObject {
       print(error)
     }
 
-    await saveJSONtoCoreData()
+    try await saveJSONtoCoreData()
   }
 
   func getImage(at url: String) async throws -> Data {
@@ -116,8 +119,7 @@ final class DataRetriever: NSObject, ObservableObject {
     return data
   }
 
-
-  func saveJSONtoCoreData() async {
+  func saveJSONtoCoreData() async throws {
 
     guard let locations = locationData?.results else {
       throw DataRetrieverErrors.errorNoLocationsToPersist
@@ -126,25 +128,22 @@ final class DataRetriever: NSObject, ObservableObject {
     let viewContext = PersistenceController.shared.container.viewContext
     for location in locations {
       print("\(location.name) image: \(location.images[0].sizes.original.url)")
-      do {
-        let likedCity = LikedCities(context: viewContext)
-        likedCity.isLiked = Bool.random()
-        let retrievedImage = try await getImage(at: location.images[0].sizes.original.url)
 
-        Location.createWith(id: location.id,
-                            name: location.name,
-                            country: location.countryID,
-                            intro: location.generatedIntro ?? "",
-                            score: location.score,
-                            price: Double(location.price),
-                            latitude: location.coordinates.latitude,
-                            longitude: location.coordinates.longitude,
-                            image: retrievedImage,
-                            in: likedCity,
-                            using: viewContext)
-      } catch let error {
-        print("Error encountered: \(error.localizedDescription)")
-      }
+      let likedCity = LikedCities(context: viewContext)
+      likedCity.isLiked = Bool.random()
+
+      Location.createWith(id: location.id,
+                          name: location.name,
+                          country: location.countryID.replacingOccurrences(of: "_", with: " "),
+                          intro: location.generatedIntro ?? "",
+                          score: location.score,
+                          price: Double(location.price),
+                          latitude: location.coordinates.latitude,
+                          longitude: location.coordinates.longitude,
+                          image: location.images[0].sizes.original.url,
+                          in: likedCity,
+                          using: viewContext)
+
     }
   }
 }

@@ -40,15 +40,4 @@ class CityHopperUITests: XCTestCase {
     XCTAssert(app.tabBars["Tab Bar"].buttons["Trips"].exists)
   }
 
-  func test_CitiesTab_CityDetails_View() throws {
-    sleep(15)
-    app.tabBars["Tab Bar"].buttons["Cities"].tap()
-    app.scrollViews
-          .otherElements.containing(.button, identifier: "9.98, Paris, , France")
-          .children(matching: .button).matching(identifier: "9.98, Paris, , France")
-          .element(boundBy: 0).tap()
-    app.navigationBars["_TtGC7SwiftUI19UIHosting"].buttons["Back"].tap()
-    XCTAssert(app.tabBars["Tab Bar"].buttons["Cities"].exists)
-  }
-
 }

@@ -7,19 +7,23 @@
 
 import SwiftUI
 
-struct CoreDataLargeListViewElement: View {
+struct LargeListViewElement: View {
   var location: Location
 
   var body: some View {
     GeometryReader { geo in
       ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-        Image(uiImage: UIImage(data: location.image!)!)
-          .resizable()
+        AsyncImage(url: URL(string: location.image!)) { image in
+          image.resizable()
+        } placeholder: {
+          Image(systemName: "photo.fill")
+        }
         VStack {
-          CoreDataListElementViewHeader(score: location.score)
+          ListElementViewHeader(score: location.score)
             .zIndex(1)
           Spacer()
           ListElementViewFooter(city: location.name!, country: location.country!)
+            .zIndex(1)
         }
       }
       .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
@@ -28,9 +32,3 @@ struct CoreDataLargeListViewElement: View {
     }
   }
 }
-
-// struct CoreDataLargeListViewElement_Previews: PreviewProvider {
-//  static var previews: some View {
-//    CoreDataLargeListViewElement(location: )
-//  }
-// }

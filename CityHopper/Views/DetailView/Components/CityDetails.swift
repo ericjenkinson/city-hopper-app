@@ -9,21 +9,21 @@ import SwiftUI
 
 struct CityDetails: View {
   @Binding var showingThingsToDo: Bool
-  var city: City
+  var location: Location
   var body: some View {
     VStack(spacing: 0.0) {
       HStack {
-        Text(city.name)
+        Text(location.name ?? "Name Missing")
           .foregroundColor(Constants.Colors.listViewElementTextColor)
         Spacer()
-        Text(String(city.price))
+        Text(String(location.price))
           .foregroundColor(Constants.Colors.listViewElementTextColor)
       }
       HStack {
         HStack {
           RoundedImageView(systemName: "location", textColor: Constants.Colors.listViewElementTextColor)
             .padding(-10)
-          Text(city.country)
+          Text(location.country ?? "Country missing")
             .foregroundColor(Constants.Colors.listViewElementTextColor)
             .padding(-10)
         }
@@ -33,19 +33,6 @@ struct CityDetails: View {
           .foregroundColor(Constants.Colors.listViewElementTextColor)
 
       }
-      HStack {
-        Button(action: {
-          withAnimation {
-            self.showingThingsToDo.toggle()
-          }
-        }, label: {
-          ButtonText(text: "Things to do!")
-
-        }).sheet(isPresented: $showingThingsToDo) {
-          ThingsToDo(thingsToDo: city.thingsToDo)
-        }
-
-      }
     }
     .padding()
     .background(
@@ -53,14 +40,4 @@ struct CityDetails: View {
     )
     .cornerRadius(Constants.General.detailViewCityDetailsCornerRadius)
   }
-}
-
-struct CityDetails_Previews: PreviewProvider {
-  static private var showingThingsToDo = Binding.constant(false)
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany",
-                                 description: "Octoberfest!!", price: 1200.00)
-
-    static var previews: some View {
-        CityDetails(showingThingsToDo: showingThingsToDo, city: city)
-    }
 }

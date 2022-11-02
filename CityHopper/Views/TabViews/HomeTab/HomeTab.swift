@@ -9,19 +9,23 @@ import SwiftUI
 
 struct HomeTab: View {
   @State private var onboardingIsVisible = false
-  @EnvironmentObject var destinations: CityViewModel
+  @State private var showPopOver = false
+  @EnvironmentObject var networkMonitor: NetworkMonitor
 
   var body: some View {
-    NavigationView {
-      VStack {
-        HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
-        Divider()
-        Spacer()
-        CategoryButtonList()
-        HorizontalListView(cities: destinations.cities)
-//        CoreDataHorizontalListView()
+    if networkMonitor.isConnected {
+      NavigationView {
+        VStack {
+          HomeTabHeader(onboardingIsVisible: $onboardingIsVisible)
+          Divider()
+          Spacer()
+          CategoryButtonList()
+          HorizontalListView()
+        }
+        .navigationBarHidden(true)
       }
-      .navigationBarHidden(true)
+    } else {
+      NoNetworkView()
     }
   }
 }
@@ -29,6 +33,5 @@ struct HomeTab: View {
 struct HomeScreenTab_Previews: PreviewProvider {
     static var previews: some View {
         HomeTab()
-          .environmentObject(CityViewModel(loadTestData: true))
     }
 }

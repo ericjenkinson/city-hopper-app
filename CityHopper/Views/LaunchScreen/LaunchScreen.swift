@@ -28,14 +28,7 @@ struct LaunchScreen: View {
       }
       .frame(maxWidth: geo.size.width, maxHeight: geo.size.height)
       .onAppear {
-        Task {
-          do {
-            //try await dataRetriever.getData()
-            locationsVM.fetchLocations()
-          } catch {
-            print(error)
-          }
-        }
+        locationsVM.fetchLocations()
       }
     }
   }

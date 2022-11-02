@@ -22,7 +22,7 @@ struct HomeScreen: View {
         .opacity(showLaunchScreen ? 1 : 0)
         .onAppear {
             Task {
-              try? await Task.sleep(nanoseconds: 12 * 1_000_000_000)
+              try? await Task.sleep(nanoseconds: 10 * 1_000_000_000)
               await MainActor.run {
                 withAnimation(.easeOut(duration: 2)) {
                   showLaunchScreen = false

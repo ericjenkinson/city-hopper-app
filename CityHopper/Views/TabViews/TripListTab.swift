@@ -21,8 +21,12 @@ struct TripListTab: View {
           ForEach(tripsVM.trips, id: \.name) { trip in
             Text(trip.name)
           }
-          .onDelete(perform: tripsVM.deleteTrip)
+          .onDelete { indexSet in
+            tripsVM.deleteTrip(indexSet: indexSet)
+          }
         }
+        .listStyle(InsetGroupedListStyle())
+        .animation(.easeOut(duration: 0.33), value: tripsVM.trips)
       }
       Button(action: {
         withAnimation {
@@ -37,13 +41,3 @@ struct TripListTab: View {
     }
   }
 }
-
-// struct TripListTab_Previews: PreviewProvider {
-//  static private var trips = Binding.constant([
-//    Trip(name: "Trip to Munich", date: Date(), members: 1)])
-//
-//  static var previews: some View {
-//    TripListTab(tripsVM: trips)
-//      .environmentObject(TripsViewModel())
-//  }
-// }

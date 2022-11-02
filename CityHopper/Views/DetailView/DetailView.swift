@@ -9,20 +9,23 @@ import SwiftUI
 
 struct DetailView: View {
   @State var showingThingsToDo = false
-  var city: City
+  var location: Location
+
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
   var body: some View {
     GeometryReader { proxy in
       ZStack {
-        Image(city.image)
-          .resizable()
-          .scaledToFill()
-          .ignoresSafeArea(.container, edges: .top)
-          .padding(.bottom)
-
+        AsyncImage(url: URL(string: location.image!)) { image in
+          image
+            .resizable()
+            .scaledToFill()
+            .ignoresSafeArea(.container, edges: .top)
+        } placeholder: {
+          Image(systemName: "photo.fill")
+        }
         VStack {
           Spacer()
-          CityDetails(showingThingsToDo: $showingThingsToDo, city: city)
+          CityDetails(showingThingsToDo: $showingThingsToDo, location: location)
             .padding()
         }
       }
@@ -38,16 +41,5 @@ struct DetailView: View {
           .cornerRadius(Constants.General.listViewElementCornerRadius)
       })
     }
-  }
-}
-
-struct DetailView_Previews: PreviewProvider {
-  static private var city = City(name: "Munich", image: "imageMunich", country: "Germany",
-                                 description: "Octoberfest!!", price: 1200.00)
-
-  static var previews: some View {
-    DetailView(city: city)
-    DetailView(city: city)
-      .preferredColorScheme(.dark)
   }
 }

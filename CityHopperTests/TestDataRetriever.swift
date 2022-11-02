@@ -19,7 +19,9 @@ class TestDataRetriever: XCTestCase {
 
   func test_getData_Invalid_URL() async throws {
     let dataRetriever = DataRetriever()
-    dataRetriever.triposoLocationURLString = ""
+    await MainActor.run {
+      dataRetriever.triposoLocationURLString = ""
+    }
 
     do {
       try await dataRetriever.getData()
@@ -28,20 +30,11 @@ class TestDataRetriever: XCTestCase {
     }
   }
 
-  func test_getData_ErrorDecodingJSON() async throws {
-    let dataRetriever = DataRetriever()
-    dataRetriever.triposoLocationURLString = "https://google.com"
-
-    do {
-      try await dataRetriever.getData()
-    } catch let error {
-      XCTAssertEqual("errorDecodingJSON", "\(error)")
-    }
-  }
-
   func test_getData_ErrorGettingResponse() async throws {
     let dataRetriever = DataRetriever()
-    dataRetriever.triposoLocationURLString = "https://httpstat.us/500"
+    await MainActor.run {
+      dataRetriever.triposoLocationURLString = "https://httpstat.us/500"
+    }
 
     do {
       try await dataRetriever.getData()

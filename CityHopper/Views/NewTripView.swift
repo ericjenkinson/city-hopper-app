@@ -9,8 +9,8 @@ import SwiftUI
 
 struct NewTripView: View {
   @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-  @EnvironmentObject var cities: CityViewModel
   @EnvironmentObject var tripsVM: TripsViewModel
+  @EnvironmentObject var locationVM: LocationViewModel
 
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
@@ -23,7 +23,7 @@ struct NewTripView: View {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
 
-    let price = cities.getPrice(cityName: selectedCity)
+    let price = locationVM.priceFor(location: selectedCity)
 
     return formatter.string(from: NSNumber(value: price)) ?? "$0"
   }
@@ -31,7 +31,7 @@ struct NewTripView: View {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
 
-    let price = cities.getPrice(cityName: selectedCity) * Double(groupSize)
+    let price = locationVM.priceFor(location: selectedCity) * Double(groupSize)
     return formatter.string(from: NSNumber(value: price)) ?? "$0"
   }
 
@@ -44,7 +44,7 @@ struct NewTripView: View {
         }
         Section(header: Text("Cities")) {
           Picker("City", selection: $selectedCity) {
-            ForEach(cities.cityNames(), id: \.self) {
+            ForEach(locationVM.getLocationNames(), id: \.self) {
               Text($0)
             }
           }
@@ -78,6 +78,5 @@ struct NewTripView: View {
 struct NewTripView_Previews: PreviewProvider {
   static var previews: some View {
     NewTripView()
-      .environmentObjectModifiers()
   }
 }
