@@ -24,6 +24,6 @@ struct RoundedImageViewStroked: View {
 
 struct RoundedImageViewStroked_Previews: PreviewProvider {
     static var previews: some View {
-      RoundedImageViewStroked(systemName: Constants.AppData.buttonSFSymbol)
+      RoundedImageViewStroked(systemName: Constants.SFSymbols.info)
     }
 }

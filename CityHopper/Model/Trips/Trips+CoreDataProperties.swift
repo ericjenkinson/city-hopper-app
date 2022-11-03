@@ -17,6 +17,8 @@ extension Trips {
   @NSManaged public var costperperson: Double
   @NSManaged public var totalcost: Double
   @NSManaged public var taken: Bool
+  @NSManaged public var image: Data
+  @NSManaged public var review: String
 
   // swiftlint:disable:next function_parameter_count
   static func createWith(tripName: String,
@@ -26,6 +28,8 @@ extension Trips {
                          costPerPerson: Double,
                          totalCost: Double,
                          tripTaken: Bool,
+                         image: Data,
+                         review: String,
                          in managedObjectContext: NSManagedObjectContext) {
     let newTrip = Trips(context: managedObjectContext)
     newTrip.name = tripName
@@ -35,6 +39,8 @@ extension Trips {
     newTrip.costperperson = costPerPerson
     newTrip.totalcost = totalCost
     newTrip.taken = tripTaken
+    newTrip.image = Data()
+    newTrip.review = review
 
     do {
       try managedObjectContext.save()

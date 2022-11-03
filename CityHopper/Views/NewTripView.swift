@@ -63,7 +63,9 @@ struct NewTripView: View {
                               groupSize: Int64(groupSize),
                               costPerPerson: Double(pricePerPerson) ?? 0.0,
                               totalCost: Double(totalCost) ?? 0.0,
-                              tripTaken: false)
+                              tripTaken: false,
+                              image: Data(),
+                              review: "")
               self.mode.wrappedValue.dismiss()
             }
           }, label: {
