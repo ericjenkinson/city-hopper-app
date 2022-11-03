@@ -14,7 +14,7 @@ struct NewTripView: View {
 
   @State private var tripName: String = ""
   @State private var tripDate: Date = Date()
-  @State private var selectedCity = "Munich"
+  @State private var selectedCity = ""
   @State private var groupSize = 1
   @State private var firstName = ""
   @State private var lastName = ""
@@ -63,14 +63,18 @@ struct NewTripView: View {
                               groupSize: Int64(groupSize),
                               costPerPerson: Double(pricePerPerson) ?? 0.0,
                               totalCost: Double(totalCost) ?? 0.0,
-                              tripTaken: false)
+                              tripTaken: false,
+                              image: Data(),
+                              review: "")
               self.mode.wrappedValue.dismiss()
             }
           }, label: {
             Text("Save Trip")
           })
+          .disabled(tripName.isEmpty || selectedCity.isEmpty)
         }
       }
+      .navigationTitle("Create a new Trip")
     }
   }
 }

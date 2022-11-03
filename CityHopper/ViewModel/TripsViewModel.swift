@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import CoreData
 
 ///// Information detailing a trip.
@@ -56,7 +57,9 @@ class TripsViewModel: ObservableObject {
                groupSize: Int64,
                costPerPerson: Double,
                totalCost: Double,
-               tripTaken: Bool) {
+               tripTaken: Bool,
+               image: Data,
+               review: String) {
     let newTrip = Trips(context: viewContext)
     newTrip.name = tripName
     newTrip.date = tripDate
@@ -65,6 +68,8 @@ class TripsViewModel: ObservableObject {
     newTrip.costperperson = costPerPerson
     newTrip.totalcost = totalCost
     newTrip.taken = tripTaken
+    newTrip.image = Data()
+    newTrip.review = review
 
     coreDataSave()
   }

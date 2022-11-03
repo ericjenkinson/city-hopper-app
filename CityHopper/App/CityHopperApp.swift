@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct CityHopperApp: App {
   // MARK: - Properties
-  let persistenceController = PersistenceController.shared
 
   var body: some Scene {
     WindowGroup {
@@ -19,7 +18,6 @@ struct CityHopperApp: App {
         .environmentObject(LocationViewModel())
         .environmentObject(LikedCitiesViewModel())
         .environmentObject(NetworkMonitor())
-        .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
   }
 }
