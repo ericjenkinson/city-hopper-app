@@ -35,9 +35,7 @@ struct CityDetails: View {
       }
     }
     .padding()
-    .background(
-      UIBlurEffect.View(blurStyle: .regular)
-    )
+    .background(Color.gray)
     .cornerRadius(Constants.General.detailViewCityDetailsCornerRadius)
   }
 }
