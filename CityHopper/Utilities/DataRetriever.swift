@@ -26,6 +26,8 @@ final class DataRetriever: NSObject, ObservableObject {
 
   // MARK: - Initialization
   override init() {
+    URLCache.shared.memoryCapacity = 50_000_000 // ~50 MB of memory space
+    URLCache.shared.diskCapacity = 1_000_000_000 // ~1 GB of disk space
     self.sessionConfiguration = URLSessionConfiguration.default
     self.sessionConfiguration.waitsForConnectivity = true
     self.sessionConfiguration.requestCachePolicy = .reloadRevalidatingCacheData
@@ -140,7 +142,7 @@ final class DataRetriever: NSObject, ObservableObject {
                           price: Double(location.price),
                           latitude: location.coordinates.latitude,
                           longitude: location.coordinates.longitude,
-                          image: location.images[0].sizes.original.url,
+                          image: location.images[0].sizes.medium.url.replacingOccurrences(of: "http", with: "https"),
                           in: likedCity,
                           using: viewContext)
 

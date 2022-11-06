@@ -12,11 +12,25 @@ struct LargeListViewElement: View {
 
   var body: some View {
     GeometryReader { geo in
-      ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
-        AsyncImage(url: URL(string: location.image!)) { image in
-          image.resizable()
-        } placeholder: {
-          Image(systemName: "photo.fill")
+//      ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
+      ZStack {
+        AsyncImage(url: URL(string: location.image!)) { phase in
+          switch phase {
+          case .empty:
+            VStack {
+              ProgressView("Downloading Image...")
+                .progressViewStyle(.circular)
+                .tint(.blue)
+            }
+          case .success(let image):
+            image
+              .resizable()
+          case .failure:
+            Text("Failed fetching image. Check your network connection and try again.")
+              .foregroundColor(.red)
+          @unknown default:
+            Text("Unknown error. Please try again.")
+          }
         }
         VStack {
           ListElementViewHeader(score: location.score)
@@ -27,7 +41,7 @@ struct LargeListViewElement: View {
         }
       }
       .frame(maxWidth: geo.size.width * 0.9, maxHeight: geo.size.height * 0.9)
-      .scaledToFit()
+      .scaledToFill()
       .cornerRadius(Constants.General.listViewElementCornerRadius)
     }
   }
