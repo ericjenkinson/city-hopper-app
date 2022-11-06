@@ -18,14 +18,12 @@ struct DetailView: View {
         AsyncImage(url: URL(string: location.image!)) { phase in
           switch phase {
           case .empty:
-            ProgressView()
+            ProgressView("Downloading Image...")
               .progressViewStyle(.circular)
+              .tint(.blue)
           case .success(let image):
             image
               .resizable()
-              .scaledToFill()
-              .ignoresSafeArea(.container, edges: .top)
-              .zIndex(1)
           case .failure:
             Text("Failed fetching image. Check your network connection and try again.")
               .foregroundColor(.red)
@@ -41,7 +39,9 @@ struct DetailView: View {
         }
         .zIndex(2)
       }
-      .frame(width: proxy.size.width, height: proxy.size.height * 0.9)
+      .frame(width: proxy.size.width, height: proxy.size.height * 1.15)
+      .scaledToFit()
+      .ignoresSafeArea(.container, edges: .top)
       .navigationBarBackButtonHidden(true)
       .navigationBarItems(leading: Button {
         self.mode.wrappedValue.dismiss()
