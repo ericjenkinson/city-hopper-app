@@ -20,7 +20,9 @@ struct LaunchScreen: View {
 
         VStack {
           AnimatedAppName()
-          ProgressView("Loading city data...", value: 50, total: 100)
+          ProgressView("Loading Location data...")
+            .progressViewStyle(.circular)
+            .tint(.blue)
         }
         .offset(y: -250)
         .frame(maxWidth: geo.size.width)
