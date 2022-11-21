@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ListElementViewHeader: View {
-  var score: Double
+  var location: Location
   var body: some View {
     HStack {
       HStack {
         RoundedImageView(systemName: Constants.SFSymbols.filledStar, textColor: Constants.Colors.starSymbolColor)
-        Text(String(score.rounded(toPlaces: 2)))
+        Text(String(location.score.rounded(toPlaces: 2)))
           .foregroundColor(Constants.Colors.listViewElementTextColor)
           .bold()
           .padding(.trailing)
@@ -23,27 +23,25 @@ struct ListElementViewHeader: View {
       )
       .cornerRadius(Constants.General.listViewElementCornerRadius)
       Spacer()
-        LikeButton()
+        LikeButton(location: location)
     }
     .padding()
 
   }
 }
-struct CoreDataListElementViewHeader_Previews: PreviewProvider {
-    static var previews: some View {
-      ListElementViewHeader(score: 8.94)
-    }
-}
 
 struct LikeButton: View {
+  @EnvironmentObject var locationsVM: LocationViewModel
   @State private var isPressed = false
-  @State var liked = false // need to change to binding
+  
+  var location: Location
   var body: some View {
     Button(action: {
-      liked.toggle()
+      location.liked?.isLiked.toggle()
+      locationsVM.updateLocations()
     }, label: {
       RoundedImageView(systemName: Constants.SFSymbols.heart,
-                       textColor: liked ? Color.red : Constants.Colors.listViewElementTextColor)
+                       textColor: location.liked!.isLiked ? Color.red : Constants.Colors.listViewElementTextColor)
         .background(
           UIBlurEffect.View(blurStyle: .regular)
         )

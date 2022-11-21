@@ -6,7 +6,5 @@
 	<string>$(TRIPOSO_ACCOUNT)</string>
 	<key>TRIPOSO_TOKEN</key>
 	<string>$(TRIPOSO_TOKEN)</string>
-	<key>TRIPOSO_LOCATION_URL</key>
-	<string>$(TRIPOSO_LOCATION_URL)</string>
 </dict>
 </plist>

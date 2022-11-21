@@ -17,16 +17,6 @@ final class LikedCitiesViewModel: ObservableObject {
 
   init() {
     fetchLikedCities()
-    if isEmpty() {
-      Task {
-        do {
-          try await dataRetriever.getData()
-          fetchLikedCities()
-        } catch {
-          print("error getting data")
-        }
-      }
-    }
   }
 
   private func coreDataSave() {
@@ -46,7 +36,7 @@ final class LikedCitiesViewModel: ObservableObject {
     return false
   }
 
-  func numberOfLocations() -> Int {
+  func numberOfLikedCities() -> Int {
     return likedCities.count
   }
 

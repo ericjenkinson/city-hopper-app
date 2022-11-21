@@ -70,6 +70,10 @@ class LocationViewModel: ObservableObject {
     }
   }
 
+  func updateLocations() {
+    coreDataSave()
+  }
+
   func getLocationNames() -> [String] {
     var locationNames = [String]()
     if locations.isEmpty {
