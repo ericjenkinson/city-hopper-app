@@ -15,7 +15,7 @@ TRIPOSO\_ACCOUNT = \<Your Account ID> <br />
 TRIPOSO\_TOKEN = \<Your API token> <br />
 
 ## Concepts demonstrated
-The app is built in Swift and SwiftUI utlizing the MVVM pattern.
+The app is built in Swift and SwiftUI utilizing the MVVM pattern.
 
 * Fetching JSON from a remote endpoint
 * Fetching images from a remote endpoint
