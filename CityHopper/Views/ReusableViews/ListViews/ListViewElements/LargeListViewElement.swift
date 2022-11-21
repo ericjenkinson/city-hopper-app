@@ -12,7 +12,6 @@ struct LargeListViewElement: View {
 
   var body: some View {
     GeometryReader { geo in
-//      ZStack(alignment: Alignment(horizontal: .trailing, vertical: .bottom)) {
       ZStack {
         AsyncImage(url: URL(string: location.image!)) { phase in
           switch phase {
@@ -33,7 +32,7 @@ struct LargeListViewElement: View {
           }
         }
         VStack {
-          ListElementViewHeader(score: location.score)
+          ListElementViewHeader(location: location)
             .zIndex(1)
           Spacer()
           ListElementViewFooter(city: location.name!, country: location.country!)
