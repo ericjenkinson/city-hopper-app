@@ -23,3 +23,5 @@ The app is built in Swift and SwiftUI utilizing the MVVM pattern.
 * Swift Modern Concurrency
 * Core Data
 * Unit and UI Test
+
+Making a change to create a pull
